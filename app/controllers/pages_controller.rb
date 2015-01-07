@@ -15,7 +15,8 @@ class PagesController < ApplicationController
   end
 
   def index
-    @pages = Page.where(genre: params[:genre])
+    @genre = Genre.find_by(id: params[:genre_id])
+    @pages = @genre.pages
   end
 
   def show
