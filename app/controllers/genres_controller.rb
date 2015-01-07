@@ -6,8 +6,8 @@ class GenresController < ApplicationController
   end
 
   def show
-    @genre = Genre.find(params[:id]).includes(:pages)
-    @recent_pages = @genres.pages.order(:created_at).reverse_order.limit(5)
+    @genre = Genre.find(params[:id])
+    @recent_pages = @genre.pages.order(:created_at).reverse_order.limit(5)
   end
 
 end

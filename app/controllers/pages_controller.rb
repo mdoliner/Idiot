@@ -16,7 +16,7 @@ class PagesController < ApplicationController
 
   def index
     @genre = Genre.find_by(id: params[:genre_id])
-    @pages = @genre.pages
+    @pages = @genre.pages.order(:created_at).reverse_order
   end
 
   def show
