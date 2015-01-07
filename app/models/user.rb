@@ -6,7 +6,15 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :level, inclusion: {in: USER_LEVELS}
 
+  after_initialize :ensure_session_token
+
   attr_reader :password
+
+  def self.find_by_credentials(username, password)
+    user = User.where( username: username )
+    return nil unless user
+    user.is_password?(password) ? user : nil
+  end
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
