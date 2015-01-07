@@ -51,40 +51,40 @@ rap1 =  Page.create!({genre_id: rap.id,
   Hey hey one day you'll be the man you always knew you could be
   And if you knew how proud I was
   You'd never shed a tear, have a fear, no you wouldn't do that
-    And though I didn't pick the day to turn the page
-    I know it's not the end every time I see her face, and I hear you say
+  And though I didn't pick the day to turn the page
+  I know it's not the end every time I see her face, and I hear you say
 
-    [Hook 2]
-    Hello my only one, remember who you are
-    You got the world cause you got love in your hands
-    And you're still my chosen one
-    So can you understand? One day you'll understand
+  [Hook 2]
+  Hello my only one, remember who you are
+  You got the world cause you got love in your hands
+  And you're still my chosen one
+  So can you understand? One day you'll understand
 
-    [Bridge]
-    So hear me out, hear me out
-    I won't go, I won't go
-    No goodbyes, no goodbyes
-    Just hello, just hello
-    And when you cry, I will cry
-    And when you smile, I will smile
-    And next time when I look in your eyes
-    We'll have wings and we'll fly
+  [Bridge]
+  So hear me out, hear me out
+  I won't go, I won't go
+  No goodbyes, no goodbyes
+  Just hello, just hello
+  And when you cry, I will cry
+  And when you smile, I will smile
+  And next time when I look in your eyes
+  We'll have wings and we'll fly
 
-    [Hook 3]
-    Hello my only one, just like the mornin' sun
-    You'll keep on risin' 'til the sky knows your name
-    And you're still my chosen one, remember who you are
-    No you're not perfect but you're not your mistakes
+  [Hook 3]
+  Hello my only one, just like the mornin' sun
+  You'll keep on risin' 'til the sky knows your name
+  And you're still my chosen one, remember who you are
+  No you're not perfect but you're not your mistakes
 
-    [Outro]
-    Hey, hey, hey, hey
-    Tell Nori about me, tell Nori ab-
-    I just want you to do me a favor
-      Tell Nori about me, tell Nori about me
-      Tell Nori about me, tell Nori about me
-      Tell Nori about me, tell Nori about me
-      Tell Nori about me, tell Nori about me
-      Tell Nori about me..."})
+  [Outro]
+  Hey, hey, hey, hey
+  Tell Nori about me, tell Nori ab-
+  I just want you to do me a favor
+  Tell Nori about me, tell Nori about me
+  Tell Nori about me, tell Nori about me
+  Tell Nori about me, tell Nori about me
+  Tell Nori about me, tell Nori about me
+  Tell Nori about me..."})
 rap2 =  Page.create!({genre_id: rap.id, title: "CoCo", artist_id: 1})
 rap3 =  Page.create!({genre_id: rap.id, title: "I Don't Fuck With You", artist_id: 1})
 rap4 =  Page.create!({genre_id: rap.id, title: "No Role Modelz", artist_id: 1})

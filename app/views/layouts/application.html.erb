@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="//use.typekit.net/zzs4bus.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
 
@@ -12,24 +14,29 @@
   <ul class="nav-links">
     <% genres = Genre.all %>
     <% genres.each do |genre| %>
-    <li><a href="<%= genre_url(genre.id) %>"><%= genre.name %></a></li>
+    <li><a href="<%= genre_url(genre.id) %>"><pre><%= genre.name %>   </pre></a></li>
     <% end %>
   </ul>
-  <ul class="nav-user">
     <% if !current_user %>
-      <li><a href="<%= new_user_url %>">Sign Up</a></li>
-      <li><a href="<%= new_session_url %>">Sign In</a></li>
+    <ul class="nav-no-user">
+      <li><a href="<%= new_user_url %>"><pre>Sign Up   </pre></a></li>
+      <li><a href="<%= new_session_url %>"><pre>Sign In</pre></a></li>
+    </ul>
     <% else %>
+    <ul class="nav-user">
       <li><form action="<%= session_url %>" method="POST">
         <input type="hidden" name="_method" value="DELETE">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <button type="submit">Log Out</button>
       </form></li>
+    </ul>
     <% end %>
-  </ul>
 </nav>
 <nav class="header-2 group">
-  <a href="<%= new_page_url %>">Create</a>
+  <a href="<%= genres_url %>" class = "logo">GENIUS</a>
+  <ul class="header-actions">
+    <li><a href="<%= new_page_url %>">Create</a></li>
+  </ul>
 </nav>
 
 <% if flash[:errors] %>
