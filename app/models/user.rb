@@ -10,6 +10,12 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
+  has_many(
+    :authored_improvements,
+    class_name: "Improvement",
+    foreign_key: :author_id
+  )
+
   def self.find_by_credentials(username, password)
     user = User.where( username: username )
     return nil unless user
