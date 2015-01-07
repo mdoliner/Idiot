@@ -8,6 +8,27 @@
 </head>
 <body>
 
+<span class="header">
+  <ul>
+    <% genres = Genre.all %>
+    <% genres.each do |genre| %>
+    <li><%= genre.name %></li>
+    <% end %>
+  </ul>
+  <% if !current_user %>
+    <a href="<%= new_user_url %>">Sign Up</a>
+    <a href="<%= new_session_url %>">Sign In</a>
+  <% end %>
+</span>
+
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= yield %>
 
 </body>
