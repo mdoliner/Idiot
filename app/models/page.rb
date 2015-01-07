@@ -3,6 +3,7 @@ class Page < ActiveRecord::Base
 
   belongs_to :genre
   belongs_to :collection
+  belongs_to :artist
   has_many :annotations
 
 end

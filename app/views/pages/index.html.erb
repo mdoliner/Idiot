@@ -1,6 +1,6 @@
 <h1><%= @genre.name %></h1>
 <ul>
   <% @pages.each do |page| %>
-    <li><%= page.title %></li>
+  <li><a href="<%= page_url(page.id) %>"><%= page.title %></a></li>
   <% end %>
 </ul>

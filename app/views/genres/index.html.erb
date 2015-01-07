@@ -2,10 +2,10 @@
 <ul>
   <% @genres.each do |genre| %>
     <% next if genre.name == "meta" %>
-    <% most_recent_page = genre.most_recent_page %>
+    <% page = genre.most_recent_page %>
     <ul>
-      <li><h3><%= genre.name %></h3></li>
-      <li><%= most_recent_page.title %></li>
+      <li><%= genre.name %></li>
+      <li><a href="<%= page_url(page.id) %>"><%= page.title %></a></li>
     </ul>
   <% end %>
 </ul>
