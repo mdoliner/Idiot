@@ -3,4 +3,8 @@ class Genre < ActiveRecord::Base
 
   has_many :pages
 
+  def most_recent_page
+    self.pages.order(:created_at).last
+  end
+
 end

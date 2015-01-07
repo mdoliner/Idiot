@@ -1,6 +1,11 @@
 <h1>Genres</h1>
 <ul>
   <% @genres.each do |genre| %>
-    <li><%= genre.name %></li>
+    <% next if genre.name == "meta" %>
+    <% most_recent_page = genre.most_recent_page %>
+    <ul>
+      <li><h3><%= genre.name %></h3></li>
+      <li><%= most_recent_page.title %></li>
+    </ul>
   <% end %>
 </ul>
