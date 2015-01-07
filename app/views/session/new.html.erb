@@ -1,18 +1,14 @@
-<form action="<%= users_url %>" method="post">
+<form action="<%= sessions_url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="username">Genius Nickname</label>
+  <label for="username">Genius login or email</label>
   <input type="input" name="user[username]" id="username">
-
-  <label for="email">Email</label>
-  <input type="input" name="user[email]">
 
   <label for="password">Password</label>
   <input type="password" name="user[password]">
 
-  <p>
-    By clicking "Create Account", you are indicating that
-    you have read and agree to the Terms of Service.
-  </p>
-
-  <button type="submit">Create Account</button>
+  <button type="submit">Login</button>
 </form>
+
+<p>
+  Don't have an account? <a href="<%= new_user_url %>">Sign up here.</a>
+</p>

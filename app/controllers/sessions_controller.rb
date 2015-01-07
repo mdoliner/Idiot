@@ -1,4 +1,4 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
 
   def new
   end
@@ -18,8 +18,7 @@ class SessionController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
-    user.try(:reset_session_token!)
+    current_user.try(:reset_session_token!)
     session[:session_token] = nil
     redirect_to root_url
   end

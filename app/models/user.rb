@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
     foreign_key: :author_id
   )
 
-  def self.find_by_credentials(username, password)
-    user = User.where( username: username )
+  def self.find_by_credentials(usernameOrEmail, password)
+    user = User.where( username: usernameOrEmail ) || User.where( email: usernameOrEmail)
     return nil unless user
     user.is_password?(password) ? user : nil
   end
