@@ -3,6 +3,64 @@
  *= require_self
  */
 
+h1, h2, h3, p, a, ul, li, nav, form, input, label, button {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+
+  box-sizing: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+form {
+  -webkit-appearance: none;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 p.page-text {
   white-space: pre-wrap;
+}
+
+body {
+  background: black;
+  color: rgb(170, 170, 170)
+}
+
+nav ul.nav-links {
+  display: inline;
+  float: left;
+}
+
+nav ul.nav-links li {
+  display: inline;
+  float: left;
+}
+
+nav ul.nav-links li + li:before {
+  content: "-";
+  color: rgb(85, 85, 85);
+}
+
+nav ul.nav-user {
+  display: inline;
+  float: right;
+}
+
+nav ul.nav-user li{
+  display: inline;
+  float: left;
 }

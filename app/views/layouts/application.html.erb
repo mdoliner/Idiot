@@ -8,25 +8,29 @@
 </head>
 <body>
 
-<span class="header">
-  <ul>
+<nav class="header-1 group">
+  <ul class="nav-links">
     <% genres = Genre.all %>
     <% genres.each do |genre| %>
     <li><a href="<%= genre_url(genre.id) %>"><%= genre.name %></a></li>
     <% end %>
   </ul>
-  <% if !current_user %>
-    <a href="<%= new_user_url %>">Sign Up</a>
-    <a href="<%= new_session_url %>">Sign In</a>
-  <% else %>
-    <form action="<%= session_url %>" method="POST">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <button type="submit">Log Out</button>
-    </form>
-  <% end %>
+  <ul class="nav-user">
+    <% if !current_user %>
+      <li><a href="<%= new_user_url %>">Sign Up</a></li>
+      <li><a href="<%= new_session_url %>">Sign In</a></li>
+    <% else %>
+      <li><form action="<%= session_url %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button type="submit">Log Out</button>
+      </form></li>
+    <% end %>
+  </ul>
+</nav>
+<nav class="header-2 group">
   <a href="<%= new_page_url %>">Create</a>
-</span>
+</nav>
 
 <% if flash[:errors] %>
   <ul>
