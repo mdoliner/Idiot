@@ -11,4 +11,4 @@ genres = Genre.create([
   { name: 'Tech' },
   { name: 'X' },
   { name: 'Meta' },
-  ])
+])
