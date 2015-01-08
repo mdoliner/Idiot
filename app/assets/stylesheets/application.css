@@ -31,9 +31,17 @@ form {
   clear: both;
 }
 
+::selection {
+  background: rgb(159, 159, 159);
+}
+
+::-moz-selection {
+  background: rgb(159, 159, 159);
+}
+
 body {
   background: black;
-  color: rgb(170, 170, 170)
+  color: rgb(170, 170, 170);
 }
 
 #main {

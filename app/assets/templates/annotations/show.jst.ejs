@@ -1,4 +1,8 @@
-<a href="#">Description</a>
+<% if (isDescription) { %>
+  <a href="#">Description</a>
+<%} else {%>
+  <a href="#">Genius Annotation</a>
+<% } %>
 <p>
   <%= annotation.escape("content") %>
 </p>
