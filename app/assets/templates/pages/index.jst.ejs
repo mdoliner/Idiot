@@ -1,0 +1,6 @@
+<h1><%= genre.escape("name") %></h1>
+<ul>
+  <% pages.each(function (page) { %>
+  <li><a href="pages/<%= page.id %>"><%= page.escape("title") %></a></li>
+  <% }); %>
+</ul>
