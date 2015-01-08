@@ -9,9 +9,4 @@ Idiot.Collections.Genres = Backbone.Collection.extend({
     var that = this;
     return genre;
   }
-  // parse: function (payload) {
-  //   if (payload.most_recent_page) {
-  //
-  //   }
-  // }
 });

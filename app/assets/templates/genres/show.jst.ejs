@@ -1,8 +1,7 @@
 <h1><%= genre.escape("name") %></h1>
-<% debugger %>
 <ul>
-  <% _.each(genre.get("recent_pages"), function (page) {%>
-    <li><a href="#/pages/<%= page.id %>"><%= page.title %></a></li>
+  <% genre.recentPages().each(function (page) {%>
+    <li><a href="#/pages/<%= page.id %>"><%= page.escape("title") %></a></li>
   <% }); %>
 </ul>
 <a href="#/genres/<%= genre.id %>/pages">See more <%= genre.escape("name") %> Genius</a>
