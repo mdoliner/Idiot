@@ -1,0 +1,11 @@
+<h1>Genres</h1>
+<ul>
+  <% genres.each(function (genre) {%>
+    <% if (genre.escape("name") === "meta") {return} %>
+    <% page = genre.get("most_recent_page") %>
+    <ul>
+      <li><%= genre.escape("name") %></li>
+      <li><a href="#pages/ + <%= page.id %>"><%= page.escape("title") %></a></li>
+    </ul>
+  <% }); %>
+</ul>
