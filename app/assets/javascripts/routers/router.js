@@ -1,6 +1,7 @@
 Idiot.Routers.Router = Backbone.Router.extend({
   routes: {
-    "": "genresIndex"
+    "": "genresIndex",
+    "genres/:id": "genreShow"
   },
 
   initialize: function () {
@@ -9,9 +10,22 @@ Idiot.Routers.Router = Backbone.Router.extend({
   },
 
   genresIndex: function () {
-    this._genres.fetch();
-    var view = new Idiot.Views.GenresIndex({collection: this._genres});
-    this.swapView(view);
+    this._genres.fetch({
+      success: function () {
+        var view = new Idiot.Views.GenresIndex({collection: this._genres});
+        this.swapView(view);
+      }.bind(this)
+    });
+  },
+
+  genreShow: function (id) {
+    var genre = this._genres.getOrAdd(id);
+    genre.fetch({
+      success: function () {
+        var view = new Idiot.Views.GenreShow({model: genre});
+        this.swapView(view);
+      }.bind(this)
+    })
   },
 
   swapView: function (view) {

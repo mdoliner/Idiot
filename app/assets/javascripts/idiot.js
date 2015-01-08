@@ -4,7 +4,6 @@ window.Idiot = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
     var router = new Idiot.Routers.Router();
     Backbone.history.start();
   }
