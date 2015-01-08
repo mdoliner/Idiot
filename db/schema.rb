@@ -11,17 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107205728) do
+ActiveRecord::Schema.define(version: 20150108191822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "annotations", force: true do |t|
-    t.text     "content",    null: false
-    t.integer  "page_id",    null: false
+    t.text     "content",     null: false
+    t.integer  "page_id",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "start_index"
+    t.integer  "end_index"
   end
+
+  add_index "annotations", ["page_id"], name: "index_annotations_on_page_id", using: :btree
 
   create_table "artists", force: true do |t|
     t.text     "biography"

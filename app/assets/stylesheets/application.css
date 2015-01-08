@@ -32,11 +32,11 @@ form {
 }
 
 ::selection {
-  background: rgb(159, 159, 159);
+  background: rgba(159, 159, 159, 0.9);
 }
 
 ::-moz-selection {
-  background: rgb(159, 159, 159);
+  background: rgba(159, 159, 159, 0.9);
 }
 
 body {
