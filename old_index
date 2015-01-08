@@ -1,0 +1,36 @@
+<!-- <nav class="header-1 group">
+  <ul class="nav-links">
+    <% genres = Genre.all %>
+    <% genres.each do |genre| %>
+    <li><a href="<%= genre_url(genre.id) %>"><pre><%= genre.name %>   </pre></a></li>
+    <% end %>
+  </ul>
+    <% if !current_user %>
+    <ul class="nav-no-user">
+      <li><a href="<%= new_user_url %>"><pre>Sign Up   </pre></a></li>
+      <li><a href="<%= new_session_url %>"><pre>Sign In</pre></a></li>
+    </ul>
+    <% else %>
+    <ul class="nav-user">
+      <li><form action="<%= session_url %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button type="submit">Log Out</button>
+      </form></li>
+    </ul>
+    <% end %>
+</nav>
+<nav class="header-2 group">
+  <a href="<%= genres_url %>" class = "logo">GENIUS</a>
+  <ul class="header-actions">
+    <li><a href="<%= new_page_url %>">Create</a></li>
+  </ul>
+</nav>
+
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %> -->
