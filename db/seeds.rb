@@ -17,6 +17,12 @@ meta = Genre.create!({ name: 'Meta' })
 kanye = Artist.create!({name: "Kanye West"})
 
 # Pages
+rap1Desc = Annotation.create!({
+  content:"This touching release depicts Kanye in a vulnerable state. He delivers the song from the perspective of his late mother, Dr. Donda West, as she looks upon her son from Heaven. Kanye couldn’t remember singing the song when lines were played back to him, and concluded Donda was sending him a message.
+
+  The song is very similar to The Beatles' “Let It Be”, which Sir Paul McCartney wrote about the death of his mother. Paul had a similar “channelling” experience after George Harrison died, which resulted in “Friends To Go”.",
+  page_id: 1
+})
 rap1 =  Page.create!({genre_id: rap.id,
   title: "Only One",
   artist_id: kanye.id,
@@ -84,7 +90,10 @@ rap1 =  Page.create!({genre_id: rap.id,
   Tell Nori about me, tell Nori about me
   Tell Nori about me, tell Nori about me
   Tell Nori about me, tell Nori about me
-  Tell Nori about me..."})
+  Tell Nori about me...",
+  description_id: rap1Desc.id
+})
+
 rap2 =  Page.create!({genre_id: rap.id, title: "CoCo", artist_id: 1})
 rap3 =  Page.create!({genre_id: rap.id, title: "I Don't Fuck With You", artist_id: 1})
 rap4 =  Page.create!({genre_id: rap.id, title: "No Role Modelz", artist_id: 1})

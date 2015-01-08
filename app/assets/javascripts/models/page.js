@@ -5,7 +5,10 @@ Idiot.Models.Page = Backbone.Model.extend({
       this.artist().set(payload.artist, {parse: true});
       delete payload.artist;
     }
-
+    if (payload.description) {
+      this.description().set(payload.description, {parse: true});
+      delete payload.description;
+    }
     return payload;
   },
   artist: function () {
@@ -15,4 +18,11 @@ Idiot.Models.Page = Backbone.Model.extend({
 
     return this._artist;
   },
+  description: function () {
+    if(!this._description) {
+      this._description = new Idiot.Models.Annotation({ page: this });
+    }
+
+    return this._description;
+  }
 });

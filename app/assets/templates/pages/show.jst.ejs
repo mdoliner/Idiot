@@ -1,5 +1,15 @@
 <h1><%= page.escape("title") %></h1>
 <h3><%= page.artist().escape("name") %>
-<p class="page-text">
-  <%= page.escape("text") %>
-</p>
+<span class="group">
+  <article class="page-text">
+    <p class="text-content">
+      <%= page.escape("text") %>
+    </p>
+  </article>
+  <article class="page-annotations">
+    <a href="#">Description</a>
+    <p>
+      <%= page.description().escape("content") %>
+    </p>
+  </article>
+</span>
