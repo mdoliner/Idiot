@@ -25,11 +25,13 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
       text.slice(annotation.get("end_index"));
     });
     $textContent.html(text);
-    var annotationView = new Idiot.Views.AnnotationShow({
-      model: this.model.description(),
-      isDescription: true
-    });
-    this.addSubview('.page-annotations', annotationView);
+    if (this.model.description().id) {
+      var annotationView = new Idiot.Views.AnnotationShow({
+        model: this.model.description(),
+        isDescription: true
+      });
+      this.addSubview('.page-annotations', annotationView);
+    }
     return this;
   },
 

@@ -1,6 +1,8 @@
 json.(@page, :title, :text)
-json.description do
-  json.content @page.description.content
+if @page.description
+  json.description do
+    json.content @page.description.content
+  end
 end
 json.artist do
   json.name @page.artist.name

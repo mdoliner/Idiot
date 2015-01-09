@@ -63,6 +63,19 @@ Idiot.Routers.Router = Backbone.Router.extend({
     })
   },
 
+  pageNew: function () {
+    var page = new Idiot.Models.Page();
+    this._genres.fetch({
+      success: function () {
+        var view = new Idiot.Views.PageNew({
+          model: page,
+          collection: this._genres
+        });
+        this.swapView(view);
+      }.bind(this)
+    })
+  },
+
   pageShow: function (id) {
     var page = this._pages.getOrAdd(id);
     page.fetch({
