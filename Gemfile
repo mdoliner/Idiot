@@ -33,6 +33,7 @@ gem 'backbone-on-rails'
 gem 'figaro'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'unicorn'
 
 group :development do
   gem 'better_errors'
