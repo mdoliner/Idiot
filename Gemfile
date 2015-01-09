@@ -30,6 +30,11 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'backbone-on-rails'
 
+gem 'figaro'
+gem 'paperclip'
+gem 'aws-sdk'
+
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

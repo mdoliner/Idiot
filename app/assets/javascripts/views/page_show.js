@@ -5,7 +5,6 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
     "click a.annotation": "refreshAnnotation",
     "mouseup .page-text": "toggleNewAnnotation",
     "click #new-annotation": "createAnnotation"
-
   },
 
   render: function () {

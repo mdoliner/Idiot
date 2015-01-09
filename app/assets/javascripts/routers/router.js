@@ -4,7 +4,8 @@ Idiot.Routers.Router = Backbone.Router.extend({
     "genres/:id": "genreShow",
     "genres/:id/pages": "pagesIndex",
     "pages/new": "pageNew",
-    "pages/:id": "pageShow"
+    "pages/:id": "pageShow",
+    "artists/:id": "artistShow"
   },
 
   initialize: function () {
@@ -12,6 +13,7 @@ Idiot.Routers.Router = Backbone.Router.extend({
     this.$headerEl = $("#header");
     this._genres = new Idiot.Collections.Genres();
     this._pages = new Idiot.Collections.Pages();
+    this._artists = new Idiot.Collections.Artists();
     this._currentUser = new Idiot.Models.CurrentUser();
     this.header();
   },
@@ -29,6 +31,18 @@ Idiot.Routers.Router = Backbone.Router.extend({
             this.$headerEl.html(this._headerView.render().$el);
           }.bind(this)
         })
+      }.bind(this)
+    })
+  },
+
+  artistShow: function (id) {
+    var artist = this._artists.getOrAdd(id);
+    artist.fetch({
+      success: function () {
+        var view = new Idiot.Views.ArtistShow({
+          model: artist
+        });
+        this.swapView(view);
       }.bind(this)
     })
   },

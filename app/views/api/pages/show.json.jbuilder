@@ -6,6 +6,7 @@ if @page.description
 end
 json.artist do
   json.name @page.artist.name
+  json.id @page.artist.id
 end
 json.annotations @page.annotations.order(:start_index).reverse_order do |annotation|
   json.id annotation.id

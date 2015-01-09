@@ -6,7 +6,6 @@ Idiot.Collections.Pages = Backbone.Collection.extend({
     if (!page) {
       page = new Idiot.Models.Page({id: id});
     }
-    var that = this;
     return page;
   }
 })

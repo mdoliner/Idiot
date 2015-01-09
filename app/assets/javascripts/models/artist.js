@@ -1,6 +1,10 @@
 Idiot.Models.Artist = Backbone.Model.extend({
   urlRoot: "api/artists",
   toJSON: function () {
-    return { artist: _.clone( this.attributes )};
+    var json = { artist: _.clone( this.attributes )}
+    if (this._image) {
+      json.artist.avatar = this._image;
+    }
+    return json;
   }
 })

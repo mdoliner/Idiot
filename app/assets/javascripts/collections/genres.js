@@ -6,7 +6,6 @@ Idiot.Collections.Genres = Backbone.Collection.extend({
     if (!genre) {
       genre = new Idiot.Models.Genre({id: id});
     }
-    var that = this;
     return genre;
   }
 });

@@ -2,7 +2,7 @@
   <span id="new-user-span"></span>
   <ul class="nav-links">
     <% genres.each(function (genre) {%>
-    <li><a href="#/<%= genre.id %>"><pre><%= genre.escape("name") %>   </pre></a></li>
+    <li><a href="#/genres/<%= genre.id %>"><pre><%= genre.escape("name") %>   </pre></a></li>
     <% }); %>
   </ul>
   <% if (!currentUser.get("logged_in")) {%>
