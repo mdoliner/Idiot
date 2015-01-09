@@ -141,6 +141,19 @@ nav ul.header-actions {
 
 /* Page Show */
 
+h1.title {
+  font-size: 36px;
+  font-weight: bold;
+  background: rgb(255, 195, 28);
+  display: inline;
+  color: black;
+}
+
+a.artist {
+  display: block;
+  font-size: 32px;
+}
+
 article.page-text {
   width: 620px;
   float: left;
