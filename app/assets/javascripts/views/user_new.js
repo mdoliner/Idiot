@@ -6,6 +6,10 @@ Idiot.Views.UserNew = Backbone.View.extend({
     "submit": "createUser"
   },
 
+  initialize: function (options) {
+    this.headerView = options.headerView;
+  },
+
   render: function () {
     var content = this.template();
     this.$el.html(content);
@@ -24,8 +28,9 @@ Idiot.Views.UserNew = Backbone.View.extend({
     this.model.save(attrs, {
       wait: true,
       success: function () {
-        Backbone.history.back({trigger: true});
-      },
+        this.headerView.refresh();
+        this.remove();
+      }.bind(this),
       error: function () {
         if (attrs.username.length === 0) {
           $("#username-error").text("Enter a nickname.");

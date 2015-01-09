@@ -16,8 +16,19 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
   newUserForm: function (event) {
     event.preventDefault();
     var view = new Idiot.Views.UserNew({
-      model: new Idiot.Models.User()
+      model: new Idiot.Models.User(),
+      headerView: this
     });
     $("#new-user-span").html(view.render().$el);
+  },
+
+  refresh: function () {
+    this.model.fetch({
+      success: function () {
+        this.render();
+      }.bind(this)
+    })
   }
+
+
 });

@@ -5,7 +5,7 @@
     <li><a href="#/<%= genre.id %>"><pre><%= genre.escape("name") %>   </pre></a></li>
     <% }); %>
   </ul>
-  <% if (!currentUser.logged_in) {%>
+  <% if (!currentUser.get("logged_in")) {%>
   <ul class="nav-no-user">
     <li><a id="new-user"><pre>Sign Up   </pre></a></li>
     <li><a href="#session/new"><pre>Sign In</pre></a></li>
