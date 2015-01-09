@@ -1,12 +1,22 @@
 <nav class="header-1 group">
   <ul class="nav-links">
     <% genres.each(function (genre) {%>
-    <li><a href="#genres/<%= genre.id %>"><pre><%= genre.escape("name") %>   </pre></a></li>
+    <li><a href="#/<%= genre.id %>"><pre><%= genre.escape("name") %>   </pre></a></li>
     <% }); %>
   </ul>
+  <% if (!currentUser.logged_in) {%>
+  <ul class="nav-no-user">
+    <li><a href="#users/new"><pre>Sign Up   </pre></a></li>
+    <li><a href="#session/new"><pre>Sign In</pre></a></li>
+  </ul>
+  <% } else { %>
+  <ul class="nav-user">
+    <li><a href="#session/destroy">Log Out</a></li>
+  </ul>
+  <% } %>
 </nav>
 <nav class="header-2 group">
-  <a href="#genres" class = "logo">GENIUS</a>
+  <a href="#" class = "logo">GENIUS</a>
   <ul class="header-actions">
     <li><a href="#pages/new">Create</a></li>
   </ul>

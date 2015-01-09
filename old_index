@@ -1,4 +1,4 @@
-<!-- <nav class="header-1 group">
+<nav class="header-1 group">
   <ul class="nav-links">
     <% genres = Genre.all %>
     <% genres.each do |genre| %>
@@ -33,4 +33,4 @@
       <li><%= error %></li>
     <% end %>
   </ul>
-<% end %> -->
+<% end %>

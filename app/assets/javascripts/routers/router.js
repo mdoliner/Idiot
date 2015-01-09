@@ -12,17 +12,23 @@ Idiot.Routers.Router = Backbone.Router.extend({
     this.$headerEl = $("#header");
     this._genres = new Idiot.Collections.Genres();
     this._pages = new Idiot.Collections.Pages();
+    this._currentUser = new Idiot.Models.CurrentUser();
     this.header();
   },
 
   header: function () {
-    this._genres.fetch({
+    this._currentUser.fetch({
       success: function () {
-        this._headerView && this._headerView.remove();
-        this._headerView = new Idiot.Views.Header({
-          collection: this._genres
-        });
-        this.$headerEl.html(this._headerView.render().$el);
+        this._genres.fetch({
+          success: function () {
+            this._headerView && this._headerView.remove();
+            this._headerView = new Idiot.Views.Header({
+              collection: this._genres,
+              model: this._currentUser
+            });
+            this.$headerEl.html(this._headerView.render().$el);
+          }.bind(this)
+        })
       }.bind(this)
     })
   },
