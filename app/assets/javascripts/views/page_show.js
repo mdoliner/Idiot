@@ -14,11 +14,13 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
     var $textContent = this.$el.find(".text-content");
     var text = $textContent.text();
     annotations.each(function (annotation) {
+      var startTag = "<a class='annotation' href='#' data-id=" + annotation.id + ">";
+      var endTag = "</a>"
       if (annotation.get("end_index") === 0) {return}
       text = text.slice(0, annotation.get("start_index")) +
-      "<a class='annotation' href='#' data-id=" + annotation.id + ">" +
+      startTag +
       text.slice(annotation.get("start_index"), annotation.get("end_index")) +
-      "</a>" +
+      endTag +
       text.slice(annotation.get("end_index"));
     });
     $textContent.html(text);
@@ -53,7 +55,10 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
       this.addSubview('.page-annotations', annotationView);
     } else {
       $('.page-annotations').empty();
-      var newAnnotationView = new Idiot.Views.AnnotationNew({});
+      var newAnnotationView = new Idiot.Views.AnnotationNew({
+        collection: this.model.annotations(),
+        model: this.model
+      });
       this.addSubview('.page-annotations', newAnnotationView);
     }
   }

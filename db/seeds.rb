@@ -148,7 +148,7 @@ rap2 =  Page.create!({
 })
 rap2_ann1 = Annotation.create!({
   content: "O.T. spoke to Complex Magazine about his love of cocaine, stating he got into it \“about seven years ago\”.",
-  start_index: 18,
+  start_index: 17,
   end_index: 128,
   page_id: rap2.id
 })

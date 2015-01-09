@@ -131,9 +131,20 @@ article.page-text {
 
 p.text-content {
   white-space: pre-wrap;
+  color: rgb(238, 238, 238);
 }
 
 article.page-annotations {
   width: 425px;
   float: right;
+  color: rgb(204, 204, 204);
+}
+
+a.annotation {
+  background: rgb(52, 52, 52);
+}
+
+a.annotation:hover {
+  background: rgb(255, 195, 28);
+  color: black;
 }
