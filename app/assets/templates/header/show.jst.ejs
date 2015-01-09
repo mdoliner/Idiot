@@ -1,4 +1,5 @@
 <nav class="header-1 group">
+  <span id="new-user-form"></span>
   <ul class="nav-links">
     <% genres.each(function (genre) {%>
     <li><a href="#/<%= genre.id %>"><pre><%= genre.escape("name") %>   </pre></a></li>
@@ -6,7 +7,7 @@
   </ul>
   <% if (!currentUser.logged_in) {%>
   <ul class="nav-no-user">
-    <li><a href="#users/new"><pre>Sign Up   </pre></a></li>
+    <li><a href="#" id="new-user"><pre>Sign Up   </pre></a></li>
     <li><a href="#session/new"><pre>Sign In</pre></a></li>
   </ul>
   <% } else { %>
