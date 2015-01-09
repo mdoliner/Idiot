@@ -3,7 +3,8 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
 
   events: {
     "click a.annotation": "refreshAnnotation",
-    "mouseup .page-text": "toggleNewAnnotation"
+    "mouseup .page-text": "toggleNewAnnotation",
+    "click #new-annotation": "createAnnotation"
 
   },
 
@@ -61,5 +62,26 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
       });
       this.addSubview('.page-annotations', newAnnotationView);
     }
+  },
+
+  createAnnotation: function (event) {
+    event.preventDefault();
+    var data = $("#new-annotation-form").serializeJSON().annotation;
+    var that = this;
+    this.model.annotations().create(data, {
+      wait: true,
+      success: function (annotation) {
+        that.model.fetch({
+          success: function () {
+            that.render();
+            $('.page-annotations').empty();
+            var annotationView = new Idiot.Views.AnnotationShow({
+              model: annotation
+            });
+            that.addSubview('.page-annotations', annotationView);
+          }
+        });
+      }
+    });
   }
 });
