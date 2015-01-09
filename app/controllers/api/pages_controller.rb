@@ -9,7 +9,6 @@ class Api::PagesController < ApplicationController
     if @page.save
       render :show
     else
-      flash.now[:errors] = @page.errors.full_messages
       render :new
     end
   end

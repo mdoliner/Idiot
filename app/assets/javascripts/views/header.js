@@ -1,7 +1,7 @@
 Idiot.Views.Header = Backbone.CompositeView.extend({
   template: JST["header/show"],
   events: {
-    "click a#new-user": "newUserForm"
+    "click #new-user": "newUserForm"
   },
 
   render: function () {
@@ -15,7 +15,9 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
 
   newUserForm: function (event) {
     event.preventDefault();
-    var view = new Idiot.Views.UserNew;
-    $("#new-user-form").html(view.render().$el);
+    var view = new Idiot.Views.UserNew({
+      model: new Idiot.Models.User()
+    });
+    $("#new-user-span").html(view.render().$el);
   }
 });

@@ -5,9 +5,19 @@ class Api::UsersController < ApplicationController
     render :current
   end
 
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      login!(@user)
+      render :show
+    else
+      render :new
+    end
+  end
+
   private
-  def annotation_params
-    params.require(:annotation).permit(:content, :start_index, :end_index, :page_id)
+  def user_params
+    params.require(:user).permit(:username, :password, :email)
   end
 
 end
