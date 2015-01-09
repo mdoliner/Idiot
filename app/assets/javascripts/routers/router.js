@@ -3,13 +3,28 @@ Idiot.Routers.Router = Backbone.Router.extend({
     "": "genresIndex",
     "genres/:id": "genreShow",
     "genres/:id/pages": "pagesIndex",
+    "pages/new": "pageNew",
     "pages/:id": "pageShow"
   },
 
   initialize: function () {
     this.$rootEl = $("#main");
+    this.$headerEl = $("#header");
     this._genres = new Idiot.Collections.Genres();
     this._pages = new Idiot.Collections.Pages();
+    this.header();
+  },
+
+  header: function () {
+    this._genres.fetch({
+      success: function () {
+        this._headerView && this._headerView.remove();
+        this._headerView = new Idiot.Views.Header({
+          collection: this._genres
+        });
+        this.$headerEl.html(this._headerView.render().$el);
+      }.bind(this)
+    })
   },
 
   genresIndex: function () {

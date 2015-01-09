@@ -1,0 +1,13 @@
+<nav class="header-1 group">
+  <ul class="nav-links">
+    <% genres.each(function (genre) {%>
+    <li><a href="#genres/<%= genre.id %>"><pre><%= genre.escape("name") %>   </pre></a></li>
+    <% }); %>
+  </ul>
+</nav>
+<nav class="header-2 group">
+  <a href="#genres" class = "logo">GENIUS</a>
+  <ul class="header-actions">
+    <li><a href="#pages/new">Create</a></li>
+  </ul>
+</nav>

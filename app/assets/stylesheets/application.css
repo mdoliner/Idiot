@@ -42,9 +42,6 @@ form {
 body {
   background: black;
   color: rgb(170, 170, 170);
-}
-
-#main {
   margin-left: 14%;
   margin-right: 16%;
   width: 1045px;
