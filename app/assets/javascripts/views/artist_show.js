@@ -5,7 +5,6 @@ Idiot.Views.ArtistShow = Backbone.View.extend({
     "change #input-artist-image": "fileInputChange"
   },
   render: function () {
-    debugger
     var content = this.template({
       artist: this.model
     });

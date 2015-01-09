@@ -42,13 +42,18 @@ form {
 body {
   background: black;
   color: rgb(170, 170, 170);
-  margin-left: 14%;
-  margin-right: 16%;
-  width: 1045px;
   position: relative;
+  font-family: sans-serif;
+}
+
+a {
+  cursor: pointer;
 }
 
 /* Header */
+nav {
+  background: rgb(21, 21, 21);
+}
 nav ul.nav-links {
   display: inline;
   float: left;
@@ -71,6 +76,10 @@ nav ul.nav-links li + li:before {
   border-radius: 10px;
   padding: 0px;
   background: rgb(85, 85, 85);
+}
+
+nav ul.nav-links a:hover {
+  color: rgb(255, 195, 28);
 }
 
 nav ul.nav-user {
@@ -117,6 +126,17 @@ nav ul.nav-no-user a:hover{
 
 nav a.logo {
   color: rgb(255, 195, 28);
+  font-size: 32px;
+  float: left;
+}
+
+nav.header-2 {
+  border-top: 1px solid rgb(85, 85, 85);
+  border-bottom: 1px solid rgb(85, 85, 85);
+}
+
+nav ul.header-actions {
+  float: right;
 }
 
 /* Page Show */
