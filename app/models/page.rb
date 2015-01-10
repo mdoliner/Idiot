@@ -1,4 +1,6 @@
 class Page < ActiveRecord::Base
+  include Improvementable
+  
   validates :genre_id, :title, :artist_id, presence: true
 
   belongs_to :genre

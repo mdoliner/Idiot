@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109212326) do
+ActiveRecord::Schema.define(version: 20150110175840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,11 +59,16 @@ ActiveRecord::Schema.define(version: 20150109212326) do
   end
 
   create_table "improvements", force: true do |t|
-    t.text     "content",    null: false
-    t.integer  "author_id",  null: false
+    t.text     "content",              null: false
+    t.integer  "author_id",            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "improvementable_id",   null: false
+    t.string   "improvementable_type", null: false
   end
+
+  add_index "improvements", ["improvementable_id"], name: "index_improvements_on_improvementable_id", using: :btree
+  add_index "improvements", ["improvementable_type"], name: "index_improvements_on_improvementable_type", using: :btree
 
   create_table "pages", force: true do |t|
     t.integer  "genre_id",                       null: false
