@@ -1,1 +1,1 @@
-json.(@annotation, :content)
+json.(@annotation, :content, :id)

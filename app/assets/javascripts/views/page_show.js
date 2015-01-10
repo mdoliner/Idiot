@@ -31,6 +31,11 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
       });
       this.addSubview('.page-annotations', annotationView);
     }
+    var improvementView = new Idiot.Views.ImprovementPagePartial({
+      collection: this.model.improvements()
+    })
+    this.$el.find("#page-improvements").html(improvementView.render().$el);
+    debugger
     return this;
   },
 
