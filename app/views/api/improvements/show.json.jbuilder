@@ -1,1 +1,1 @@
-json.(@improvement, :author, :content, :created_at)
+json.(@improvement, :author, :content, :created_at, :username)

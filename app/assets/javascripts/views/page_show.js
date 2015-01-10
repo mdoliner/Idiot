@@ -105,12 +105,12 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
     event.preventDefault();
     var $span = $("#submit-page-improvement");
     $span.empty();
-    var $submit = $("<button type='submit'></button>").html("Post suggestion")
-    if (!this.currentUser.get("logged_in")) {
-      $submit.append($("<small>Have an account? <a href='#'>Sign in</a> first |</small>"));
-    }
-    $submit.append($("<a href='#'>How to add links/pics etc</a>"));
+    var $submit = $("<button class='submit-page-improvement' type='submit'></button>").html("Post suggestion");
     $span.append($submit);
+    if (!this.currentUser.get("logged_in")) {
+      $span.append($("<small class='signup-page-improvement'>Have an account? <a href='#'>Sign in</a> first |</small>"));
+    }
+    $span.append($("<a href='#'>How to add links/pics etc</a>"));
   },
 
   createPageImprovement: function (event) {

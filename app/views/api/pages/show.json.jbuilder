@@ -1,6 +1,7 @@
 json.(@page, :title, :text)
 if @page.description
   json.description do
+    json.id @page.description.id
     json.content @page.description.content
   end
 end
@@ -19,4 +20,5 @@ json.improvements @page.improvements do |improvement|
   json.content improvement.content
   json.author improvement.author
   json.created_at improvement.created_at
+  json.username improvement.username
 end

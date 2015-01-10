@@ -1,5 +1,7 @@
 Idiot.Views.ImprovementPagePartial = Backbone.View.extend({
     template: JST['improvements/page_partial'],
+    tagName: "span",
+    className: "page-improvement-partial group",
 
     initialize: function (options) {
       this.currentUser = options.currentUser;

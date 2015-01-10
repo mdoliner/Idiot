@@ -16,8 +16,11 @@
 
   <span id="submit-page-improvement"></span>
 </form>
-<ul>
+<ul class="page-improvements">
   <% improvements.each(function(improvement) {%>
-    <li><%= improvement.escape("content") %></li>
+    <li class="page-improvement">
+      <h9 class="username"><%= improvement.escape("username") %></h9>
+      <p><%= improvement.escape("content") %></p>
+    </li>
   <% }); %>
 </ul>
