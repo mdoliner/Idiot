@@ -20,6 +20,7 @@
   <% improvements.each(function(improvement) {%>
     <li class="page-improvement">
       <h9 class="username"><%= improvement.escape("username") %></h9>
+      <small class="time"><%= improvement.escape("time_ago_posted") %></small>
       <p><%= improvement.escape("content") %></p>
     </li>
   <% }); %>

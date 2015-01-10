@@ -165,7 +165,7 @@ article.page-text {
 
 p.text-content {
   white-space: pre-wrap;
-  color: rgb(238, 238, 238);
+  color: rgb(204, 204, 204);
 }
 
 article.page-annotations {
@@ -176,6 +176,7 @@ article.page-annotations {
 
 a.annotation {
   background: rgb(52, 52, 52);
+  color: rgb(238, 238, 238);
 }
 
 a.annotation:hover {
@@ -194,11 +195,12 @@ span.page-improvement-partial {
 
 li.page-improvement {
   border-bottom: 1px solid rgb(54, 54, 54);
-  padding: 30px 50px;
+  padding: 15px 20px;
+  font-size: 12px;
 }
 
 li.page-improvement p {
-  color: rgb(142, 142, 142);
+  color: rgb(204, 204, 204);
 }
 
 li.page-improvement h9.username {
@@ -206,6 +208,10 @@ li.page-improvement h9.username {
   font-size: 12px;
   padding-bottom: 20px;
   display: inline-block;
+}
+
+li.page-improvement small.time {
+  float: right;
 }
 
 span.page-improvement-partial textarea {

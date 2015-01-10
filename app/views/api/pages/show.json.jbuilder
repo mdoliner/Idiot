@@ -20,5 +20,6 @@ json.improvements @page.improvements do |improvement|
   json.content improvement.content
   json.author improvement.author
   json.created_at improvement.created_at
+  json.time_ago_posted time_ago_in_words(improvement.created_at)
   json.username improvement.username
 end
