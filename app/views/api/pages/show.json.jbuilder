@@ -14,3 +14,9 @@ json.annotations @page.annotations.order(:start_index).reverse_order do |annotat
   json.start_index annotation.start_index
   json.end_index annotation.end_index
 end
+json.improvements @page.improvements do |improvement|
+  json.id improvement.id
+  json.content improvement.content
+  json.author improvement.author
+  json.created_at improvement.created_at
+end

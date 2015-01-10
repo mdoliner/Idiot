@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110175840) do
+ActiveRecord::Schema.define(version: 20150110220857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20150110175840) do
     t.datetime "updated_at"
     t.integer  "improvementable_id",   null: false
     t.string   "improvementable_type", null: false
+    t.string   "username"
   end
 
   add_index "improvements", ["improvementable_id"], name: "index_improvements_on_improvementable_id", using: :btree

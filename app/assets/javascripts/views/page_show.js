@@ -6,11 +6,13 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
     "mouseup .page-text": "toggleNewAnnotation",
     "click #new-annotation": "createAnnotation",
     "click #new-page-improvement input": "attachPageImprovementSubmit",
-    "click #new-page-improvement textarea": "attachPageImprovementSubmit"
+    "click #new-page-improvement textarea": "attachPageImprovementSubmit",
+    "click #submit-page-improvement": "createPageImprovement"
   },
 
   initialize: function (options) {
     this.currentUser = options.currentUser;
+    this.listenTo(this.model.improvements(), "sync", this.render);
   },
 
   render: function () {
@@ -41,8 +43,9 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
       collection: this.model.improvements(),
       currentUser: this.currentUser
     })
-    this.$el.find("#page-improvements").html(improvementView.render().$el);
-    debugger
+    this.$el.find("#page-improvements").html(improvementView.render({
+      improvements: this.model.improvements()
+    }).$el);
     return this;
   },
 
@@ -52,7 +55,7 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
     $('.page-annotations').empty();
     var annotationView = new Idiot.Views.AnnotationShow({
       model: this.model.annotations().findWhere({id: id}),
-      isDescription: true
+      isDescription: false
     });
     this.addSubview('.page-annotations', annotationView);
   },
@@ -108,5 +111,47 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
     }
     $submit.append($("<a href='#'>How to add links/pics etc</a>"));
     $span.append($submit);
+  },
+
+  createPageImprovement: function (event) {
+    event.preventDefault();
+    var attrs = {};
+    attrs.author_id = this.currentUser.id || 0;
+    attrs.content = $("#page-improvement-content").val();
+    attrs.username = this.currentUser.get("username") || $("page-improvement-username").val();
+    attrs.email = this.currentUser.get("email") || $("page-improvement-email").val();
+    attrs.improvementable_id = this.model.id;
+    attrs.improvementable_type = "Page";
+    var improvement = new Idiot.Models.Improvement();
+    improvement.save(attrs, {
+      wait: true,
+      success: function () {
+        this.model.improvements().add(improvement);
+        if (this.currentUser.get("logged_in")) {
+          $("#page-improvement-content").val("");
+        } else {
+          $("#new-page-improvement").empty();
+        }
+      }.bind(this),
+      error: function () {
+        if (this.currentUser.get("logged_in")) {
+          if (attrs.username.length === 0) {
+            $("#username-error").text("Enter your name.");
+          } else {
+            $("#username-error").empty();
+          }
+          if (attrs.email.length === 0) {
+            $("#email-error").text("Enter your email address.");
+          } else {
+            $("#email-error").empty();
+          }
+        }
+        if (attrs.content.length === 0) {
+          $("#content-error").text("Enter your suggesstion");
+        } else {
+          $("#content-error").empty();
+        }
+      }.bind(this)
+    })
   }
 });

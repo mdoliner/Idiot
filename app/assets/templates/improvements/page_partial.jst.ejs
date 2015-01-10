@@ -1,20 +1,23 @@
 <form id="new-page-improvement">
   <% if (!currentUser.get("logged_in")) {%>
-  <label for="username"></label>
-  <input id="username"type="text" name="improvement[username]" placeholder="Your name">
+  <label for="page-improvement-username"></label>
+  <input id="page-improvement-username" type="text" name="improvement[username]" placeholder="Your name">
+  <p id="username-error"></p>
 
-  <label for="email"></label>
-  <input id="email" type="text" name="improvement[email]" placeholder="Your email address">
+  <label for="page-improvement-email"></label>
+  <input id="page-improvement-email" type="text" name="improvement[email]" placeholder="Your email address">
+  <p id="email-error"></p>
 
   <% }; %>
 
-  <label for="content"></label>
-  <textarea name="improvement[content]" id="content" placeholder="Suggest an improvement or correction to earn IQ"></textarea>
+  <label for="page-improvement-content"></label>
+  <textarea name="improvement[content]" id="page-improvement-content" placeholder="Suggest an improvement or correction to earn IQ"></textarea>
+  <p id="content-error"></p>
 
   <span id="submit-page-improvement"></span>
 </form>
 <ul>
   <% improvements.each(function(improvement) {%>
-    <li><%= improvement.get("content") %></li>
+    <li><%= improvement.escape("content") %></li>
   <% }); %>
 </ul>

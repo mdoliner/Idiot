@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :pages, except: [:index]
     resources :annotations
     resources :artists
+    resources :improvements
   end
   # resource :session, only: [:new, :create, :destroy]
   # resources :users
