@@ -4,7 +4,13 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
   events: {
     "click a.annotation": "refreshAnnotation",
     "mouseup .page-text": "toggleNewAnnotation",
-    "click #new-annotation": "createAnnotation"
+    "click #new-annotation": "createAnnotation",
+    "click #new-page-improvement input": "attachPageImprovementSubmit",
+    "click #new-page-improvement textarea": "attachPageImprovementSubmit"
+  },
+
+  initialize: function (options) {
+    this.currentUser = options.currentUser;
   },
 
   render: function () {
@@ -32,7 +38,8 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
       this.addSubview('.page-annotations', annotationView);
     }
     var improvementView = new Idiot.Views.ImprovementPagePartial({
-      collection: this.model.improvements()
+      collection: this.model.improvements(),
+      currentUser: this.currentUser
     })
     this.$el.find("#page-improvements").html(improvementView.render().$el);
     debugger
@@ -89,5 +96,17 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
         });
       }
     });
+  },
+
+  attachPageImprovementSubmit: function (event) {
+    event.preventDefault();
+    var $span = $("#submit-page-improvement");
+    $span.empty();
+    var $submit = $("<button type='submit'></button>").html("Post suggestion")
+    if (!this.currentUser.get("logged_in")) {
+      $submit.append($("<small>Have an account? <a href='#'>Sign in</a> first |</small>"));
+    }
+    $submit.append($("<a href='#'>How to add links/pics etc</a>"));
+    $span.append($submit);
   }
 });

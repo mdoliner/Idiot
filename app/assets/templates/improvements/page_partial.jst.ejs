@@ -1,5 +1,17 @@
-<form>
+<form id="new-page-improvement">
+  <% if (!currentUser.get("logged_in")) {%>
+  <label for="username"></label>
+  <input id="username"type="text" name="improvement[username]" placeholder="Your name">
 
+  <label for="email"></label>
+  <input id="email" type="text" name="improvement[email]" placeholder="Your email address">
+
+  <% }; %>
+
+  <label for="content"></label>
+  <textarea name="improvement[content]" id="content" placeholder="Suggest an improvement or correction to earn IQ"></textarea>
+
+  <span id="submit-page-improvement"></span>
 </form>
 <ul>
   <% improvements.each(function(improvement) {%>
