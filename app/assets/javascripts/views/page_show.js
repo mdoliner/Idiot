@@ -4,7 +4,7 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
   events: {
     "click a.annotation": "refreshAnnotation",
     "mouseup .page-text": "toggleNewAnnotation",
-    "click #new-annotation": "createAnnotation",
+    "click #submit-annotation": "createAnnotation",
     "click #new-page-improvement input": "attachPageImprovementSubmit",
     "click #new-page-improvement textarea": "attachPageImprovementSubmit",
     "click #submit-page-improvement": "createPageImprovement"
@@ -82,7 +82,7 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
 
   createAnnotation: function (event) {
     event.preventDefault();
-    var data = $("#new-annotation-form").serializeJSON().annotation;
+    var data = $("#annotation-form").serializeJSON().annotation;
     var that = this;
     this.model.annotations().create(data, {
       wait: true,

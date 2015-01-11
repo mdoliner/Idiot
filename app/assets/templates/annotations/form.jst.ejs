@@ -1,11 +1,11 @@
 <ul class="errors">
 </ul>
-<form id="new-annotation-form">
+<form id="annotation-form">
   <label for="content"></label>
   <input type="hidden" name="annotation[start_index]" value="<%= startIndex %>">
   <input type="hidden" name="annotation[end_index]" value="<%= endIndex %>">
   <input type="hidden" name="annotation[page_id]" value="<%= pageId %>">
-  <textarea id="content" name="annotation[content]" placeholder="Say something interesting"></textarea>
+  <textarea id="content" name="annotation[content]" placeholder="Say something interesting" value="<%= annotation.get("content") %>"></textarea>
 
-  <button type="submit" id="new-annotation">Save</button>
+  <button type="submit" id="submit-annotation">Save</button>
 </form>

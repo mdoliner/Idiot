@@ -29,10 +29,12 @@ Idiot.Views.AnnotationNew = Backbone.CompositeView.extend({
   renderNewForm: function (event) {
     event.preventDefault();
 
+    var annotation = new Idiot.Models.Annotation();
     var content = this.formTemplate({
       startIndex: this.startIndex,
       endIndex: this.endIndex,
-      pageId: this.model.id
+      pageId: this.model.id,
+      annotation: annotation
     });
     this.$el.html(content);
     return this;
