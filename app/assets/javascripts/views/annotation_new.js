@@ -34,6 +34,7 @@ Idiot.Views.AnnotationNew = Backbone.CompositeView.extend({
       startIndex: this.startIndex,
       endIndex: this.endIndex,
       pageId: this.model.id,
+      isNew: true,
       annotation: annotation
     });
     this.$el.html(content);

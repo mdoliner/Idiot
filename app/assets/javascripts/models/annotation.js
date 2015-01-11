@@ -2,6 +2,7 @@ Idiot.Models.Annotation = Backbone.Model.extend({
   urlRoot: "api/annotations",
 
   toJSON: function () {
+    debugger
     return { annotation: _.clone( this.attributes )};
   },
 

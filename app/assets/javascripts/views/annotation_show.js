@@ -24,9 +24,23 @@ Idiot.Views.AnnotationShow = Backbone.View.extend({
 
     var annotation = this.model;
     var content = this.formTemplate({
-      annotation: this.model
+      annotation: this.model,
+      isNew: false
     });
     this.$el.html(content);
     return this;
+  },
+
+  updateAnnotation: function (options) {
+    event.preventDefault();
+    var content = $("textarea.annotation-content").val();
+    this.model.set({content: content});
+    this.model.save({annotation: {content: content}}, {patch: true});
+    var annotationView = new Idiot.Views.AnnotationShow({
+      model: this.model,
+      isDescription: options.isDescription || false
+    });
+    this.$el.html(annotationView.render().$el);
   }
+
 });

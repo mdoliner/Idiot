@@ -11,6 +11,15 @@ class Api::AnnotationsController < ApplicationController
     render :show
   end
 
+  def update
+    @annotation = Annotation.find(params[:id])
+    if @annotation.update(annotation_params)
+      render :show
+    else
+      render @annotation
+    end
+  end
+
   private
   def annotation_params
     params.require(:annotation).permit(:content, :start_index, :end_index, :page_id)
