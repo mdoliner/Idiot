@@ -5,9 +5,7 @@ Idiot.Routers.Router = Backbone.Router.extend({
     "genres/:id/pages": "pagesIndex",
     "pages/new": "pageNew",
     "pages/:id": "pageShow",
-    "artists/:id": "artistShow",
-    "session/new": "sessionNew",
-    "session/destroy": "sessionDestroy"
+    "artists/:id": "artistShow"
   },
 
   initialize: function () {
