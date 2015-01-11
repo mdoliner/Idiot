@@ -7,7 +7,7 @@
     <input type="hidden" name="annotation[end_index]" value="<%= endIndex %>">
     <input type="hidden" name="annotation[page_id]" value="<%= pageId %>">
   <% } %>
-  <textarea id="content" class="annotation-content" name="annotation[content]" placeholder="Say something interesting"><%= annotation.escape("content") %> </textarea>
+  <textarea id="content" class="annotation-content" name="annotation[content]" placeholder="Say something interesting"><%= annotation.escape("content") %></textarea>
 
-  <button type="submit" id="submit-annotation">Save</button>
+  <button type="submit" id="submit-annotation" class="submit-annotation">Save</button>
 </form>
