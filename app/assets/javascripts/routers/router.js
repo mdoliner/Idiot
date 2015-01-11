@@ -5,7 +5,9 @@ Idiot.Routers.Router = Backbone.Router.extend({
     "genres/:id/pages": "pagesIndex",
     "pages/new": "pageNew",
     "pages/:id": "pageShow",
-    "artists/:id": "artistShow"
+    "artists/:id": "artistShow",
+    "session/new": "sessionNew",
+    "session/destroy": "sessionDestroy"
   },
 
   initialize: function () {
@@ -15,6 +17,7 @@ Idiot.Routers.Router = Backbone.Router.extend({
     this._pages = new Idiot.Collections.Pages();
     this._artists = new Idiot.Collections.Artists();
     this._currentUser = new Idiot.Models.CurrentUser();
+    this._session = new Idiot.Models.Session();
     this.header();
   },
 

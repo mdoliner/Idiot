@@ -214,6 +214,17 @@ li.page-improvement small.time {
   float: right;
 }
 
+span.page-improvement-partial input {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(119, 119, 119);
+  width: 275px;
+  padding: 5px;
+}
+
 span.page-improvement-partial textarea {
   width: 610px;
   height: 98px;
