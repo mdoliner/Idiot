@@ -14,7 +14,7 @@ Idiot.Views.SessionNew = Backbone.View.extend({
     var content = this.template();
     this.$el.html(content);
     return this;
-  }
+  },
 
   createSession: function (event) {
     event.preventDefault();
@@ -26,7 +26,7 @@ Idiot.Views.SessionNew = Backbone.View.extend({
         this.remove();
       }.bind(this),
       error: function () {
-        
+
       }
     })
   }
