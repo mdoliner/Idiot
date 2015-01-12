@@ -1,4 +1,4 @@
-json.(@page, :title, :text)
+json.(@page, :title, :text, :id)
 if @page.description
   json.description do
     json.id @page.description.id

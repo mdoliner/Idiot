@@ -16,12 +16,12 @@ Idiot.Views.PageNew = Backbone.View.extend({
 
   createPage: function (event) {
     event.preventDefault();
-    var attrs = this.$el.serializeJSON();
+    var attrs = this.$el.serializeJSON().page;
     this.model.save(attrs, {
       wait: true,
       success: function () {
-        Backbone.history.navigate("#pages/" + this.model.id);
-      },
+        Backbone.history.navigate("#pages/" + this.model.id, {trigger: true});
+      }.bind(this),
       error: function (model, response) {
         var params = attrs.page;
         if (params.artist_id.length === 0) {
