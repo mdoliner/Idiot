@@ -4,6 +4,10 @@ Idiot.Views.ArtistShow = Backbone.View.extend({
     "submit form": "addPhoto",
     "change #input-artist-image": "fileInputChange"
   },
+  initialize: function () {
+    this.listenTo(this.model, "sync", this.render);
+  },
+  
   render: function () {
     var content = this.template({
       artist: this.model
