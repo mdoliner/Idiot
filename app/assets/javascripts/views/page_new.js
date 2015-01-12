@@ -2,7 +2,9 @@ Idiot.Views.PageNew = Backbone.View.extend({
   template: JST["pages/new"],
   tagName: 'form',
   events: {
-    "submit": "createPage"
+    "submit": "createPage",
+    "keyup #artist": "updateArtistSearch",
+    "click li.chosen-artist": "selectArtist"
   },
 
   render: function () {
@@ -14,9 +16,49 @@ Idiot.Views.PageNew = Backbone.View.extend({
     return this;
   },
 
+  updateArtistSearch: function () {
+    var $results = $("#artist-search-results");
+    $results.css("display", "block")
+    var query = $("#artist").val().toLowerCase();
+    var resultItems;
+    if (query.length > 2) {
+      $results.empty();
+      var artists = new Idiot.Collections.Artists();
+      artists.fetch({
+        success: function () {
+          resultItems = artists.filter(function (artist) {
+            return artist.get("name").toLowerCase().indexOf(query) !== -1;
+          });
+          _.each(resultItems, function (artist) {
+            var $li = $("<li class='chosen-artist'></li>");
+            $li.data("id", artist.id);
+            $li.text(artist.escape("name"))
+            $results.append($li);
+          })
+        }
+      });
+    } else {
+      this.hideSearch();
+    }
+  },
+
+  hideSearch: function () {
+    $("#artist-search-results").css("display", "none")
+  },
+
+  selectArtist: function (event) {
+    event.preventDefault();
+
+    var $target = $(event.target);
+    this.artistId = $target.data("id");
+    $("#artist").val($target.text());
+    $("#artist-search-results").empty();
+  },
+
   createPage: function (event) {
     event.preventDefault();
     var attrs = this.$el.serializeJSON().page;
+    attrs.artist_id = this.artistId;
     this.model.save(attrs, {
       wait: true,
       success: function () {

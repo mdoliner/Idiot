@@ -43,12 +43,12 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
   },
 
   updateSearch: function () {
-    var results = $("#search-results");
-    $("#search-results").css("display", "block")
+    var $results = $("#search-results");
+    $results.css("display", "block")
     var query = $("#search").val().toLowerCase();
     var resultItems;
     if (query.length > 2) {
-      results.empty();
+      $results.empty();
       var pages = new Idiot.Collections.Pages();
       pages.fetch({
         success: function () {
@@ -59,7 +59,7 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
             var $li = $("<li>");
             var $link = $("<a class='search-item' href='#pages/" + item.id + "'></a>").text(item.escape("title"));
             $li.html($link);
-            results.append($li);
+            $results.append($li);
           })
         }
       });
