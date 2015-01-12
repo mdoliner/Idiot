@@ -4,7 +4,8 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
     "click #new-user": "newUserForm",
     "click #new-session": "newSessionForm",
     "keyup #search": "updateSearch",
-    "click a.search-item": "clearSearch"
+    "click a.search-item": "clearSearch",
+    "click": "hideSearch"
   },
 
   render: function () {
@@ -43,6 +44,7 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
 
   updateSearch: function () {
     var results = $("#search-results");
+    $("#search-results").css("display", "block")
     var query = $("#search").val().toLowerCase();
     var resultItems;
     if (query.length > 2) {
@@ -54,18 +56,25 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
             return item.get("title").toLowerCase().indexOf(query) !== -1;
           });
           _.each(resultItems, function (item) {
-            var $link = $("<a class='search-item' href='#pages/" + item.id + "'></a>");
-            $link.wrap("<li></li>").text(item.escape("title"));
-            results.append($link);
+            var $li = $("<li>");
+            var $link = $("<a class='search-item' href='#pages/" + item.id + "'></a>").text(item.escape("title"));
+            $li.html($link);
+            results.append($li);
           })
         }
       });
+    } else {
+      this.hideSearch();
     }
   },
 
   clearSearch: function () {
     $("#search").val("");
     $("#search-results").empty();
+  },
+
+  hideSearch: function () {
+    $("#search-results").css("display", "none")
   }
 
 
