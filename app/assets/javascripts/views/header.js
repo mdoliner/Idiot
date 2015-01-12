@@ -3,7 +3,8 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
   events: {
     "click #new-user": "newUserForm",
     "click #new-session": "newSessionForm",
-    "keyup #search": "updateSearch"
+    "keyup #search": "updateSearch",
+    "click a.search-item": "clearSearch"
   },
 
   render: function () {
@@ -53,12 +54,18 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
             return item.get("title").toLowerCase().indexOf(query) !== -1;
           });
           _.each(resultItems, function (item) {
-            var $li = $("<li>").text(item.escape("title"));
-            results.append($li);
+            var $link = $("<a class='search-item' href='#pages/" + item.id + "'></a>");
+            $link.wrap("<li></li>").text(item.escape("title"));
+            results.append($link);
           })
         }
       });
     }
+  },
+
+  clearSearch: function () {
+    $("#search").val("");
+    $("#search-results").empty();
   }
 
 
