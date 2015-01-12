@@ -3,7 +3,7 @@
  *= require_self
  */
 
-h1, h2, h3, p, a, ul, li, nav, form, input, label, button, pre {
+h1, h2, h3, h4, h6, p, a, ul, li, nav, form, input, label, button, pre, b {
   border: 0;
   padding: 0;
   margin: 0;
@@ -217,6 +217,44 @@ ul.search-results a:hover, ul.search-results li:nth-child(even) a:hover  {
   background: rgb(71, 71, 71);
 }
 
+/* Pages Index */
+
+span.pages-index h6 {
+  font-size: 12px;
+  padding-top: 25px;
+  padding-bottom: 14px;
+  display: block;
+}
+
+span.pages-index h6 b {
+  color: rgb(237, 232, 233);
+}
+
+span.pages-index li.page-item {
+  width: 1000px;
+  border-top: 1px solid rgb(30, 30, 30);
+  border-bottom: 1px solid rgb(30, 30, 30);
+  padding: 15px 0;
+  -webkit-transition: border .25s, padding .25s;
+}
+
+span.pages-index li.page-item:hover {
+  padding-left: 10px;
+  border-left: 3px solid rgb(255, 195, 28);
+}
+
+span.pages-index li.page-item:hover h4{
+  color: rgb(237, 232, 233);
+}
+
+span.pages-index li.page-item h3 {
+  color: rgb(237, 232, 233);
+  padding-bottom: 5px;
+}
+
+span.pages-index li.page-item h4 {
+  -webkit-transition: color .25s;
+}
 /* Page Show */
 
 h1.title {

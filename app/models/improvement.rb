@@ -1,5 +1,5 @@
 class Improvement < ActiveRecord::Base
-  validates :content, :author_id, :improvementable_id, :improvementable_type, presence: true
+  validates :content, :author_id, :improvementable_id, :improvementable_type,  :username, presence: true
 
   belongs_to(
     :author,

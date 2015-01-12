@@ -1,6 +1,10 @@
-<h1><%= genre.escape("name") %></h1>
+<h6>EVERYTHING IN <b><%= genre.escape("name").toUpperCase() %> GENIUS</b></h6>
 <ul>
   <% pages.each(function (page) { %>
-  <li><a href="#pages/<%= page.id %>"><%= page.escape("title") %></a></li>
+
+  <li class="page-item"><a href="#pages/<%= page.id %>">
+    <h3><%= page.escape("title") %></h3>
+    <h4><%= page.escape("artist_name") %></h4>
+  </a></li>
   <% }); %>
 </ul>
