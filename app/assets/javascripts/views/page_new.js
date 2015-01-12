@@ -1,6 +1,7 @@
 Idiot.Views.PageNew = Backbone.View.extend({
   template: JST["pages/new"],
   tagName: 'form',
+  className: 'new-page-form',
   events: {
     "submit": "createPage",
     "keyup #artist": "updateArtistSearch",
@@ -53,6 +54,7 @@ Idiot.Views.PageNew = Backbone.View.extend({
     this.artistId = $target.data("id");
     $("#artist").val($target.text());
     $("#artist-search-results").empty();
+    this.hideSearch();
   },
 
   createPage: function (event) {

@@ -17,6 +17,11 @@ h1, h2, h3, p, a, ul, li, nav, form, input, label, button, pre {
   background: transparent;
 }
 
+input[type="radio"] {
+  visibility: hidden;
+  display: none;
+}
+
 ul {
   list-style: none;
 }
@@ -44,6 +49,9 @@ body {
   color: rgb(170, 170, 170);
   position: relative;
   font-family: sans-serif;
+  width: 1100px;
+  margin: auto;
+  padding-top: 10px;
 }
 
 a, button {
@@ -52,6 +60,10 @@ a, button {
 
 input, textarea {
   background: rgb(51, 51, 51);
+}
+
+input, textarea, label {
+  display: block;
 }
 
 /* Header */
@@ -423,4 +435,128 @@ span.annotation-improvement-partial textarea {
 
 #submit-annotation-improvement small, #submit-annotation-improvement a {
   font-size: 12px;
+}
+
+/* Page New */
+form.new-page-form {
+  padding-top: 25px;
+}
+
+.new-page-form h3 {
+  color: white;
+  font-size: 32px;
+  padding-bottom: 20px;
+}
+
+.new-page-form small {
+  font-size: 12px;
+  color: rgb(98, 98, 98);
+  padding-bottom: 10px;
+  display: block;
+}
+
+.new-page-form input {
+  width: 388px;
+  border: 1px solid rgb(187, 187, 187);
+  border-radius: 2px;
+  padding: 5px;
+  background: white;
+  font-size: 14px;
+  color: black;
+}
+
+.new-page-form label {
+  color: white;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+span.genre-buttons {
+  display: block;
+}
+
+label.genre-radio {
+  border: 1px solid rgb(153, 153, 153);
+  padding: 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+label.genre-radio:hover {
+  background: rgb(48, 47, 47);
+}
+
+input[type="radio"]:checked + label.genre-radio {
+  background: rgb(237, 232, 233);
+  color: black;
+}
+
+.new-page-form span.main-inputs:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: rgb(48, 48, 48);
+}
+
+span.artist, span.title {
+  display: block;
+  width: 400px;
+  float: left;
+  margin-bottom: 10px;
+}
+
+span.artist {
+  margin-right: 20px;
+}
+
+.new-page-form textarea {
+  width: 100%;
+  height: 490px;
+  background: white;
+}
+
+.new-page-form button {
+  background: rgb(38, 38, 38);
+  color: rgb(204, 204, 204);
+  padding: 5px 10px;
+  border-radius: 2px;
+  border: 1px solid rgb(68, 68, 68);
+  font-size: 14px;
+  margin-top: 25px;
+}
+
+.new-page-form button:hover {
+  color: rgb(230, 230, 230);
+  background: rgb(51, 51, 51);
+}
+
+ul.artist-search-results {
+  position: absolute;
+  height: 500px;
+  width: 300px;
+  overflow: hidden;
+  left: 0px;
+  margin-top: 71px;
+  display: none;
+}
+
+ul.artist-search-results li {
+  background: rgb(33, 33, 33);
+  display: block;
+  padding: 5px 5px 5px 5px;
+  box-sizing: border-box;
+  -webkit-transition: background .25s;
+  cursor: pointer;
+}
+
+ul.artist-search-results li:nth-child(even) a {
+  background: rgb(20, 20, 20);
+}
+
+
+ul.artist-search-results li:hover, ul.search-results li:nth-child(even) a:hover  {
+  background: rgb(71, 71, 71);
 }

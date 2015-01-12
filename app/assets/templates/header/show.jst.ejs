@@ -2,7 +2,7 @@
   <span id="header-form"></span>
   <ul class="nav-links">
     <% genres.each(function (genre) {%>
-    <li><a href="#/genres/<%= genre.id %>"><pre><%= genre.escape("name") %>   </pre></a></li>
+    <li><a href="#/genres/<%= genre.id %>"><pre><%= genre.escape("name").toUpperCase() %>   </pre></a></li>
     <% }); %>
   </ul>
   <% if (!currentUser.get("logged_in")) {%>

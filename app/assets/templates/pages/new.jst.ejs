@@ -1,17 +1,25 @@
 <h3>Create Text</h3>
 <small>PRIMARY TAG</small>
 <p class="error" id="tag-error"></p>
-<% genres.each(function (genre) {%>
-  <label for="<%= genre.escape("name") %>"><%= genre.escape("name") %></label>
-  <input id="<%= genre.escape("name") %>" type="radio" name="page[genre_id]" value="<%= genre.id %>">
-<% }); %>
-<label for="artist">By:</label>
-<input type="text" id="artist">
-<ul id="artist-search-results"></ul>
-<p class="error" id="artist-error"></p>
-<label for="title">Title:</label>
-<input type="text" name="page[title]" id="title">
-<p class="error" id="title-error"></p>
+<span class="genre-buttons">
+  <% genres.each(function (genre) {%>
+    <input id="<%= genre.escape("name") %>" type="radio" name="page[genre_id]" value="<%= genre.id %>">
+    <label for="<%= genre.escape("name") %>" class="genre-radio" ><%= genre.escape("name") %></label>
+  <% }); %>
+</span>
+<span class="main-inputs group">
+  <span class="artist">
+    <label for="artist">By:</label>
+    <input type="text" id="artist" placeholder="The primary artist, author, creator, etc.">
+  </span>
+  <span class="title">
+    <ul class="artist-search-results" id="artist-search-results"></ul>
+    <p class="error" id="artist-error"></p>
+    <label for="title">Title:</label>
+    <input type="text" name="page[title]" id="title" placeholder="Title">
+    <p class="error" id="title-error"></p>
+  </span>
+</span>
 <label for="text">Text:</label>
 <textarea name="page[text]" id="text"></textarea>
 <p class="error" id="text-error"></p>
