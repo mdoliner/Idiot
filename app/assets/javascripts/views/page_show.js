@@ -35,6 +35,7 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
     if (this.model.description().id) {
       var annotationView = new Idiot.Views.AnnotationShow({
         model: this.model.description(),
+        currentUser: this.currentUser,
         isDescription: true
       });
       this.addSubview('.page-annotations', annotationView);
@@ -55,6 +56,7 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
     $('.page-annotations').empty();
     var annotationView = new Idiot.Views.AnnotationShow({
       model: this.model.annotations().findWhere({id: id}),
+      currentUser: this.currentUser,
       isDescription: false
     });
     this.addSubview('.page-annotations', annotationView);
@@ -67,6 +69,7 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
       $('.page-annotations').empty();
       var annotationView = new Idiot.Views.AnnotationShow({
         model: this.model.description(),
+        currentUser: this.currentUser,
         isDescription: true
       });
       this.addSubview('.page-annotations', annotationView);
@@ -118,8 +121,13 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
     var attrs = {};
     attrs.author_id = this.currentUser.id || 0;
     attrs.content = $("#page-improvement-content").val();
-    attrs.username = this.currentUser.get("username") || $("page-improvement-username").val();
-    attrs.email = this.currentUser.get("email") || $("page-improvement-email").val();
+    if (this.currentUser.get("logged_in")) {
+      attrs.username = this.currentUser.get("username");
+      attrs.email = this.currentUser.get("email");
+    } else {
+      attrs.username = $("#page-improvement-username").val();
+      attrs.email = $("#page-improvement-email").val();
+    }
     attrs.improvementable_id = this.model.id;
     attrs.improvementable_type = "Page";
     var improvement = new Idiot.Models.Improvement();

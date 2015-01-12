@@ -58,6 +58,11 @@ input, textarea {
 nav {
   background: rgb(21, 21, 21);
 }
+
+nav.header-1 {
+  margin-bottom: 5px;
+}
+
 nav ul.nav-links {
   display: inline;
   float: left;
@@ -128,16 +133,18 @@ nav ul.nav-no-user a:hover{
   color: rgb(91, 167, 194)
 }
 
-nav a.logo {
-  color: rgb(255, 195, 28);
-  font-size: 32px;
-  float: left;
-}
-
 nav.header-2 {
   position: relative;
   border-top: 1px solid rgb(85, 85, 85);
   border-bottom: 1px solid rgb(85, 85, 85);
+}
+
+nav a.logo {
+  color: rgb(255, 195, 28);
+  font-size: 32px;
+  float: left;
+  top: 50%;
+  -webkit-transform: translateY(20%);
 }
 
 nav ul.header-actions {
@@ -158,7 +165,6 @@ nav input.search {
 
 nav li.search-bar {
   top: 50%;
-  -webkit-transform: translateY(4%);
   border-right: 1px solid rgb(51, 51, 51);
   padding: 10px;
 }
