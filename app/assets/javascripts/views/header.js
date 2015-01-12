@@ -2,7 +2,8 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
   template: JST["header/show"],
   events: {
     "click #new-user": "newUserForm",
-    "click #new-session": "newSessionForm"
+    "click #new-session": "newSessionForm",
+    "keyup #search": "updateSearch"
   },
 
   render: function () {
@@ -37,6 +38,27 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
         this.render();
       }.bind(this)
     })
+  },
+
+  updateSearch: function () {
+    var results = $("#search-results");
+    var query = $("#search").val().toLowerCase();
+    var resultItems;
+    if (query.length > 2) {
+      results.empty();
+      var pages = new Idiot.Collections.Pages();
+      pages.fetch({
+        success: function () {
+          resultItems = pages.filter(function (item) {
+            return item.get("title").toLowerCase().indexOf(query) !== -1;
+          });
+          _.each(resultItems, function (item) {
+            var $li = $("<li>").text(item.escape("title"));
+            results.append($li);
+          })
+        }
+      });
+    }
   }
 
 

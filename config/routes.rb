@@ -4,10 +4,8 @@ Rails.application.routes.draw do
     resource :session, only: [:new, :create, :destroy]
     match 'users/current' => 'users#current', via: :get
     resources :users
-    resources :genres do
-      resources :pages, only: [:index]
-    end
-    resources :pages, except: [:index]
+    resources :genres
+    resources :pages
     resources :annotations
     resources :artists
     resources :improvements

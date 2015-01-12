@@ -14,8 +14,8 @@ class Api::PagesController < ApplicationController
   end
 
   def index
-    @genre = Genre.find_by(id: params[:genre_id])
-    @pages = @genre.pages.order(:created_at).reverse_order
+    @pages = Page.all
+    render :index
   end
 
   def show
