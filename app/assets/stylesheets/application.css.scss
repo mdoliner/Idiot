@@ -230,7 +230,7 @@ span.pages-index h6 b {
   color: rgb(237, 232, 233);
 }
 
-span.pages-index li.page-item {
+li.page-item {
   width: 1000px;
   border-top: 1px solid rgb(30, 30, 30);
   border-bottom: 1px solid rgb(30, 30, 30);
@@ -238,21 +238,21 @@ span.pages-index li.page-item {
   -webkit-transition: border .25s, padding .25s;
 }
 
-span.pages-index li.page-item:hover {
+li.page-item:hover {
   padding-left: 10px;
   border-left: 3px solid rgb(255, 195, 28);
 }
 
-span.pages-index li.page-item:hover h4{
+li.page-item:hover h4{
   color: rgb(237, 232, 233);
 }
 
-span.pages-index li.page-item h3 {
+li.page-item h3 {
   color: rgb(237, 232, 233);
   padding-bottom: 5px;
 }
 
-span.pages-index li.page-item h4 {
+li.page-item h4 {
   -webkit-transition: color .25s;
 }
 /* Page Show */
@@ -277,11 +277,21 @@ span.image-bar {
   z-index: 2;
 }
 
+.texture {
+  display: block;
+  position: absolute;
+  background-image: image-url("box.png");
+  opacity: .5;
+  width: 100%;
+  height: 100%;
+}
+
 img.photo-main {
   top:0;
   left:0;
   width:100%;
   height: auto;
+  opacity: 1;
 }
 
 h1.title {
@@ -291,18 +301,35 @@ h1.title {
   display: inline-block;
   color: black;
   padding: 10px;
-  z-index: 3;
+  margin-top: 154px;
 }
 
 a.artist {
   display: block;
   font-size: 32px;
   color: white;
-  margin-top: 60px;
+  margin-top: 216px;
   background: rgba(20, 20, 20, .6);
   padding: 10px;
 }
 
+a.edit-photo {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  background: rgba(20, 20, 20, .7);
+  border-left: 1px solid rgba(85, 85, 85, .7);
+  border-bottom: 1px solid rgba(85, 85, 85, .7);
+  display: block;
+  padding: 5px;
+  -webkit-transition: background .25s, color .25s;
+}
+
+a.edit-photo:hover {
+  background: rgb(51, 51, 51);
+  color: rgb(253, 193, 28);
+
+}
 
 span.page-content {
   display: block;
@@ -317,6 +344,7 @@ article.page-text {
 p.text-content {
   white-space: pre-wrap;
   color: rgb(204, 204, 204);
+  padding-bottom: 75px;
 }
 
 article.page-annotations {
@@ -379,6 +407,7 @@ span.page-improvement-partial {
   width: 570px;
   background: rgb(32, 32, 32);
   padding: 10px;
+  margin-bottom: 30px;
 }
 
 li.page-improvement {
@@ -413,11 +442,17 @@ span.page-improvement-partial input {
   padding: 5px;
 }
 
+span.page-improvement-partial input:focus {
+  border: 1px solid rgb(136, 107, 29);
+  box-shadow: 0px 0px 7px rgb(136, 107, 29), inset 0px 0px 2px rgb(136, 107, 29);
+}
+
 span.page-improvement-partial textarea {
   width: 560px;
   height: 98px;
   border: 1px solid rgb(83, 83, 83);
   font-size: 18px;
+  outline: none;
 }
 
 #submit-page-improvement a {
@@ -430,6 +465,7 @@ span.page-improvement-partial textarea {
 
 #submit-page-improvement button {
   background: rgb(38, 38, 38);
+  margin-top: 5px;
   padding: 5px 10px;
   margin-right: 5px;
   border: 1px solid rgb(68, 68, 68);
@@ -483,11 +519,17 @@ span.annotation-improvement-partial input {
   padding: 5px;
 }
 
+span.annotation-improvement-partial input:focus {
+  border: 1px solid rgb(136, 107, 29);
+  box-shadow: 0px 0px 7px rgb(136, 107, 29), inset 0px 0px 2px rgb(136, 107, 29);
+}
+
 span.annotation-improvement-partial textarea {
   width: 390px;
   height: 98px;
   border: 1px solid rgb(83, 83, 83);
   font-size: 18px;
+  outline: none;
 }
 
 #submit-annotation-improvement a {
@@ -634,4 +676,55 @@ ul.artist-search-results li:nth-child(even) a {
 
 ul.artist-search-results li:hover, ul.search-results li:nth-child(even) a:hover  {
   background: rgb(71, 71, 71);
+}
+
+/* Artist Show */
+
+span.artist-content h1 {
+  color: white;
+  font-size: 44px;
+  display: block;
+  border-bottom: 1px solid white;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+span.artist-content h2 {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding-top: 25px;
+  padding-bottom: 10px;
+}
+
+span.artist-songs {
+  width: 560px;
+  float: left;
+}
+
+span.artist-songs li {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+
+span.artist-info {
+  width: 400px;
+  float: right;
+  margin-top: 50px;
+}
+
+img.artist-photo {
+  display: block;
+  width: 300px;
+  height: auto;
+}
+
+span.artist-info a.edit-photo {
+  right: 100px;
+}
+
+span.artist-info p.biography {
+  white-space: pre-wrap;
 }

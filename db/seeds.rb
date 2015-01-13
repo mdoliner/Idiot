@@ -14,7 +14,11 @@ x = Genre.create!({ name: 'X' })
 meta = Genre.create!({ name: 'Meta' })
 
 # Artists
-kanye = Artist.create!({name: "Kanye West"})
+kanye = Artist.create!({name: "Kanye West", biography: "The ubiquitous Kanye West. From his famous quip, “George Bush doesn’t care about black people” to “I'ma let you finish” to marrying Kim Kardashian, you can see that he’s a staple in the tabloids and blog posts.
+
+  But that certainly doesn’t take anything away from his music. As matter of fact, it makes it better. For instance, his 2010 solo album, My Beautiful Dark Twisted Fantasy was universally praised by fans and critics alike; it was recorded during the backlash he received from the Swift interruption and during his break-up with then girlfriend Amber Rose.
+
+  He has scored other well known hits as well from each of his previous studio albums, such as “Stronger,” “Homecoming,” and “Gold Digger.” Each of his albums have been massive critical and commercial successes, including his collaboration album with Jay-Z, Watch the Throne. Kanye’s most recent project was Yeezus, his sixth solo album, which polarized his fan base and the general public, but was heaped with rave reviews by music critics."})
 genasis = Artist.create!({name: "O.T. Genasis"})
 # Pages
 rap1Desc = Annotation.create!({
