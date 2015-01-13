@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110220857) do
+ActiveRecord::Schema.define(version: 20150113155838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,11 +36,11 @@ ActiveRecord::Schema.define(version: 20150110220857) do
     t.string   "photo_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name",                null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.string   "name",               null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "collections", force: true do |t|
@@ -72,18 +72,22 @@ ActiveRecord::Schema.define(version: 20150110220857) do
   add_index "improvements", ["improvementable_type"], name: "index_improvements_on_improvementable_type", using: :btree
 
   create_table "pages", force: true do |t|
-    t.integer  "genre_id",                       null: false
-    t.string   "title",                          null: false
-    t.integer  "artist_id",                      null: false
+    t.integer  "genre_id",                           null: false
+    t.string   "title",                              null: false
+    t.integer  "artist_id",                          null: false
     t.date     "release_date"
     t.string   "soundcloud_url"
     t.string   "youtube_url"
     t.integer  "collection_id"
     t.text     "text"
-    t.boolean  "is_locked",      default: false
+    t.boolean  "is_locked",          default: false
     t.integer  "description_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "users", force: true do |t|

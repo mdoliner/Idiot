@@ -23,6 +23,15 @@ class Api::PagesController < ApplicationController
     render :show
   end
 
+  def update
+    @page = Page.find(params[:id])
+    if @page.update(page_params)
+      render :show
+    else
+      render json: @page
+    end
+  end
+
   private
   def page_params
     params.require(:page).permit(:genre_id,
@@ -32,7 +41,8 @@ class Api::PagesController < ApplicationController
     :soundcloud_url,
     :youtube_url,
     :collection_id,
-    :text)
+    :text,
+    :photo)
   end
 
 end

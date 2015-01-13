@@ -1,4 +1,5 @@
 json.(@page, :title, :text, :id)
+json.image_url asset_path(@page.photo.url)
 if @page.description
   json.description do
     json.id @page.description.id

@@ -7,12 +7,14 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
     "click #submit-annotation": "createAnnotation",
     "click #new-page-improvement input": "attachPageImprovementSubmit",
     "click #new-page-improvement textarea": "attachPageImprovementSubmit",
-    "click #submit-page-improvement": "createPageImprovement"
+    "click #submit-page-improvement": "createPageImprovement",
+    "click #edit-photo": "editPhoto"
   },
 
   initialize: function (options) {
     this.currentUser = options.currentUser;
     this.listenTo(this.model.improvements(), "sync", this.render);
+    this.listenTo(this.model, "change:image_url", this.render);
   },
 
   render: function () {
@@ -160,6 +162,19 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
           $("#content-error").empty();
         }
       }.bind(this)
-    })
+    });
+  },
+
+  editPhoto: function (event) {
+    event.preventDefault();
+    var $el = $("#edit-photo");
+    $el.empty();
+    var view = new Idiot.Views.PhotoNew({
+      model: this.model,
+      url: "pages/" + this.model.id,
+      attrName: "page"
+    });
+    $el.after(view.render().$el);
   }
+
 });

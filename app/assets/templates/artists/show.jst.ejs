@@ -8,13 +8,7 @@
 <span>
   <h3>About <%= artist.escape("name") %></h3>
   <img src="<%= artist.get("image_url") %>" />
-  <form>
-    <label>
-      Image
-      <input type="file" name="artist[avatar]" id="input-artist-image">
-    </label>
-    <button type="submit">Update Image</button>
-  </form>
+
   <p>
     <%= artist.escape("biography") %>
   </p>

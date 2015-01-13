@@ -3,7 +3,7 @@ Idiot.Models.Artist = Backbone.Model.extend({
   toJSON: function () {
     var json = { artist: _.clone( this.attributes )}
     if (this._image) {
-      json.artist.avatar = this._image;
+      json.artist.photo = this._image;
     }
     return json;
   }

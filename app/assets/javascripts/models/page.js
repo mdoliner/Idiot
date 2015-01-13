@@ -54,7 +54,11 @@ Idiot.Models.Page = Backbone.Model.extend({
   },
 
   toJSON: function () {
-    return { page: _.clone( this.attributes )};
+    var json = { page: _.clone( this.attributes )};
+    if (this._image) {
+      json.page.photo = this._image;
+    }
+    return json;
   }
 
 });

@@ -1,6 +1,7 @@
 <h1 class="title"><%= page.escape("title") %></h1>
 <a class="artist" href="#artists/<%= page.artist().id %>"><%= page.artist().escape("name") %></a>
-
+<img src="<%= page.get("image_url") %>">
+<a id="edit-photo">Update Photo</a>
 <span class="group">
   <article class="page-text">
     <p class="text-content"><%= page.escape("text") %></p>

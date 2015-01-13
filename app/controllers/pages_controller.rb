@@ -32,7 +32,8 @@ class PagesController < ApplicationController
                                   :soundcloud_url,
                                   :youtube_url,
                                   :collection_id,
-                                  :text)
+                                  :text,
+                                  :photo)
   end
 
 end
