@@ -286,6 +286,28 @@ span.image-bar {
   height: 100%;
 }
 
+form.update-photo {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+}
+
+button.update-photo {
+  font-size: 14px;
+  right: 0;
+  padding: 5px;
+  float: right;
+  background: rgba(20, 20, 20, .7);
+  border-left: 1px solid rgba(85, 85, 85, .7);
+  border-bottom: 1px solid rgba(85, 85, 85, .7);
+  -webkit-transition: background .25s, color .25s;
+}
+
+button.update-photo:hover {
+  background: rgb(51, 51, 51);
+  color: rgb(253, 193, 28);
+}
+
 img.photo-main {
   top:0;
   left:0;
@@ -328,7 +350,6 @@ a.edit-photo {
 a.edit-photo:hover {
   background: rgb(51, 51, 51);
   color: rgb(253, 193, 28);
-
 }
 
 span.page-content {
@@ -727,4 +748,12 @@ span.artist-info a.edit-photo {
 
 span.artist-info p.biography {
   white-space: pre-wrap;
+  padding-right: 10px;
+}
+
+textarea.edit-biography {
+  width: 100%;
+  height: 600px;
+  color: rgb(170, 170, 170);
+  font-size: 16px;
 }

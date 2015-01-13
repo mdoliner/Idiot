@@ -4,7 +4,9 @@ Idiot.Views.ArtistShow = Backbone.View.extend({
   className: 'artist-content',
 
   events: {
-    "click #edit-photo": "editPhoto"
+    "click #edit-photo": "editPhoto",
+    "dblclick p.editable": "editBiography",
+    "blur .edit-biography": "saveBiography"
   },
 
   initialize: function () {
@@ -17,6 +19,26 @@ Idiot.Views.ArtistShow = Backbone.View.extend({
     });
     this.$el.html(content);
     return this;
+  },
+
+  editBiography: function (event) {
+    event.preventDefault();
+    var $biography = $(event.currentTarget);
+    var $textarea = $("<textarea class='edit-biography'>");
+
+    $textarea.val(this.model.get("biography"));
+    $biography.removeClass('editable');
+    $biography.html($textarea);
+    $textarea.focus();
+  },
+
+  saveBiography: function (event) {
+    event.preventDefault();
+    var newBiography = $(event.currentTarget).val();
+
+    this.model.set("biography", newBiography);
+    this.model.save();
+    this.render();
   },
 
   editPhoto: function (event) {
