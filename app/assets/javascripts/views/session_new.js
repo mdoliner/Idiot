@@ -22,7 +22,7 @@ Idiot.Views.SessionNew = Backbone.View.extend({
     this.model.save(attrs, {
       wait: true,
       success: function () {
-        this.headerView.refresh();
+        this.headerView.model.fetch();
         this.remove();
       }.bind(this),
       error: function () {

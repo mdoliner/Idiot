@@ -12,8 +12,8 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    this.session = new Idiot.Models.Session();
     this.listenTo(this.model, "change:logged_in", this.render);
+    this.on("forceLogin", this.newUserForm.bind(this));
   },
 
   render: function () {
@@ -33,7 +33,8 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
   },
 
   newUserForm: function (event) {
-    event.preventDefault();
+    event && event.preventDefault();
+    this.session = new Idiot.Models.Session();
     var view = new Idiot.Views.UserNew({
       session: this.session,
       model: new Idiot.Models.User(),
@@ -45,6 +46,7 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
 
   newSessionForm: function (event) {
     event.preventDefault();
+    this.session = new Idiot.Models.Session();
     var view = new Idiot.Views.SessionNew({
       headerView:this,
       model: this.session
@@ -58,6 +60,7 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
     this.session && this.session.destroy({
       success: function () {
         this.model.fetch();
+        Backbone.history.navigate("", {trigger: true});
       }.bind(this)
     });
   },

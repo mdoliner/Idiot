@@ -97,7 +97,7 @@ Idiot.Routers.Router = Backbone.Router.extend({
         }.bind(this)
       });
     } else {
-      
+      this._headerView.trigger("forceLogin");
     }
   },
 
