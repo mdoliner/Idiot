@@ -1,5 +1,9 @@
 <span class="user-info">
   <h1><%= user.get("username") %></h1>
+  <% if (currentUser.id === user.id) {%>
+    <a id="edit-photo" class="edit-photo">Edit Photo</a>
+  <% } %>
+  <img src="<%= user.get("image_url") %>"/>
   <h2>About <%= user.get("username") %></h2>
   <p><%= user.get("biography") %></p>
 </span>

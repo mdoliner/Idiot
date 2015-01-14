@@ -122,7 +122,8 @@ Idiot.Routers.Router = Backbone.Router.extend({
     user.fetch({
       success: function () {
         var view = new Idiot.Views.UserShow({
-          model: user
+          model: user,
+          currentUser: this._currentUser
         });
         this.swapView(view);
       }.bind(this)

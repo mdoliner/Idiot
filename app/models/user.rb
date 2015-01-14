@@ -6,6 +6,14 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :level, inclusion: {in: USER_LEVELS}
 
+  has_attached_file :photo, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }
+  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+  
+
   after_initialize :ensure_session_token
 
   attr_reader :password
