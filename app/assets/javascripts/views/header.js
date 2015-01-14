@@ -54,7 +54,6 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
       model: this.session
     });
     $("#header-form").html(view.render().$el);
-    $("span.modal-background").css("visibility", "visible").css("opacity", "1");
   },
 
   destroySession: function (event) {
