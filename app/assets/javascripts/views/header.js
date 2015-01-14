@@ -17,6 +17,7 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
   },
 
   render: function () {
+    $("span.header-form").css("height", "330px");
     var content = this.template({
       genres: this.collection,
       currentUser: this.model
@@ -28,6 +29,7 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
   toggleModal: function (event) {
     event.preventDefault();
     if ($(event.target).hasClass("modal-background")) {
+      $("span.header-form").css("height", "330px");
       $("span.modal-background").css("opacity", "0").css("visibility", "hidden");
     }
   },

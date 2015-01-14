@@ -19,6 +19,7 @@ Idiot.Views.UserNew = Backbone.View.extend({
   },
 
   newUserEmail: function () {
+    $("span.header-form").css("height", "570px");
     var form = this.formTemplate();
     this.$el.append(form);
     return this;
