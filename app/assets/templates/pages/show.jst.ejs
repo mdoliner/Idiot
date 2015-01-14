@@ -7,8 +7,9 @@
     </span>
   </span>
 </span>
-
-<a id="edit-photo" class="edit-photo">Update Photo</a>
+<% if (currentUser.get("level") === "editor") {%>
+  <a id="edit-photo" class="edit-photo">Update Photo</a>
+<% } %>
 <span class="page-content group">
   <article class="page-text">
     <p class="text-content"><%= page.escape("text") %></p>

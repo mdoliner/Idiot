@@ -30,9 +30,9 @@ Idiot.Routers.Router = Backbone.Router.extend({
           success: function () {
             this.$headerEl.html(this._headerView.render().$el);
           }.bind(this)
-        })
+        });
       }.bind(this)
-    })
+    });
   },
 
   artistShow: function (id) {
@@ -40,11 +40,12 @@ Idiot.Routers.Router = Backbone.Router.extend({
     artist.fetch({
       success: function () {
         var view = new Idiot.Views.ArtistShow({
-          model: artist
+          model: artist,
+          currentUser: this._currentUser
         });
         this.swapView(view);
       }.bind(this)
-    })
+    });
   },
 
   genresIndex: function () {

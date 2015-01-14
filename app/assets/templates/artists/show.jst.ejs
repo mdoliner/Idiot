@@ -12,8 +12,14 @@
 </span>
 
 <span class="artist-info">
-  <a id="edit-photo" class="edit-photo">Edit Photo</a>
+  <% if (currentUser.get("level") === "editor") {%>
+    <a id="edit-photo" class="edit-photo">Edit Photo</a>
+  <% } %>
   <img class="artist-photo" src="<%= artist.get('image_url') %>" />
   <h2>About <%= artist.escape("name") %></h2>
-  <p class="biography editable"><%= artist.escape("biography") %></p>
+  <% if (currentUser.get("level") === "editor") {%>
+    <p class="biography editable"><%= artist.escape("biography") %></p>
+  <% } else { %>
+    <p class="biography"><%= artist.escape("biography") %></p>
+  <% } %>
 </span>

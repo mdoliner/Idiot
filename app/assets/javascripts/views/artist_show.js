@@ -9,13 +9,15 @@ Idiot.Views.ArtistShow = Backbone.View.extend({
     "blur .edit-biography": "saveBiography"
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.currentUser = options.currentUser;
     this.listenTo(this.model, "sync", this.render);
   },
 
   render: function () {
     var content = this.template({
-      artist: this.model
+      artist: this.model,
+      currentUser: this.currentUser
     });
     this.$el.html(content);
     return this;
@@ -34,10 +36,12 @@ Idiot.Views.ArtistShow = Backbone.View.extend({
 
   saveBiography: function (event) {
     event.preventDefault();
-    var newBiography = $(event.currentTarget).val();
+    if (this.currentUser.get("level") === "editor") {
+      var newBiography = $(event.currentTarget).val();
 
-    this.model.set("biography", newBiography);
-    this.model.save();
+      this.model.set("biography", newBiography);
+      this.model.save();
+    }
     this.render();
   },
 

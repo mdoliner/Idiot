@@ -19,7 +19,10 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var textContent = this.template({ page: this.model });
+    var textContent = this.template({
+      page: this.model,
+      currentUser: this.currentUser
+    });
     var annotations = this.model.annotations();
     this.$el.html(textContent);
     var $textContent = this.$el.find(".text-content");
