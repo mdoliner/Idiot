@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   )
 
   def self.find_by_credentials(usernameOrEmail, password)
-    user = User.where( username: usernameOrEmail ) || User.where( email: usernameOrEmail)
+    user = User.find_by( username: usernameOrEmail ) || User.find_by( email: usernameOrEmail)
     return nil unless user
     user.is_password?(password) ? user : nil
   end

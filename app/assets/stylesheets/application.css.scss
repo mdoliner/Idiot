@@ -217,6 +217,78 @@ ul.search-results a:hover, ul.search-results li:nth-child(even) a:hover  {
   background: rgb(71, 71, 71);
 }
 
+/* Header Forms */
+
+span.modal-background {
+  opacity: 0;
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .6);
+  -webkit-transition: opacity .5s, visibility .5s;
+  visibility: hidden;
+}
+
+span.header-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  width: 480px;
+  height: 330px;
+  background: rgb(41, 41, 41);
+  border: 1px solid rgb(68, 68, 68);
+  border-radius: 2px;
+  display: block;
+}
+
+article.user-new {
+  text-align: center;
+}
+
+article.user-new h1{
+  color: rgb(255, 195, 28);
+  font-size: 48px;
+  padding-top: 30px;
+}
+
+article.user-new h2{
+  color: rgb(255, 195, 28);
+  font-size: 24px;
+  padding-top: 15px;
+}
+
+a.sign-up-email {
+  color: rgb(238, 238, 238);
+  background: rgb(68, 68, 68);
+  display: inline-block;
+  width: 370px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+a.sign-up-email:hover {
+  background: rgb(81, 81, 81);
+}
+
+small.sign-in {
+  display: block;
+  font-size: 16px;
+  color: rgb(238, 238, 238);
+  padding: 10px;
+}
+
+small.sign-in a {
+  color: rgb(91, 167, 194);
+}
+
+small.sign-in a:hover {
+  color: rgb(165, 207, 222);
+}
+
 /* Pages Index */
 
 span.pages-index h6 {

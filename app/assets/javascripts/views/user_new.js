@@ -1,6 +1,8 @@
 Idiot.Views.UserNew = Backbone.View.extend({
   template: JST["users/new_method"],
   formTemplate: JST["users/new"],
+  tagName: "article",
+  className: "user-new",
   events: {
     "click #sign-up-email": "newUserEmail",
     "submit": "createUser"

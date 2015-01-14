@@ -2,11 +2,17 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
   template: JST["header/show"],
   events: {
     "click #new-user": "newUserForm",
-    "click #new-session": "newSessionForm",
+    "click a.new-session": "newSessionForm",
+    "click #destroy-session": "destroySession",
     "click #new-artist": "newArtistForm",
     "keyup #search": "updateSearch",
     "click a.search-item": "clearSearch",
+    "click span.modal-background": "toggleModal",
     "click": "hideSearch"
+  },
+
+  initialize: function () {
+    this.listenTo(this.model, "change:logged_in", this.render);
   },
 
   render: function () {
@@ -18,6 +24,13 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
     return this;
   },
 
+  toggleModal: function (event) {
+    event.preventDefault();
+    if ($(event.target).hasClass("modal-background")) {
+      $("span.modal-background").css("opacity", "0").css("visibility", "hidden");
+    }
+  },
+
   newUserForm: function (event) {
     event.preventDefault();
     var view = new Idiot.Views.UserNew({
@@ -25,14 +38,27 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
       headerView: this
     });
     $("#header-form").html(view.render().$el);
+    $("span.modal-background").css("visibility", "visible").css("opacity", "1");
   },
 
   newSessionForm: function (event) {
     event.preventDefault();
+    this.session = new Idiot.Models.Session();
     var view = new Idiot.Views.SessionNew({
-      headerView:this
+      headerView:this,
+      model: this.session
     });
     $("#header-form").html(view.render().$el);
+    $("span.modal-background").css("visibility", "visible").css("opacity", "1");
+  },
+
+  destroySession: function (event) {
+    event.preventDefault();
+    this.session && this.session.destroy({
+      success: function () {
+        this.model.fetch();
+      }.bind(this)
+    });
   },
 
   newArtistForm: function (event) {
@@ -42,6 +68,7 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
       model: artist
     });
     $("#header-form").html(view.render().$el);
+    $("span.modal-background").css("visibility", "visible").css("opacity", "1");
   },
 
   refresh: function () {

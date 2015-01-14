@@ -28,6 +28,6 @@ Idiot.Views.SessionNew = Backbone.View.extend({
       error: function () {
 
       }
-    })
+    });
   }
 });
