@@ -168,13 +168,12 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
   editPhoto: function (event) {
     event.preventDefault();
     var $el = $("#edit-photo");
-    $el.empty();
     var view = new Idiot.Views.PhotoNew({
       model: this.model,
-      url: "pages/" + this.model.id,
       attrName: "page"
     });
     $el.after(view.render().$el);
+    $el.remove();
   }
 
 });

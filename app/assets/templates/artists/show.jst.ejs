@@ -1,15 +1,19 @@
 <h1><%= artist.escape("name") %></h1>
-<span>
-  <h3>Popular</h3>
-
-  <h3><%= artist.escape("name") %> A-Z</h3>
-
+<span class="artist-songs">
+  <h2><%= artist.escape("name") %> A-Z</h3>
+  <ul>
+    <% artist.pages().each(function(page) {%>
+      <li class="page-item"><a href="#pages/<%= page.id %>">
+        <h3><%= page.escape("title") %></h3>
+        <h4><%= page.escape("artist_name") %></h4>
+      </a></li>
+    <% }); %>
+  </ul>
 </span>
-<span>
-  <h3>About <%= artist.escape("name") %></h3>
-  <img src="<%= artist.get("image_url") %>" />
 
-  <p>
-    <%= artist.escape("biography") %>
-  </p>
+<span class="artist-info">
+  <a id="edit-photo" class="edit-photo">Edit Photo</a>
+  <img class="artist-photo" src="<%= artist.get('image_url') %>" />
+  <h2>About <%= artist.escape("name") %></h2>
+  <p class="biography editable"><%= artist.escape("biography") %></p>
 </span>

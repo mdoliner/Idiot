@@ -1,14 +1,13 @@
 Idiot.Views.PhotoNew = Backbone.View.extend ({
   template: JST["photos/new"],
   tagName: "form",
-  className: "update-photo",
+  className: "update-photo group",
   events: {
     "submit": "addPhoto",
     "change #input-image": "fileInputChange"
   },
 
   initialize: function (options) {
-    this.redirectUrl = options.url;
     this.attrName = options.attrName;
   },
 
@@ -25,7 +24,6 @@ Idiot.Views.PhotoNew = Backbone.View.extend ({
 
     var arg = {};
     arg[this.attrName] = {photo: this.model._image};
-    console.log(arg);
     this.model.save(arg, {
       patch: true,
       success: function () {
