@@ -1,7 +1,7 @@
 Idiot.Views.ArtistNew = Backbone.View.extend({
   template: JST['artists/new'],
-
   tagName: "form",
+  className: "artist-new",
 
   events: {
     "submit": "createArtist"

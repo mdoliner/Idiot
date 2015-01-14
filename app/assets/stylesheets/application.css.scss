@@ -219,6 +219,13 @@ ul.search-results a:hover, ul.search-results li:nth-child(even) a:hover  {
   background: rgb(71, 71, 71);
 }
 
+img.prof-photo {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
 /* Header Forms */
 
 span.modal-background {
@@ -877,6 +884,19 @@ ul.artist-search-results li:nth-child(even) a {
 
 ul.artist-search-results li:hover, ul.search-results li:nth-child(even) a:hover  {
   background: rgb(71, 71, 71);
+}
+
+/* Artist New */
+
+form.artist-new {
+  display: block;
+}
+
+form.artist-new h3 {
+  color: rgb(255, 195, 28);
+  font-size: 48px;
+  padding-top: 30px;
+  text-align: center;
 }
 
 /* Artist Show */
