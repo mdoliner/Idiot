@@ -407,6 +407,74 @@ form.new-session-form button.login:hover {
   background: rgb(51, 51, 51);
 }
 
+/* Genre Show */
+
+h1.genre-title {
+  padding: 10px 0 5px 0;
+  font-size: 12px;
+}
+
+span.page-link-big {
+  display: inline-block;
+  width: 510px;
+  height: 410px;
+  float: left;
+  margin-right: 20px;
+}
+
+li.page-link-big {
+  display: inline-block;
+  overflow: hidden;
+  width: 506px;
+  height: 406px;
+  border: 1px solid rgb(34, 34, 34);
+}
+
+li.page-link-big h2 {
+  position: absolute;
+  font-size: 36px;
+  margin-left: 5px;
+  margin-top: 5px;
+  color: white;
+}
+
+li.page-link-big h3 {
+  position: absolute;
+}
+
+li.page-link-big img {
+  width: 100%;
+  overflow: hidden;
+}
+
+span.page-links {
+  width: 510px;
+  height: 410px;
+  float: left;
+}
+
+li.page-link {
+  display: inline-block;
+  width: 240px;
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid rgb(34, 34, 34);
+  margin-right: 10px;
+}
+
+li.page-link h2 {
+  position: absolute;
+}
+
+li.page-link h3 {
+  position: absolute;
+}
+
+li.page-link img {
+  float: left;
+  width: 100%;
+}
+
 /* Pages Index */
 
 span.pages-index h6 {
@@ -445,6 +513,7 @@ li.page-item h3 {
 li.page-item h4 {
   -webkit-transition: color .25s;
 }
+
 /* Page Show */
 
 span.info-bar {
@@ -467,14 +536,14 @@ span.image-bar {
   z-index: 2;
 }
 
-// .texture {
-//   display: block;
-//   position: absolute;
-//   background-image: image-url("box.png");
-//   opacity: .5;
-//   width: 100%;
-//   height: 100%;
-// }
+.texture {
+  display: block;
+  // position: absolute;
+  // background-image: image-url("box.png");
+  opacity: .5;
+  width: 100%;
+  height: 100%;
+}
 
 form.update-photo {
   position: absolute;
