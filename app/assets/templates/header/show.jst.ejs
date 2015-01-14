@@ -12,6 +12,7 @@
   </ul>
   <% } else { %>
   <ul class="nav-user">
+    <li><a href="#users/<%= currentUser.id %>"><%= currentUser.escape("username") %></a></li>
     <li><a id="destroy-session">Log Out</a></li>
   </ul>
   <% } %>
