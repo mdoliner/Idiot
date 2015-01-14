@@ -19,9 +19,9 @@ Idiot.Views.ArtistNew = Backbone.View.extend({
     this.model.save(args, {
       success: function () {
         Backbone.history.navigate("#artists/" + this.model.id, {trigger: true});
+        $("#header-form").empty();
       }.bind(this),
       error: function () {
-        debugger
         if (args.name.length === 0) {
           $("#artist-name-errors").text("Name cannot be blank");
         }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150113155838) do
+ActiveRecord::Schema.define(version: 20150114014136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20150113155838) do
   add_index "annotations", ["page_id"], name: "index_annotations_on_page_id", using: :btree
 
   create_table "artists", force: true do |t|
-    t.text     "biography"
+    t.text     "biography",          default: "Biography is currently empty. Is this person even famous?"
     t.string   "instagram_url"
     t.string   "twitter_url"
     t.string   "facebok_url"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150113155838) do
     t.string   "photo_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name",               null: false
+    t.string   "name",                                                                                     null: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
