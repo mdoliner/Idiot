@@ -3,6 +3,7 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
   events: {
     "click #new-user": "newUserForm",
     "click #new-session": "newSessionForm",
+    "click #new-artist": "newArtistForm",
     "keyup #search": "updateSearch",
     "click a.search-item": "clearSearch",
     "click": "hideSearch"
@@ -30,6 +31,15 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
     event.preventDefault();
     var view = new Idiot.Views.SessionNew({
       headerView:this
+    });
+    $("#header-form").html(view.render().$el);
+  },
+
+  newArtistForm: function (event) {
+    event.preventDefault();
+    var artist = new Idiot.Models.Artist();
+    var view = new Idiot.Views.ArtistNew({
+      model: artist
     });
     $("#header-form").html(view.render().$el);
   },

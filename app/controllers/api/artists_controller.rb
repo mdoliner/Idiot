@@ -5,6 +5,15 @@ class Api::ArtistsController < ApplicationController
     render :index
   end
 
+  def create
+    @artist = Artist.new(artist_params)
+    if @artist.save
+      render :show
+    else
+      render json: @artist, status: :unprocessable_entity
+    end
+  end
+
   def show
     @artist = Artist.find(params[:id])
     render :show
