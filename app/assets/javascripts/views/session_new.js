@@ -1,7 +1,7 @@
 Idiot.Views.SessionNew = Backbone.View.extend({
   template: JST["session/new"],
-  tagName: "form",
-  className: "new-session-form",
+  tagName: "span",
+  className: "new-session",
   events: {
     "submit": "createSession"
   },

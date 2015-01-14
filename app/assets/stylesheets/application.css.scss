@@ -15,6 +15,7 @@ h1, h2, h3, h4, h6, p, a, ul, li, nav, form, input, label, button, pre, b {
   text-align: inherit;
   color: inherit;
   background: transparent;
+  background-color: transparent;
 }
 
 input[type="radio"] {
@@ -59,6 +60,7 @@ a, button {
 }
 
 input, textarea {
+  -webkit-appearance: none;
   background: rgb(51, 51, 51);
 }
 
@@ -243,6 +245,8 @@ span.header-form {
   display: block;
 }
 
+/* User New */
+
 article.user-new {
   text-align: center;
 }
@@ -288,6 +292,57 @@ small.sign-in a {
 small.sign-in a:hover {
   color: rgb(165, 207, 222);
 }
+
+/* Session New */
+
+span.new-session h1 {
+  color: rgb(255, 195, 28);
+  font-size: 48px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+form.new-session-form {
+  background: rgb(28, 28, 28);
+  font-size: 16px;
+  color: rgb(236, 231, 232);
+  width: 370px;
+  margin: auto;
+}
+
+form.new-session-form label {
+  padding-top: 12px;
+  padding-bottom: 5px;
+  margin-left: 10px;
+}
+
+form.new-session-form input {
+  box-sizing: border-box;
+  margin-left: 10px;
+  color: rgb(204, 204, 204);
+}
+
+form.new-session-form input:focus {
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+form.new-session-form button.login {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: rgb(204, 204, 204);
+  background: rgb(38, 38, 38);
+  margin: 10px;
+  border: 1px solid rgb(68, 68, 68);
+  border-radius: 2px;
+}
+
+form.new-session-form button.login:hover {
+  color: rgb(230, 230, 230);
+  background: rgb(51, 51, 51);
+}
+
+
 
 /* Pages Index */
 
