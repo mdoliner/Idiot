@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resource :session, only: [:new, :create, :destroy]
     match 'users/current' => 'users#current', via: :get
+    match 'users/logout' => 'users#logout', via: :get
     resources :users
     resources :genres
     resources :pages

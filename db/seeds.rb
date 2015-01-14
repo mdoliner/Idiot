@@ -1,3 +1,19 @@
+# Users
+user_whitehat = User.create!({
+  username: "whitehat",
+  password: "whitehat",
+  email: "imawhitehat@whitehat.com",
+  level: "whitehat",
+  biography: "Once I was a loser in real life. Now I'm just a loser online... yay..."
+})
+user_editor = User.create!({
+  username: "editor",
+  password: "editor",
+  email: "imaneditor@editor.com",
+  level: "editor",
+  biography: "Once I was a loser in real life. Now I'm a celebrity online... Yay!"
+})
+
 # Genres
 rap = Genre.create!({ name: 'Rap' })
 rock = Genre.create!({ name: 'Rock' })

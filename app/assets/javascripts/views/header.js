@@ -59,10 +59,11 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
 
   destroySession: function (event) {
     event.preventDefault();
-    this.session && this.session.destroy({
+    this.model.fetch({
+      url: "api/users/logout",
       success: function () {
-        this.model.fetch();
         Backbone.history.navigate("", {trigger: true});
+        this.model.fetch();
       }.bind(this)
     });
   },
