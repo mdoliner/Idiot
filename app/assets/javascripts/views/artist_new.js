@@ -4,7 +4,11 @@ Idiot.Views.ArtistNew = Backbone.View.extend({
   className: "artist-new",
 
   events: {
-    "submit": "createArtist"
+    "click #create-artist": "createArtist"
+  },
+
+  initialize: function (options) {
+    this.headerView = options.headerView;
   },
 
   render: function () {
@@ -20,6 +24,7 @@ Idiot.Views.ArtistNew = Backbone.View.extend({
       success: function () {
         Backbone.history.navigate("#artists/" + this.model.id, {trigger: true});
         $("#header-form").empty();
+        this.headerView.render();
       }.bind(this),
       error: function () {
         if (args.name.length === 0) {

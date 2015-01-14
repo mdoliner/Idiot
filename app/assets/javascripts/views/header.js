@@ -72,7 +72,8 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
     event.preventDefault();
     var artist = new Idiot.Models.Artist();
     var view = new Idiot.Views.ArtistNew({
-      model: artist
+      model: artist,
+      headerView: this
     });
     $("#header-form").html(view.render().$el);
     $("span.modal-background").css("visibility", "visible").css("opacity", "1");
