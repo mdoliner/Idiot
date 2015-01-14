@@ -3,7 +3,7 @@ Idiot.Views.SessionNew = Backbone.View.extend({
   tagName: "span",
   className: "new-session",
   events: {
-    "submit": "createSession"
+    "click button.login": "createSession"
   },
 
   initialize: function (options) {

@@ -12,6 +12,7 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
+    this.session = new Idiot.Models.Session();
     this.listenTo(this.model, "change:logged_in", this.render);
   },
 
@@ -34,6 +35,7 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
   newUserForm: function (event) {
     event.preventDefault();
     var view = new Idiot.Views.UserNew({
+      session: this.session,
       model: new Idiot.Models.User(),
       headerView: this
     });
@@ -43,7 +45,6 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
 
   newSessionForm: function (event) {
     event.preventDefault();
-    this.session = new Idiot.Models.Session();
     var view = new Idiot.Views.SessionNew({
       headerView:this,
       model: this.session
@@ -69,14 +70,6 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
     });
     $("#header-form").html(view.render().$el);
     $("span.modal-background").css("visibility", "visible").css("opacity", "1");
-  },
-
-  refresh: function () {
-    this.model.fetch({
-      success: function () {
-        this.render();
-      }.bind(this)
-    })
   },
 
   updateSearch: function () {

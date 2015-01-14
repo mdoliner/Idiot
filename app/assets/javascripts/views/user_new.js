@@ -5,7 +5,7 @@ Idiot.Views.UserNew = Backbone.View.extend({
   className: "user-new",
   events: {
     "click #sign-up-email": "newUserEmail",
-    "submit": "createUser"
+    "click button.user-new": "createUser"
   },
 
   initialize: function (options) {
@@ -30,7 +30,14 @@ Idiot.Views.UserNew = Backbone.View.extend({
     this.model.save(attrs, {
       wait: true,
       success: function () {
-        this.headerView.refresh();
+        this.headerView.model.fetch({
+          success: function () {
+            this.headerView.session.save({
+              username: attrs.username,
+              password: attrs.password
+            });
+          }.bind(this)
+        });
         this.remove();
       }.bind(this),
       error: function () {
