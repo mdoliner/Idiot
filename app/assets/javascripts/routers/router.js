@@ -17,6 +17,10 @@ Idiot.Routers.Router = Backbone.Router.extend({
     this._currentUser = new Idiot.Models.CurrentUser();
     this._session = new Idiot.Models.Session();
     this.header();
+    this._headerView = new Idiot.Views.Header({
+      collection: this._genres,
+      model: this._currentUser
+    });
   },
 
   header: function () {
@@ -24,11 +28,6 @@ Idiot.Routers.Router = Backbone.Router.extend({
       success: function () {
         this._genres.fetch({
           success: function () {
-            this._headerView && this._headerView.remove();
-            this._headerView = new Idiot.Views.Header({
-              collection: this._genres,
-              model: this._currentUser
-            });
             this.$headerEl.html(this._headerView.render().$el);
           }.bind(this)
         })
@@ -107,7 +106,8 @@ Idiot.Routers.Router = Backbone.Router.extend({
       success: function () {
         var view = new Idiot.Views.PageShow({
           model: page,
-          currentUser: this._currentUser
+          currentUser: this._currentUser,
+          headerView: this._headerView
         });
         this.swapView(view);
       }.bind(this)

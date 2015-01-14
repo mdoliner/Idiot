@@ -13,6 +13,7 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.currentUser = options.currentUser;
+    this.headerView = options.headerView;
     this.listenTo(this.model.improvements(), "sync", this.render);
     this.listenTo(this.model, "change:image_url", this.render);
   },
@@ -79,7 +80,9 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
       $('.page-annotations').empty();
       var newAnnotationView = new Idiot.Views.AnnotationNew({
         collection: this.model.annotations(),
-        model: this.model
+        model: this.model,
+        currentUser: this.currentUser,
+        headerView: this.headerView
       });
       this.addSubview('.page-annotations', newAnnotationView);
     }

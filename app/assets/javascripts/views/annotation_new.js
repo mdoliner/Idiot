@@ -7,6 +7,11 @@ Idiot.Views.AnnotationNew = Backbone.CompositeView.extend({
     "submit": "createAnnotation"
   },
 
+  initialize: function (options) {
+    this.currentUser = options.currentUser;
+    this.headerView = options.headerView;
+  },
+
   render: function () {
     var content = this.template();
     var selection = window.getSelection();
@@ -28,16 +33,19 @@ Idiot.Views.AnnotationNew = Backbone.CompositeView.extend({
 
   renderNewForm: function (event) {
     event.preventDefault();
-
-    var annotation = new Idiot.Models.Annotation();
-    var content = this.formTemplate({
-      startIndex: this.startIndex,
-      endIndex: this.endIndex,
-      pageId: this.model.id,
-      isNew: true,
-      annotation: annotation
-    });
-    this.$el.html(content);
-    return this;
+    if (!this.currentUser.get("logged_in")) {
+      this.headerView.trigger("forceLogin");
+    } else {
+      var annotation = new Idiot.Models.Annotation();
+      var content = this.formTemplate({
+        startIndex: this.startIndex,
+        endIndex: this.endIndex,
+        pageId: this.model.id,
+        isNew: true,
+        annotation: annotation
+      });
+      this.$el.html(content);
+      return this;
+    }
   }
 });

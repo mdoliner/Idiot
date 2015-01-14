@@ -25,6 +25,8 @@
       </ul>
     </li>
     <li><a href="#pages/new" class="create">Create Page</a></li>
-    <li><a href="#" class="create" id="new-artist">Create Artist</a></li>
+    <% if (currentUser.get("level") === "editor") { %>
+      <li><a href="#" class="create" id="new-artist">Create Artist</a></li>
+    <% } %>
   </ul>
 </nav>
