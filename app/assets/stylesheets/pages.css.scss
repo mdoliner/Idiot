@@ -1,3 +1,293 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* Pages Index */
+
+span.pages-index h6 {
+  font-size: 12px;
+  padding-top: 25px;
+  padding-bottom: 14px;
+  display: block;
+}
+
+span.pages-index h6 b {
+  color: rgb(237, 232, 233);
+}
+
+li.page-item {
+  width: 1000px;
+  border-top: 1px solid rgb(30, 30, 30);
+  border-bottom: 1px solid rgb(30, 30, 30);
+  padding: 15px 0;
+  -webkit-transition: border .25s, padding .25s;
+}
+
+li.page-item:hover {
+  padding-left: 10px;
+  border-left: 3px solid rgb(255, 195, 28);
+}
+
+li.page-item:hover h4{
+  color: rgb(237, 232, 233);
+}
+
+li.page-item h3 {
+  color: rgb(237, 232, 233);
+  padding-bottom: 5px;
+}
+
+li.page-item h4 {
+  -webkit-transition: color .25s;
+}
+
+/* Page Show */
+
+span.info-bar {
+  position: absolute;
+  width: 100%;
+}
+
+span.info-bar * {
+  position: absolute;
+  z-index: 3;
+}
+
+span.image-bar {
+  position: absolute;
+  width: 100%;
+  height: 273px;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.texture {
+  display: block;
+  // position: absolute;
+  // background-image: image-url("box.png");
+  opacity: .5;
+  width: 100%;
+  height: 100%;
+}
+
+form.update-photo {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+}
+
+button.update-photo {
+  font-size: 14px;
+  right: 0;
+  padding: 5px;
+  float: right;
+  background: rgba(20, 20, 20, .7);
+  border-left: 1px solid rgba(85, 85, 85, .7);
+  border-bottom: 1px solid rgba(85, 85, 85, .7);
+  -webkit-transition: background .25s, color .25s;
+}
+
+button.update-photo:hover {
+  background: rgb(51, 51, 51);
+  color: rgb(253, 193, 28);
+}
+
+img.photo-main {
+  top:0;
+  left:0;
+  width:100%;
+  height: auto;
+  opacity: 1;
+}
+
+h1.title {
+  font-size: 36px;
+  font-weight: bold;
+  background: rgb(255, 195, 28);
+  display: inline-block;
+  color: black;
+  padding: 10px;
+  margin-top: 154px;
+}
+
+a.artist {
+  display: block;
+  font-size: 32px;
+  color: white;
+  margin-top: 216px;
+  background: rgba(20, 20, 20, .6);
+  padding: 10px;
+}
+
+a.edit-photo {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  background: rgba(20, 20, 20, .7);
+  border-left: 1px solid rgba(85, 85, 85, .7);
+  border-bottom: 1px solid rgba(85, 85, 85, .7);
+  display: block;
+  padding: 5px;
+  -webkit-transition: background .25s, color .25s;
+}
+
+a.edit-photo:hover {
+  background: rgb(51, 51, 51);
+  color: rgb(253, 193, 28);
+}
+
+span.page-content {
+  display: block;
+  padding-top: 275px;
+}
+
+article.page-text {
+  width: 620px;
+  float: left;
+}
+
+p.text-content {
+  white-space: pre-wrap;
+  color: rgb(204, 204, 204);
+  padding-bottom: 75px;
+}
+
+article.page-annotations {
+  width: 425px;
+  position: absolute;
+  left: 620px;
+  float: left;
+  color: rgb(204, 204, 204);
+}
+
+a.annotation {
+  background: rgb(52, 52, 52);
+  color: rgb(238, 238, 238);
+}
+
+a.annotation:hover {
+  background: rgb(255, 195, 28);
+  color: black;
+}
+
+/* Page New */
+form.new-page-form {
+  padding-top: 25px;
+}
+
+.new-page-form h3 {
+  color: white;
+  font-size: 32px;
+  padding-bottom: 20px;
+}
+
+.new-page-form small {
+  font-size: 12px;
+  color: rgb(98, 98, 98);
+  padding-bottom: 10px;
+  display: block;
+}
+
+.new-page-form input {
+  width: 388px;
+  border: 1px solid rgb(187, 187, 187);
+  border-radius: 2px;
+  padding: 5px;
+  background: white;
+  font-size: 14px;
+  color: black;
+}
+
+.new-page-form label {
+  color: white;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+span.genre-buttons {
+  display: block;
+}
+
+label.genre-radio {
+  border: 1px solid rgb(153, 153, 153);
+  padding: 5px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+label.genre-radio:hover {
+  background: rgb(48, 47, 47);
+}
+
+input[type="radio"]:checked + label.genre-radio {
+  background: rgb(237, 232, 233);
+  color: black;
+}
+
+.new-page-form span.main-inputs:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: rgb(48, 48, 48);
+}
+
+span.artist, span.title {
+  display: block;
+  width: 400px;
+  float: left;
+  margin-bottom: 10px;
+}
+
+span.artist {
+  margin-right: 20px;
+}
+
+.new-page-form textarea {
+  width: 100%;
+  height: 490px;
+  background: white;
+}
+
+.new-page-form button {
+  background: rgb(38, 38, 38);
+  color: rgb(204, 204, 204);
+  padding: 5px 10px;
+  border-radius: 2px;
+  border: 1px solid rgb(68, 68, 68);
+  font-size: 14px;
+  margin-top: 25px;
+}
+
+.new-page-form button:hover {
+  color: rgb(230, 230, 230);
+  background: rgb(51, 51, 51);
+}
+
+ul.artist-search-results {
+  position: absolute;
+  height: 500px;
+  width: 300px;
+  overflow: hidden;
+  left: 0px;
+  margin-top: 71px;
+  display: none;
+}
+
+ul.artist-search-results li {
+  background: rgb(33, 33, 33);
+  display: block;
+  padding: 5px 5px 5px 5px;
+  box-sizing: border-box;
+  -webkit-transition: background .25s;
+  cursor: pointer;
+}
+
+ul.artist-search-results li:nth-child(even) a {
+  background: rgb(20, 20, 20);
+}
+
+
+ul.artist-search-results li:hover, ul.search-results li:nth-child(even) a:hover  {
+  background: rgb(71, 71, 71);
+}

@@ -11,9 +11,10 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
     "click": "hideSearch"
   },
 
-  initialize: function () {
-    this.listenTo(this.model, "change:logged_in", this.render);
+  initialize: function (options) {
+    this.listenTo(this.model, "change:logged_in", this.refresh);
     this.on("forceLogin", this.newUserForm.bind(this));
+    this.router = options.router;
   },
 
   render: function () {
@@ -24,6 +25,11 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     return this;
+  },
+
+  refresh: function () {
+    this.render();
+    this.router._currentView && this.router.swapView(this.router._currentView);
   },
 
   toggleModal: function (event) {

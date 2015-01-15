@@ -1,15 +1,22 @@
-<h1><%= collection.escape("name") %></h1>
-<% if (collection.escape("release_year")) { %>
-  <h2><%= collection.escape("release_year") %></h2>
-<% } %>
-<h3><%= collection.artist().escape("name") %></h3>
-<img src="<%= collection.escape("image_url") %>" />
-<ul>
-  <% collection.pages().each(function (page) { %>
-    <li>
-      <small><%= page.escape("collection_number") %></small>
-      <h4><%= page.escape("title") %></h4>
-      <small><%= page.escape("artist_name") %></small>
-    </li>
-  <% }); %>
-</ul>
+<span class="collection-info">
+  <h1><%= collection.escape("title") %></h1>
+  <% if (collection.escape("release_year")) { %>
+    <h2><%= collection.escape("release_year") %></h2>
+  <% } %>
+  <h3><%= collection.artist().escape("name") %></h3>
+  <% if (currentUser.get("level") === "editor") {%>
+    <a id="edit-photo" class="edit-photo">Edit Photo</a>
+  <% } %>
+  <img src="<%= collection.escape("image_url") %>" />
+</span>
+<span class="collection-items">
+  <ul>
+    <% collection.pages().each(function (page) { %>
+      <li>
+        <small><%= page.escape("collection_number") %></small>
+        <h4><%= page.escape("title") %></h4>
+        <small><%= page.escape("artist_name") %></small>
+      </li>
+    <% }); %>
+  </ul>
+</span>

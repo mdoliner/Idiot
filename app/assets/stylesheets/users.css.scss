@@ -1,3 +1,102 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* User New */
+
+article.user-new {
+  text-align: center;
+}
+
+article.user-new h1{
+  color: rgb(255, 195, 28);
+  font-size: 48px;
+  padding-top: 30px;
+}
+
+article.user-new h2{
+  color: rgb(255, 195, 28);
+  font-size: 24px;
+  padding-top: 15px;
+}
+
+a.sign-up-email {
+  color: rgb(238, 238, 238);
+  background: rgb(68, 68, 68);
+  display: inline-block;
+  width: 370px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+a.sign-up-email:hover {
+  background: rgb(81, 81, 81);
+}
+
+small.sign-in {
+  display: block;
+  font-size: 16px;
+  color: rgb(238, 238, 238);
+  padding: 10px;
+}
+
+small.sign-in a {
+  color: rgb(91, 167, 194);
+}
+
+small.sign-in a:hover {
+  color: rgb(165, 207, 222);
+}
+
+form.new-user-form {
+  padding: 10px;
+  background: rgb(28, 28, 28);
+  width: 380px;
+  margin: auto;
+  border-top: 1px solid rgb(68, 68, 68);
+  opacity: 0;
+  -webkit-transition: opacity 1.5s;
+}
+
+form.new-user-form label {
+  margin: auto;
+  text-align: none;
+  color: rgb(237, 232, 233);
+  padding-bottom: 5px;
+}
+
+form.new-user-form input {
+  margin: auto;
+  width: 350px;
+  border: 1px solid rgb(85, 85, 85);
+  background: rgb(54, 54, 54);
+  color: rgb(204, 204, 204);
+  border-radius: 2px;
+}
+
+form.new-user-form p {
+  text-align: left;
+  font-size: 14px;
+  padding: 10px;
+  color: rgb(237, 232, 233);
+}
+
+form.new-user-form input:focus {
+  border: 1px solid rgb(153, 153, 153);
+  color: rgb(153, 153, 153);
+}
+
+form.new-user-form button.user-new {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: rgb(204, 204, 204);
+  background: rgb(38, 38, 38);
+  margin: 10px;
+  border: 1px solid rgb(68, 68, 68);
+  border-radius: 2px;
+  -webkit-transition: border .25s;
+}
+
+form.new-user-form button.user-new:hover {
+  border: 1px solid white;
+  color: white;
+}

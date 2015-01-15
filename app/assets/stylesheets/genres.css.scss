@@ -1,3 +1,134 @@
-// Place all the styles related to the genres controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Genre Show */
+
+h1.genre-title {
+  padding: 10px 0;
+  font-size: 12px;
+}
+
+span.page-link-big {
+  display: inline-block;
+  width: 510px;
+  height: 410px;
+  float: left;
+  margin-right: 20px;
+}
+
+li.page-link-big {
+  display: inline-block;
+  overflow: hidden;
+  width: 506px;
+  height: 406px;
+  border: 2px solid rgb(54, 54, 54);
+}
+
+li.page-link-big h2 {
+  position: absolute;
+  font-size: 38px;
+  margin-left: 5px;
+  margin-top: 5px;
+  color: rgb(210, 210, 210);
+  z-index: 3;
+  -webkit-transition: color 1s;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 500px;
+}
+
+li.page-link-big h3 {
+  position: absolute;
+  z-index: 3;
+  font-size: 24px;
+  margin-left: 5px;
+  margin-top: 45px;
+  color: rgb(160, 160, 160);
+  -webkit-transition: color 1s;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 500px;
+}
+
+li.page-link-big img {
+  width: 100%;
+  overflow: hidden;
+  opacity: 0.6;
+  -webkit-transition: opacity 1s;
+}
+
+li.page-link-big img:hover {
+  opacity: 1;
+}
+
+li.page-link-big:hover h2 {
+  color: white;
+}
+
+li.page-link-big:hover h3 {
+  color: white;
+}
+
+span.page-links {
+  width: 520px;
+  height: 410px;
+  float: left;
+}
+
+li.page-link {
+  display: inline-block;
+  width: 240px;
+  height: 200px;
+  overflow: hidden;
+  border: 2px solid rgb(54, 54, 54);
+  margin-right: 10px;
+}
+
+li.page-link h2 {
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 5px;
+  z-index: 3;
+  font-size: 20px;
+  color: rgb(210, 210, 210);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 500px;
+}
+
+li.page-link h3 {
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 33px;
+  font-size: 16px;
+  color: rgb(160, 160, 160);
+  -webkit-transition: color 1s;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 500px;
+}
+
+li.page-link img {
+  float: left;
+  width: 100%;
+  opacity: 0.6;
+  -webkit-transition: opacity 1s;
+}
+
+li.page-link img:hover {
+  opacity: 1;
+}
+
+ul.genre-show {
+  display: block;
+}
+
+a.pages-index {
+  display: block;
+  float: right;
+  padding-top: 15px;
+  margin-right: 73px;
+}
+
+a.pages-index:hover {
+  color: rgb(91, 167, 194);
+}

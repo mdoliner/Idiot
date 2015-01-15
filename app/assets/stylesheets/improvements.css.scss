@@ -1,0 +1,153 @@
+/* Page Improvement Creation */
+
+span.page-improvement-partial {
+  display: block;
+  width: 570px;
+  background: rgb(32, 32, 32);
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+li.page-improvement {
+  border-bottom: 1px solid rgb(54, 54, 54);
+  padding: 15px 20px;
+  font-size: 12px;
+}
+
+li.page-improvement p {
+  color: rgb(204, 204, 204);
+}
+
+li.page-improvement h9.username {
+  color: rgb(254, 254, 254);
+  font-size: 12px;
+  padding-bottom: 20px;
+  display: inline-block;
+}
+
+li.page-improvement small.time {
+  float: right;
+}
+
+span.page-improvement-partial input {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(119, 119, 119);
+  width: 260px;
+  padding: 5px;
+}
+
+span.page-improvement-partial input:focus {
+  border: 1px solid rgb(136, 107, 29);
+  box-shadow: 0px 0px 7px rgb(136, 107, 29), inset 0px 0px 2px rgb(136, 107, 29);
+}
+
+span.page-improvement-partial textarea {
+  width: 560px;
+  height: 98px;
+  border: 1px solid rgb(83, 83, 83);
+  font-size: 18px;
+  outline: none;
+}
+
+#submit-page-improvement a {
+  color: rgb(88, 162, 189);
+}
+
+#submit-page-improvement a:hover {
+  color: rgb(165, 207, 222);
+}
+
+#submit-page-improvement button {
+  background: rgb(38, 38, 38);
+  margin-top: 5px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: 1px solid rgb(68, 68, 68);
+  border-radius: 5px;
+  font-size: 14px;
+  color: rgb(204, 204, 204);
+}
+
+#submit-page-improvement small, #submit-page-improvement a {
+  font-size: 12px;
+}
+
+/* Annotation Improvement Creation */
+
+span.annotation-improvement-partial {
+  display: block;
+  width: 100%;
+  background: rgb(32, 32, 32);
+  padding: 10px;
+}
+
+li.annotation-improvement {
+  border-bottom: 1px solid rgb(54, 54, 54);
+  padding: 15px 20px;
+  font-size: 12px;
+}
+
+li.annotation-improvement p {
+  color: rgb(204, 204, 204);
+}
+
+li.annotation-improvement h9.username {
+  color: rgb(254, 254, 254);
+  font-size: 12px;
+  padding-bottom: 20px;
+  display: inline-block;
+}
+
+li.annotation-improvement small.time {
+  float: right;
+}
+
+span.annotation-improvement-partial input {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(119, 119, 119);
+  width: 180px;
+  padding: 5px;
+}
+
+span.annotation-improvement-partial input:focus {
+  border: 1px solid rgb(136, 107, 29);
+  box-shadow: 0px 0px 7px rgb(136, 107, 29), inset 0px 0px 2px rgb(136, 107, 29);
+}
+
+span.annotation-improvement-partial textarea {
+  width: 390px;
+  height: 98px;
+  border: 1px solid rgb(83, 83, 83);
+  font-size: 18px;
+  outline: none;
+}
+
+#submit-annotation-improvement a {
+  color: rgb(88, 162, 189);
+}
+
+#submit-annotation-improvement a:hover {
+  color: rgb(165, 207, 222);
+}
+
+#submit-annotation-improvement button {
+  background: rgb(38, 38, 38);
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: 1px solid rgb(68, 68, 68);
+  border-radius: 5px;
+  font-size: 14px;
+  color: rgb(204, 204, 204);
+}
+
+#submit-annotation-improvement small, #submit-annotation-improvement a {
+  font-size: 12px;
+}

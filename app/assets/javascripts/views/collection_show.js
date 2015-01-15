@@ -3,6 +3,10 @@ Idiot.Views.CollectionShow = Backbone.View.extend({
   tagName: "span",
   className: "collection-show",
 
+  events: {
+    "click #edit-photo": "editPhoto"
+  },
+
   initialize: function (options) {
     this.currentUser = options.currentUser
   },
@@ -14,5 +18,16 @@ Idiot.Views.CollectionShow = Backbone.View.extend({
     });
     this.$el.html(content);
     return this;
+  },
+
+  editPhoto: function (event) {
+    event.preventDefault();
+    var $el = $("#edit-photo");
+    var view = new Idiot.Views.PhotoNew({
+      model: this.model,
+      attrName: "collection"
+    });
+    $el.after(view.render().$el);
+    $el.remove();
   }
 });

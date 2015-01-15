@@ -1,0 +1,236 @@
+/* Header */
+nav {
+  background: rgb(21, 21, 21);
+}
+
+nav.header-1 {
+  margin-bottom: 5px;
+}
+
+nav ul.nav-links {
+  display: inline;
+  float: left;
+}
+
+nav ul.nav-links li {
+  position: relative;
+  display: inline;
+  float: left;
+}
+
+nav ul.nav-links li + li:before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: -7px;
+  top: 7px;
+  width: 3px;
+  height: 3px;
+  border-radius: 10px;
+  padding: 0px;
+  background: rgb(85, 85, 85);
+}
+
+nav ul.nav-links a:hover {
+  color: rgb(255, 195, 28);
+}
+
+nav ul.nav-user {
+  display: inline;
+  float: right;
+}
+
+nav ul.nav-user li{
+  display: inline;
+  float: left;
+}
+
+nav ul.nav-no-user {
+  display: inline;
+  float: right;
+}
+
+nav ul.nav-no-user li{
+  display: inline;
+  float: left;
+}
+
+nav ul.nav-no-user li{
+  position: relative;
+  color: rgb(204, 204, 204)
+}
+
+nav ul.nav-no-user li + li:before{
+  content: "";
+  position: absolute;
+  display: block;
+  left: -8px;
+  top: 7px;
+  width: 4px;
+  height: 4px;
+  border-radius: 10px;
+  padding: 0px;
+  background: rgb(204, 204, 204)
+}
+
+nav ul.nav-no-user a:hover{
+  color: rgb(91, 167, 194)
+}
+
+nav.header-2 {
+  position: relative;
+  border-top: 1px solid rgb(85, 85, 85);
+  border-bottom: 1px solid rgb(85, 85, 85);
+}
+
+nav a.logo {
+  color: rgb(255, 195, 28);
+  font-size: 32px;
+  float: left;
+  top: 50%;
+  -webkit-transform: translateY(20%);
+}
+
+nav ul.header-actions {
+  float: right;
+}
+
+nav ul.header-actions > li {
+  float:left;
+}
+
+nav input.search {
+  width: 383px;
+  border: 1px solid rgb(85, 85, 85);
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+nav li.search-bar {
+  top: 50%;
+  border-right: 1px solid rgb(51, 51, 51);
+  padding: 10px;
+}
+
+nav a.create {
+  top: 50%;
+  -webkit-transform: translateY(4%);
+  display: block;
+  padding: 15px;
+  border-right: 1px solid rgb(51, 51, 51);
+}
+
+nav a.create:hover {
+  background: rgb(34, 34, 34);
+}
+
+ul.search-results {
+  position: absolute;
+  height: 500px;
+  width: 300px;
+  overflow: hidden;
+}
+
+ul.search-results a {
+  background: rgb(33, 33, 33);
+  display: block;
+  padding: 5px 5px 5px 5px;
+  box-sizing: border-box;
+  -webkit-transition: background .25s;
+}
+
+ul.search-results li:nth-child(even) a {
+  background: rgb(20, 20, 20);
+}
+
+
+ul.search-results a:hover, ul.search-results li:nth-child(even) a:hover  {
+  background: rgb(71, 71, 71);
+}
+
+img.prof-photo {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* Header Forms */
+
+span.modal-background {
+  opacity: 0;
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .6);
+  -webkit-transition: opacity .5s, visibility .5s;
+  visibility: hidden;
+}
+
+span.header-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  width: 480px;
+  height: 330px;
+  background: rgb(41, 41, 41);
+  border: 1px solid rgb(68, 68, 68);
+  border-radius: 2px;
+  display: block;
+  -webkit-transition: height .5s;
+}
+
+
+/* Session New */
+
+span.new-session h1 {
+  color: rgb(255, 195, 28);
+  font-size: 48px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+form.new-session-form {
+  background: rgb(28, 28, 28);
+  font-size: 16px;
+  color: rgb(236, 231, 232);
+  width: 370px;
+  margin: auto;
+}
+
+form.new-session-form label {
+  padding-top: 12px;
+  padding-bottom: 5px;
+  margin-left: 10px;
+}
+
+form.new-session-form input {
+  box-sizing: border-box;
+  margin-left: 10px;
+  color: rgb(204, 204, 204);
+  border: 1px solid rgb(85, 85, 85);
+  -webkit-transition: border .25s;
+}
+
+form.new-session-form input:focus {
+  border: 1px solid white;
+  color: white;
+}
+
+form.new-session-form button.login {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: rgb(204, 204, 204);
+  background: rgb(38, 38, 38);
+  margin: 10px;
+  border: 1px solid rgb(68, 68, 68);
+  border-radius: 2px;
+}
+
+form.new-session-form button.login:hover {
+  color: rgb(230, 230, 230);
+  background: rgb(51, 51, 51);
+}

@@ -23,7 +23,8 @@ Idiot.Routers.Router = Backbone.Router.extend({
     this.header();
     this._headerView = new Idiot.Views.Header({
       collection: this._genres,
-      model: this._currentUser
+      model: this._currentUser,
+      router: this
     });
   },
 
