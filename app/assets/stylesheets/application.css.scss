@@ -427,7 +427,7 @@ li.page-link-big {
   overflow: hidden;
   width: 506px;
   height: 406px;
-  border: 1px solid rgb(34, 34, 34);
+  border: 2px solid rgb(54, 54, 54);
 }
 
 li.page-link-big h2 {
@@ -438,7 +438,10 @@ li.page-link-big h2 {
   color: rgb(210, 210, 210);
   z-index: 3;
   -webkit-transition: color 1s;
-  text-stroke: 1px solid black;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 500px;
 }
 
 li.page-link-big h3 {
@@ -447,8 +450,11 @@ li.page-link-big h3 {
   font-size: 24px;
   margin-left: 5px;
   margin-top: 45px;
-  color: rgb(120, 120, 120);
+  color: rgb(160, 160, 160);
   -webkit-transition: color 1s;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 500px;
 }
 
 li.page-link-big img {
@@ -471,7 +477,7 @@ li.page-link-big:hover h3 {
 }
 
 span.page-links {
-  width: 510px;
+  width: 520px;
   height: 410px;
   float: left;
 }
@@ -481,7 +487,7 @@ li.page-link {
   width: 240px;
   height: 200px;
   overflow: hidden;
-  border: 1px solid rgb(34, 34, 34);
+  border: 2px solid rgb(54, 54, 54);
   margin-right: 10px;
 }
 
@@ -492,6 +498,9 @@ li.page-link h2 {
   z-index: 3;
   font-size: 20px;
   color: rgb(210, 210, 210);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 500px;
 }
 
 li.page-link h3 {
@@ -499,8 +508,11 @@ li.page-link h3 {
   margin-left: 5px;
   margin-top: 33px;
   font-size: 16px;
-  color: rgb(120, 120, 120);
+  color: rgb(160, 160, 160);
   -webkit-transition: color 1s;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 500px;
 }
 
 li.page-link img {
