@@ -30,6 +30,7 @@ span.genres-index span.title {
   font-size: 16px;
   color: rgb(98, 98, 98);
   margin: 10px;
+  z-index: 3;
 }
 
 span.genres-index span.title i {
@@ -54,11 +55,21 @@ span.genres-index li.page-link-big h3 {
   font-size: 16px;
 }
 
-span.genres-index li.page-link-big small {
+span.genres-index small {
   position: absolute;
   bottom: 5px;
   font-size: 16px;
   margin-left: 5px;
+  z-index: 3;
+  -webkit-transition: color 1s;
+}
+
+li.page-link-big:hover small {
+  color: white;
+}
+
+li.page-link:hover small {
+  color: white;
 }
 
 span.genres-index li.page-link {
@@ -81,13 +92,6 @@ span.genres-index li.page-link h3 {
   max-width: 330px;
   bottom: 25px;
   font-size: 16px;
-}
-
-span.genres-index li.page-link small {
-  position: absolute;
-  bottom: 5px;
-  font-size: 16px;
-  margin-left: 5px;
 }
 
 /* Genre Show */
@@ -183,6 +187,7 @@ li.page-link h2 {
   color: rgb(210, 210, 210);
   white-space: nowrap;
   text-overflow: ellipsis;
+  -webkit-transition: color 1s;
   max-width: 500px;
 }
 
@@ -191,6 +196,7 @@ li.page-link h3 {
   margin-left: 5px;
   margin-top: 33px;
   font-size: 16px;
+  z-index: 3;
   color: rgb(160, 160, 160);
   -webkit-transition: color 1s;
   white-space: nowrap;
@@ -207,6 +213,14 @@ li.page-link img {
 
 li.page-link img:hover {
   opacity: 1;
+}
+
+li.page-link:hover h2 {
+  color: white;
+}
+
+li.page-link:hover h3 {
+  color: white;
 }
 
 ul.genre-show {

@@ -130,6 +130,7 @@ ul.search-results {
   height: 500px;
   width: 300px;
   overflow: hidden;
+  z-index: 10;
 }
 
 ul.search-results a {
