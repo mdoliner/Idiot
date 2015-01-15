@@ -4,7 +4,7 @@ json.artist do
   json.id @collection.artist.id
 end
 json.pages @collection.pages.order(:collection_number) do |page|
-  json.(page, :title, :collection_number)
+  json.(page, :title, :collection_number, :id)
   json.artist_name page.artist.name
 end
 json.image_url asset_path(@collection.photo.url)

@@ -1,7 +1,7 @@
 Idiot.Views.CollectionShow = Backbone.View.extend({
   template: JST['collections/show'],
   tagName: "span",
-  className: "collection-show",
+  className: "collection-show group",
 
   events: {
     "click #edit-photo": "editPhoto"

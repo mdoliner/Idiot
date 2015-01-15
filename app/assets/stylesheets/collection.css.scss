@@ -1,0 +1,70 @@
+span.collection-header {
+  display: block;
+}
+
+span.collection-header h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  padding-top: 30px;
+  display: inline-block;
+}
+
+span.collection-header h2 {
+  font-size: 32px;
+  color: rgb(170, 170, 170);
+  display: inline-block;
+}
+
+span.collection-header h3 {
+  font-size: 26px;
+  color: rgb(170, 170, 170);
+  display: block;
+  padding-bottom: 20px;
+}
+
+span.collection-info {
+  width: 400px;
+  display: block;
+  float: left;
+}
+
+span.collection-info img {
+  width: 300px;
+  height: auto;
+}
+
+span.collection-items {
+  width: 610px;
+  float: left;
+  display: block;
+}
+
+span.collection-items li a {
+  padding: 10px;
+  border-top: 1px solid rgb(30, 30, 30);
+  display: block;
+}
+
+span.collection-items li a * {
+  display: inline-block;
+}
+
+span.collection-items small.number {
+  color: rgb(85, 85, 85);
+  padding-right: 5px;
+}
+
+span.collection-items h4 {
+  color: rgb(237, 232, 233);
+  border-left: 1px solid rgb(85, 85, 85);
+  padding-left: 10px;
+}
+
+span.collection-items small.artist {
+  -webkit-transition: color .25s;
+}
+
+span.collection-items li a:hover small.artist {
+  color: rgb(237, 232, 233);
+}
