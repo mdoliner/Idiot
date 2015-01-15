@@ -101,7 +101,31 @@ span.artist-info p.biography {
 
 textarea.edit-biography {
   width: 100%;
-  height: 600px;
   color: rgb(170, 170, 170);
   font-size: 16px;
+}
+
+h3.artist-collections {
+  margin-top: 15px;
+  color: white;
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+ul.artist-collections li {
+  border-top: 1px solid rgb(30, 30, 30);
+}
+
+ul.artist-collections li a {
+  display: block;
+  padding: 5px 0;
+  color: rgb(91, 167, 194);
+}
+
+ul.artist-collections li a:hover {
+  color: white;
+}
+
+span.artist-info a.new-collection {
+
 }

@@ -27,6 +27,7 @@ Idiot.Views.ArtistShow = Backbone.View.extend({
     event.preventDefault();
     var $biography = $(event.currentTarget);
     var $textarea = $("<textarea class='edit-biography'>");
+    $textarea.css("height", $biography.height() + 30);
 
     $textarea.val(this.model.get("biography"));
     $biography.removeClass('editable');

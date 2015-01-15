@@ -22,4 +22,13 @@
   <% } else { %>
     <p class="biography"><%= artist.escape("biography") %></p>
   <% } %>
+  <h3 class="artist-collections"><%= artist.escape("name") %>'s Works</h3>
+  <ul class="artist-collections">
+    <% artist.collections().each(function (collection) {%>
+      <li><a href="#collections/<%= collection.id %>"><%= collection.escape("title") %></a></li>
+    <% }); %>
+  </ul>
+  <% if (currentUser.get("level") === "editor") {%>
+    <button id="new-collection" class="new-collection">Add a New Work</button>
+  <% } %>
 </span>
