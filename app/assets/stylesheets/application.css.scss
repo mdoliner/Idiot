@@ -410,7 +410,7 @@ form.new-session-form button.login:hover {
 /* Genre Show */
 
 h1.genre-title {
-  padding: 10px 0 5px 0;
+  padding: 10px 0;
   font-size: 12px;
 }
 
@@ -432,19 +432,42 @@ li.page-link-big {
 
 li.page-link-big h2 {
   position: absolute;
-  font-size: 36px;
+  font-size: 38px;
   margin-left: 5px;
   margin-top: 5px;
-  color: white;
+  color: rgb(210, 210, 210);
+  z-index: 3;
+  -webkit-transition: color 1s;
+  text-stroke: 1px solid black;
 }
 
 li.page-link-big h3 {
   position: absolute;
+  z-index: 3;
+  font-size: 24px;
+  margin-left: 5px;
+  margin-top: 45px;
+  color: rgb(120, 120, 120);
+  -webkit-transition: color 1s;
 }
 
 li.page-link-big img {
   width: 100%;
   overflow: hidden;
+  opacity: 0.6;
+  -webkit-transition: opacity 1s;
+}
+
+li.page-link-big img:hover {
+  opacity: 1;
+}
+
+li.page-link-big:hover h2 {
+  color: white;
+}
+
+li.page-link-big:hover h3 {
+  color: white;
 }
 
 span.page-links {
@@ -464,15 +487,46 @@ li.page-link {
 
 li.page-link h2 {
   position: absolute;
+  margin-left: 5px;
+  margin-top: 5px;
+  z-index: 3;
+  font-size: 20px;
+  color: rgb(210, 210, 210);
 }
 
 li.page-link h3 {
   position: absolute;
+  margin-left: 5px;
+  margin-top: 33px;
+  font-size: 16px;
+  color: rgb(120, 120, 120);
+  -webkit-transition: color 1s;
 }
 
 li.page-link img {
   float: left;
   width: 100%;
+  opacity: 0.6;
+  -webkit-transition: opacity 1s;
+}
+
+li.page-link img:hover {
+  opacity: 1;
+}
+
+ul.genre-show {
+  display: block;
+}
+
+a.pages-index {
+  display: block;
+  float: right;
+  padding-top: 15px;
+  margin-right: 73px;
+}
+
+a.pages-index:hover {
+  color: rgb(91, 167, 194);
 }
 
 /* Pages Index */

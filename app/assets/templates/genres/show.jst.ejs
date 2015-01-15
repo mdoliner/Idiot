@@ -1,12 +1,12 @@
 <h1 class="genre-title">LATEST ON <%= genre.escape("name").toUpperCase() %> GENIUS</h1>
   <% var isFirst = true; %>
-<ul class="group">
+<ul class="genre-show group">
   <span class="page-link-big">
     <% var page = genre.recentPages().first(); %>
     <li class="page-link-big"><a href="#/pages/<%= page.id %>">
       <h2><%= page.escape("title") %></h2>
       <h3><%= page.artist().escape("name") %></h3>
-      <img class="texture" src="<%= page.escape("image_url") %>" />
+      <img src="<%= page.escape("image_url") %>" />
     </a></li>
   </span>
   <span class= "page-links">
@@ -21,4 +21,4 @@
     <% }); %>
   </span>
 </ul>
-<a href="#/genres/<%= genre.id %>/pages">See more <%= genre.escape("name") %> Genius</a>
+<a href="#/genres/<%= genre.id %>/pages" class="pages-index">See more <%= genre.escape("name") %> Genius</a>
