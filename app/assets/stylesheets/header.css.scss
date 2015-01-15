@@ -168,6 +168,7 @@ span.modal-background {
   background: rgba(0, 0, 0, .6);
   -webkit-transition: opacity .5s, visibility .5s;
   visibility: hidden;
+  z-index: 11;
 }
 
 span.header-form {
@@ -183,7 +184,6 @@ span.header-form {
   display: block;
   -webkit-transition: height .5s;
 }
-
 
 /* Session New */
 
