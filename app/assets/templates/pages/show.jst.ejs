@@ -17,4 +17,24 @@
   </article>
   <article class="page-annotations">
   </article>
+  <article class="page-collection">
+    <% if (page.escape("collection_id")) {%>
+      <small>APPEARS ON <a href="#collections/<%= page.collection().id %>"><%= page.collection().escape("title").toUpperCase() %></a></small>
+      <ul>
+        <% _.each(page.collection().get("pages"), function (collectionPage) {%>
+          <% if (collectionPage.id === page.id) {%>
+            <li class="current-page">
+              <%= collectionPage.collection_number %>. <%= collectionPage.title %>
+            </li>
+          <% } else { %>
+            <li class="adjacent-page">
+              <a href="#pages/<%= collectionPage.id %>">
+                <%= collectionPage.collection_number %>. <%= collectionPage.title %>
+              </a>
+            </li>
+          <% } %>
+        <% }); %>
+      </ul>
+    <% } %>
+  </article>
 </span>

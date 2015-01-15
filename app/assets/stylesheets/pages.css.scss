@@ -142,12 +142,16 @@ span.page-content {
 article.page-text {
   width: 620px;
   float: left;
+  padding-left: 15px;
+  border-left: 1px solid rgb(51, 51, 51);
 }
 
 p.text-content {
+  padding-top: 20px;
   white-space: pre-wrap;
   color: rgb(204, 204, 204);
   padding-bottom: 75px;
+  font-size: 18px;
 }
 
 article.page-annotations {
@@ -156,6 +160,44 @@ article.page-annotations {
   left: 620px;
   float: left;
   color: rgb(204, 204, 204);
+  background: rgb(20, 20, 20);
+  padding-left: 15px;
+  padding-right: 5px;
+  border-left: 1px solid rgb(255, 195, 28);
+  z-index: 3;
+}
+
+article.page-annotations p {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+article.page-annotations h3 {
+  padding-top: 15px;
+  color: rgb(255, 195, 28);
+}
+
+article.page-annotations a.edit {
+  display: block;
+  padding: 5px 0;
+  border-top: 1px solid rgb(59, 59, 59);
+  border-bottom: 1px solid rgb(59, 59, 59);
+  font-size: 14px;
+}
+
+span.annotation-options {
+  display: block;
+}
+
+article.page-annotations a.reply {
+  font-size: 14px;
+  padding: 5px 0;
+  float: right;
+  color: rgb(126, 126, 126);
+}
+
+article.page-annotations a.reply:hover {
+  color: rgb(255, 195, 28);
 }
 
 a.annotation {
@@ -166,6 +208,26 @@ a.annotation {
 a.annotation:hover {
   background: rgb(255, 195, 28);
   color: black;
+}
+
+article.page-collection {
+  padding-top: 60px;
+}
+
+article.page-collection small a {
+  color: rgb(237, 232, 233);
+}
+
+li.current-page {
+  color: rgb(237, 232, 233);
+}
+
+li.adjacent-page {
+  color: rgb(170, 170, 170);
+}
+
+li.adjacent-page:hover {
+  color: rgb(237, 232, 233);
 }
 
 /* Page New */

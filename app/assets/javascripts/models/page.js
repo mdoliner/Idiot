@@ -14,6 +14,10 @@ Idiot.Models.Page = Backbone.Model.extend({
       this.annotations().set(payload.annotations, {parse: true});
       delete payload.annotations
     }
+    if (payload.collection) {
+      this.collection().set(payload.collection, {parse: true});
+      delete payload.collection
+    }
     if (payload.improvements) {
       this.improvements().set(payload.improvements, {parse:true});
       delete payload.improvements
@@ -27,6 +31,14 @@ Idiot.Models.Page = Backbone.Model.extend({
     }
 
     return this._artist;
+  },
+
+  collection: function () {
+    if (!this.coll) {
+      this.coll = new Idiot.Models.Collection();
+    }
+
+    return this.coll;
   },
 
   description: function () {

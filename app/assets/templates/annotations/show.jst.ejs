@@ -1,11 +1,11 @@
 <% if (isDescription) { %>
-  <a href="#">Description</a>
+  <h3><a href="#">Description</a></h3>
 <%} else {%>
-  <a href="#">Genius Annotation</a>
+  <h3><a href="#">Genius Annotation</a></h3>
 <% } %>
 <p>
   <%= annotation.escape("content") %>
 </p>
 <a class="edit">propose an edit</a>
-<a id="annotation-replies">Reply</a>
+<a class="reply" id="annotation-replies">Reply</a>
 <span id="annotation-improvements"></span>
