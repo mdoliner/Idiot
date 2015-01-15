@@ -10,7 +10,8 @@ Idiot.Views.CollectionShow = Backbone.View.extend({
   },
 
   initialize: function (options) {
-    this.currentUser = options.currentUser
+    this.currentUser = options.currentUser;
+    this.listenTo(this.model, "change:image_url", this.render);
   },
 
   render: function () {

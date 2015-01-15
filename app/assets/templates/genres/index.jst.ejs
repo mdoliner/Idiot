@@ -1,11 +1,26 @@
-<h1>Genres</h1>
+<h1>Idiot</h1>
+<% var isFirst = true; %>
 <ul>
+  <span class="page-link-big">
+    <% var genre = genres.first(); %>
+    <li class="page-link-big"><a href="#/pages/<%=  genre.mostRecentPage().id %>">
+      <h2><%=  genre.mostRecentPage().escape("title") %></h2>
+      <h3><%=  genre.mostRecentPage().artist().escape("name") %></h3>
+      <img src="<%=  genre.mostRecentPage().escape("image_url") %>" />
+    </a></li>
+  </span>
   <% genres.each(function (genre) {%>
-    <% if (genre.escape("name") === "meta") {return} %>
-    <% page = genre.mostRecentPage() %>
-    <ul>
-      <li><%= genre.escape("name") %></li>
-      <li><a href="#pages/<%= page.id %>"><%= page.escape("title") %></a></li>
-    </ul>
+    <% if (isFirst) { isFirst = false } else {%>
+      <% if (genre.escape("name") === "Meta" ||
+        genre.escape("name") === "Law" ||
+        genre.escape("name") === "Tech" ||
+        genre.escape("name") === "X") { return } %>
+      <% page = genre.mostRecentPage() %>
+      <li class="page-link"><a href="#/pages/<%= page.id %>">
+        <h2><%= page.escape("title") %></h2>
+        <h3><%= page.artist().escape("name") %></h3>
+        <img src="<%= page.escape("image_url") %>" />
+      </a></li>
+    <% } %>
   <% }); %>
 </ul>
