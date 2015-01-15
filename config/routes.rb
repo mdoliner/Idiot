@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :annotations
     resources :artists
     resources :improvements
+    resources :collections
   end
   # resource :session, only: [:new, :create, :destroy]
   # resources :users
