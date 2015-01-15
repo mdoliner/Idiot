@@ -66,6 +66,7 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
       isDescription: false
     });
     this.addSubview('.page-annotations', annotationView);
+    $(".page-annotations").css("top", event.pageY - $(".page-annotations").height() / 2);
   },
 
   toggleNewAnnotation: function (event) {
@@ -79,6 +80,7 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
         isDescription: true
       });
       this.addSubview('.page-annotations', annotationView);
+      $(".page-annotations").css("top", event.pageY - $(".page-annotations").height() / 2);
     } else {
       $('.page-annotations').empty();
       var newAnnotationView = new Idiot.Views.AnnotationNew({
@@ -88,6 +90,7 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
         headerView: this.headerView
       });
       this.addSubview('.page-annotations', newAnnotationView);
+      $(".page-annotations").css("top", event.pageY - $(".page-annotations").height() / 2);
     }
   },
 
