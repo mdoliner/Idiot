@@ -15,26 +15,36 @@ Idiot.Views.AnnotationNew = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template();
     var selection = window.getSelection();
-    var anchorNode = selection.anchorNode;
-    var selectionLength = selection.extentOffset - selection.anchorOffset;
-    this.startIndex = this.findStartLength(anchorNode) - anchorNode.length + selection.anchorOffset;
-    this.endIndex = this.startIndex + selectionLength;
+    this.anchorNode = selection.anchorNode;
+    this.extentNode = selection.extentNode;
+    var length = this.findLength(this.anchorNode);
+    this.startIndex = length - this.anchorNode.length + selection.anchorOffset;
+    this.endIndex = length - this.anchorNode.length + selection.extentOffset;
     this.$el.html(content);
     return this;
   },
 
-  findStartLength: function (node) {
+  findLength: function (node) {
     if (node.previousSibling === null) {
       return $(node).text().length;
     } else {
-      return $(node).text().length + this.findStartLength(node.previousSibling);
+      return $(node).text().length + this.findLength(node.previousSibling);
     }
+  },
+
+  overlaps: function () {
+    if (this.anchorNode.nodeValue != this.extentNode.nodeValue) {
+      return true;
+    }
+    return false;
   },
 
   renderNewForm: function (event) {
     event.preventDefault();
     if (!this.currentUser.get("logged_in")) {
       this.headerView.trigger("forceLogin");
+    } else if (this.overlaps()) {
+
     } else {
       var annotation = new Idiot.Models.Annotation();
       var content = this.formTemplate({
