@@ -4,7 +4,9 @@ Idiot.Views.CollectionShow = Backbone.View.extend({
   className: "collection-show group",
 
   events: {
-    "click #edit-photo": "editPhoto"
+    "click #edit-photo": "editPhoto",
+    "dblclick small.editable": "editNumbering",
+    "blur .edit-numbering": "saveNumbering"
   },
 
   initialize: function (options) {
@@ -18,6 +20,34 @@ Idiot.Views.CollectionShow = Backbone.View.extend({
     });
     this.$el.html(content);
     return this;
+  },
+
+  editNumbering: function (event) {
+    event.preventDefault();
+    var $number = $(event.currentTarget);
+    var id = $number.data("id")
+    var $input = $("<input data-id='" + id + "' class='edit-numbering'>");
+    var page = this.model.pages().get(id);
+
+    $input.val(page.escape("collection_number"));
+    $number.removeClass('editable');
+    $number.html($input);
+    $input.focus();
+  },
+
+  saveNumbering: function (event) {
+    event.preventDefault();
+    if (this.currentUser.get("level") === "editor") {
+      var newNumbering = $(event.currentTarget).val();
+      var page = this.model.pages().get($(event.currentTarget).data("id"));
+      page.set("collection_number", newNumbering);
+      page.save();
+      this.model.fetch({
+        success: function () {
+          this.render();
+        }.bind(this)
+      })
+    }
   },
 
   editPhoto: function (event) {

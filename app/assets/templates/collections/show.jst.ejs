@@ -4,18 +4,23 @@
     <h2>(<%= collection.escape("release_year") %>)</h2>
   <% } %>
   <h3><a href="#artists/<%= collection.artist().id %>"><%= collection.artist().escape("name") %></a></h3>
+</span>
+<span class="collection-info">
   <% if (currentUser.get("level") === "editor") {%>
     <a id="edit-photo" class="edit-photo">Edit Photo</a>
   <% } %>
-</span>
-<span class="collection-info">
   <img src="<%= collection.escape("image_url") %>" />
 </span>
 <span class="collection-items">
   <ul>
     <% collection.pages().each(function (page) { %>
-      <li><a href="#pages/<%= page.id %>">
-        <small class="number"><%= page.escape("collection_number") %>.</small>
+      <li>
+        <% if (currentUser.get("level") === "editor") {%>
+          <small data-id="<%= page.id %>" class="number editable"><%= page.escape("collection_number") %>.</small>
+        <% } else { %>
+          <small class="number"><%= page.escape("collection_number") %>.</small>
+        <% } %>
+        <a href="#pages/<%= page.id %>">
         <h4><%= page.escape("title") %></h4>
         <small class="artist"> by <%= page.escape("artist_name") %></small>
       </a></li>

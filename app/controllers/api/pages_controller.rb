@@ -42,7 +42,8 @@ class Api::PagesController < ApplicationController
     :youtube_url,
     :collection_id,
     :text,
-    :photo)
+    :photo,
+    :collection_number)
   end
 
 end
