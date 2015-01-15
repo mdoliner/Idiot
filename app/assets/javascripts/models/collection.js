@@ -13,7 +13,19 @@ Idiot.Models.Collection = Backbone.Model.extend({
       this.pages().set(payload.pages, {parse: true});
       delete payload.pages;
     }
+    if (payload.artist) {
+      this.artist().set(payload.artist, {parse: true});
+      delete payload.artist;
+    }
     return payload;
+  },
+
+  artist: function () {
+    if (!this._artist) {
+      this._artist = new Idiot.Models.Artist();
+    }
+
+    return this._artist;
   },
 
   pages: function () {

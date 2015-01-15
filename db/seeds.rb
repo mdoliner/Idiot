@@ -172,11 +172,16 @@ rap2_ann1 = Annotation.create!({
   end_index: 122,
   page_id: rap2.id
 })
-rap3 =  Page.create!({genre_id: rap.id, title: "I Don't Fuck With You", artist_id: 1})
-rap4 =  Page.create!({genre_id: rap.id, title: "No Role Modelz", artist_id: 1})
-rap5 =  Page.create!({genre_id: rap.id, title: "Only", artist_id: 1})
-rap6 =  Page.create!({genre_id: rap.id, title: "Fire Squad", artist_id: 1})
-rock1 = Page.create!({ genre_id: rock.id, title: "Take Me to Church", artist_id: 1})
+coll = Collection.create!({
+  title: "Hybrid Theory",
+  artist_id: 1,
+  release_year: 2000
+})
+rap3 =  Page.create!({genre_id: rap.id, title: "I Don't Fuck With You", artist_id: 1, collection_id: coll.id, collection_number: 3})
+rap4 =  Page.create!({genre_id: rap.id, title: "No Role Modelz", artist_id: 1, collection_id: coll.id, collection_number: 3})
+rap5 =  Page.create!({genre_id: rap.id, title: "Only", artist_id: 1, collection_id: coll.id, collection_number: 1})
+rap6 =  Page.create!({genre_id: rap.id, title: "Fire Squad", artist_id: 1, collection_id: coll.id, collection_number: 3})
+rock1 = Page.create!({ genre_id: rock.id, title: "Take Me to Church", artist_id: 1, collection_id: coll.id, collection_number: 4})
 lit1 = Page.create!({ genre_id: lit.id, title: "Moby-Dick (Chap. 1: Loomings)", artist_id: 1})
 pop1 = Page.create!({ genre_id: pop.id, title: "Style", artist_id: 1})
 news1 = Page.create!({ genre_id: news.id, title: "Writer At War: Kendrick Lamar's XXL Cover Story", artist_id: 1})
