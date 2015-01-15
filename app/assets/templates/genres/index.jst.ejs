@@ -3,22 +3,23 @@
 <ul>
   <span class="page-link-big">
     <% var genre = genres.first(); %>
+    <% var page = genre.mostRecentPage(); %>
     <li class="page-link-big"><a href="#/pages/<%=  genre.mostRecentPage().id %>">
-      <h2><%=  genre.mostRecentPage().escape("title") %></h2>
-      <h3><%=  genre.mostRecentPage().artist().escape("name") %></h3>
+      <span class="title"><i><%= genre.escape("name").toUpperCase() %></i> GENIUS</span>
+      <h2><%=  page.escape("title") %></h2>
+      <h3><%=  page.escape("artist_name") %></h3>
+      <small><%= page.escape("annotation_count") %> annotations</small>
       <img src="<%=  genre.mostRecentPage().escape("image_url") %>" />
     </a></li>
   </span>
   <% genres.each(function (genre) {%>
     <% if (isFirst) { isFirst = false } else {%>
-      <% if (genre.escape("name") === "Meta" ||
-        genre.escape("name") === "Law" ||
-        genre.escape("name") === "Tech" ||
-        genre.escape("name") === "X") { return } %>
       <% page = genre.mostRecentPage() %>
       <li class="page-link"><a href="#/pages/<%= page.id %>">
+        <span class="title"><i><%= genre.escape("name").toUpperCase() %></i> GENIUS</span>
         <h2><%= page.escape("title") %></h2>
-        <h3><%= page.artist().escape("name") %></h3>
+        <h3><%= page.escape("artist_name") %></h3>
+        <small><%= page.escape("annotation_count") %> annotation<% if (page.escape("annotation_count") !== "1") {%>s <% } %></small>
         <img src="<%= page.escape("image_url") %>" />
       </a></li>
     <% } %>
