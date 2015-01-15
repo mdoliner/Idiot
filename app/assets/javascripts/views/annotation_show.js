@@ -28,12 +28,14 @@ Idiot.Views.AnnotationShow = Backbone.View.extend({
   renderEdit: function () {
     event.preventDefault();
 
+    var height = $(".page-annotations p").height();
     var annotation = this.model;
     var content = this.formTemplate({
       annotation: this.model,
       isNew: false
     });
-    this.$el.html(content);
+    $(".page-annotations p").html(content);
+    $("textarea#content").css("height", height);
     return this;
   },
 

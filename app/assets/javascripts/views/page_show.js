@@ -104,12 +104,14 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
       success: function (annotation) {
         that.model.fetch({
           success: function () {
+            var top = $('.page-annotations').css("top");
             that.render();
             $('.page-annotations').empty();
             var annotationView = new Idiot.Views.AnnotationShow({
               model: annotation
             });
             that.addSubview('.page-annotations', annotationView);
+            $(".page-annotations").css("top", top);
           }
         });
       }

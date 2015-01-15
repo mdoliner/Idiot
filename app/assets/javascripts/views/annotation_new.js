@@ -54,7 +54,7 @@ Idiot.Views.AnnotationNew = Backbone.CompositeView.extend({
         isNew: true,
         annotation: annotation
       });
-      this.$el.html(content);
+      this.$el.html(content);;
       return this;
     }
   }
