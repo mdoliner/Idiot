@@ -6,10 +6,12 @@ Idiot.Views.ArtistShow = Backbone.View.extend({
   events: {
     "click #edit-photo": "editPhoto",
     "dblclick p.editable": "editBiography",
-    "blur .edit-biography": "saveBiography"
+    "blur .edit-biography": "saveBiography",
+    "click #new-collection": "newCollectionForm"
   },
 
   initialize: function (options) {
+    this.headerView = options.headerView;
     this.currentUser = options.currentUser;
     this.listenTo(this.model, "sync", this.render);
   },
@@ -44,6 +46,18 @@ Idiot.Views.ArtistShow = Backbone.View.extend({
       this.model.save();
     }
     this.render();
+  },
+
+  newCollectionForm: function (event) {
+    event.preventDefault();
+    var collection = new Idiot.Models.Collection();
+    var view = new Idiot.Views.CollectionNew({
+      model: collection,
+      artist: this.model,
+      headerView: this.headerView
+    });
+    $("#header-form").html(view.render().$el);
+    $("span.modal-background").css("visibility", "visible").css("opacity", "1");
   },
 
   editPhoto: function (event) {

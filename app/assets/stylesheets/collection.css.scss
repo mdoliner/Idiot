@@ -1,3 +1,4 @@
+/* Collection Show */
 span.collection-header {
   display: block;
 }
@@ -92,4 +93,52 @@ span.collection-items small.artist {
 
 span.collection-items li a:hover small.artist {
   color: rgb(237, 232, 233);
+}
+
+/* Collection New */
+form.collection-new {
+  display: block;
+  text-align: center;
+}
+
+form.collection-new h3 {
+  color: rgb(255, 195, 28);
+  font-size: 48px;
+  padding-top: 30px;
+}
+
+form.collection-new label {
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  color: white;
+}
+
+form.collection-new input {
+  margin: auto;
+  padding: 5px;
+  border: 1px solid rgb(85, 85, 85);
+  -webkit-transition: border .25s;
+  margin-bottom: 30px;
+}
+
+form.collection-new input:focus {
+  border: 1px solid white;
+  color: white;
+}
+
+form.collection-new button {
+  padding: 10px 15px;
+  font-size: 18px;
+  color: rgb(204, 204, 204);
+  background: rgb(38, 38, 38);
+  margin: 10px;
+  border: 1px solid rgb(68, 68, 68);
+  border-radius: 2px;
+  -webkit-transition: color .2s, background .2s;
+}
+
+form.collection-new button:hover {
+  color: rgb(230, 230, 230);
+  background: rgb(51, 51, 51);
 }

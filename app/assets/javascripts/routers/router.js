@@ -45,6 +45,7 @@ Idiot.Routers.Router = Backbone.Router.extend({
     artist.fetch({
       success: function () {
         var view = new Idiot.Views.ArtistShow({
+          headerView: this._headerView,
           model: artist,
           currentUser: this._currentUser
         });
