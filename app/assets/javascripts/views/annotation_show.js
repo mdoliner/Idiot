@@ -14,7 +14,7 @@ Idiot.Views.AnnotationShow = Backbone.View.extend({
   initialize: function (options) {
     this.isDescription = options.isDescription;
     this.currentUser = options.currentUser;
-    this.listenTo(this.model.improvements(), "sync", this.renderReplies)
+    this.listenTo(this.model.improvements(), "add", this.renderReplies)
   },
 
   render: function () {
