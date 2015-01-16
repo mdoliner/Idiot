@@ -23,6 +23,12 @@ class Api::CollectionsController < ApplicationController
     render :show
   end
 
+  def destroy
+    @collection = Collection.find(params[:id])
+    @collection.destroy
+    render json: @collection
+  end
+
   private
   def collection_params
     params.require(:collection).permit(:title, :artist_id, :photo, :release_year)

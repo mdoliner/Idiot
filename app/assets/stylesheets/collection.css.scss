@@ -42,6 +42,10 @@ button.delete {
   background: rgb(227, 34, 46);
 }
 
+button.delete.active:hover {
+  background: rgb(195, 0, 13);
+}
+
 span.collection-info {
   width: 400px;
   display: block;

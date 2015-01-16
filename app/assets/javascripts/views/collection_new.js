@@ -20,7 +20,6 @@ Idiot.Views.CollectionNew = Backbone.View.extend({
 
   createCollection: function (event) {
     event.preventDefault();
-    debugger
     var args = {
       title: $("#collection-name").val(),
       artist_id: this.artist.id
