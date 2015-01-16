@@ -7,7 +7,9 @@ Idiot.Views.ArtistShow = Backbone.View.extend({
     "click #edit-photo": "editPhoto",
     "dblclick p.editable": "editBiography",
     "blur .edit-biography": "saveBiography",
-    "click #new-collection": "newCollectionForm"
+    "click #new-collection": "newCollectionForm",
+    "click #delete-artist": "deletePrep",
+    "click #delete-artist.active": "deleteArtist"
   },
 
   initialize: function (options) {
@@ -58,6 +60,20 @@ Idiot.Views.ArtistShow = Backbone.View.extend({
     });
     $("#header-form").html(view.render().$el);
     $("span.modal-background").css("visibility", "visible").css("opacity", "1");
+  },
+
+  deletePrep: function (event) {
+    event.preventDefault();
+    $(event.currentTarget).addClass("active");
+  },
+
+  deleteArtist: function (event) {
+    this.model.destroy({
+      wait: true,
+      success: function () {
+        Backbone.history.navigate("", { trigger: true });
+      }
+    });
   },
 
   editPhoto: function (event) {

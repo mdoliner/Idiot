@@ -28,6 +28,12 @@ class Api::ArtistsController < ApplicationController
     end
   end
 
+  def destroy
+    @artist = Artist.find(params[:id])
+    @artist.destroy!
+    render json: @artist
+  end
+
   private
   def artist_params
     params.require(:artist).permit(:photo, :biography, :name)
