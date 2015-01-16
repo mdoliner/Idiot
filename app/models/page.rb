@@ -42,6 +42,7 @@ class Page < ActiveRecord::Base
   def image_url
     if self.photo.url == "/photos/original/missing.png"
       track = self.spotify_track
+      return "/photos/original/blank.png" if !track
       track.album.images.first["url"]
     else
       self.photo.url
