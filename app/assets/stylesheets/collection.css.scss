@@ -60,7 +60,7 @@ span.collection-info img {
 
 span.collection-info a.edit-photo {
   left: 210px;
-  width: 79px;
+  width: 80px;
 }
 
 span.collection-info form.update-photo {
@@ -117,6 +117,29 @@ span.collection-items small.artist {
 span.collection-items li a:hover small.artist {
   color: rgb(237, 232, 233);
 }
+
+input.new-collection-page {
+  padding: 5px;
+  width: 100%;
+}
+
+ul.page-search-results li {
+  background: rgb(33, 33, 33);
+  display: block;
+  padding: 5px 5px 5px 5px;
+  box-sizing: border-box;
+  -webkit-transition: background .25s;
+  cursor: pointer;
+}
+
+ul.page-search-results li:nth-child(even) {
+  background: rgb(20, 20, 20);
+}
+
+ul.page-search-results li:hover, ul.search-results li:nth-child(even):hover  {
+  background: rgb(71, 71, 71);
+}
+
 
 /* Collection New */
 form.collection-new {

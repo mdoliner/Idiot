@@ -32,5 +32,9 @@
         <small class="artist"> by <%= page.escape("artist_name") %></small>
       </a></li>
     <% }); %>
+    <% if (currentUser.get("level") === "editor") {%>
+      <li><input type="text" id="new-page" class="new-collection-page" placeholder="Add a Page to This Collection"></li>
+      <ul class="page-search-results" id="page-search-results"></ul>
+    <% } %>
   </ul>
 </span>

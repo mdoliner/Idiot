@@ -8,7 +8,9 @@ Idiot.Views.CollectionShow = Backbone.View.extend({
     "dblclick small.editable": "editNumbering",
     "blur .edit-numbering": "saveNumbering",
     "click #delete-collection": "deletePrep",
-    "click button#delete-collection.active": "deleteCollection"
+    "click button#delete-collection.active": "deleteCollection",
+    "keyup #new-page": "updatePageSearch",
+    "click li.chosen-page": "selectPage"
   },
 
   initialize: function (options) {
@@ -51,6 +53,56 @@ Idiot.Views.CollectionShow = Backbone.View.extend({
         }.bind(this)
       })
     }
+  },
+
+  updatePageSearch: function (event) {
+    var $results = $("#page-search-results");
+    $results.css("display", "block")
+    var query = $("#new-page").val().toLowerCase();
+    var resultItems;
+    if (query.length > 2) {
+      $results.empty();
+      var pages = new Idiot.Collections.Pages();
+      pages.fetch({
+        success: function () {
+          resultItems = pages.filter(function (page) {
+            return page.get("title").toLowerCase().indexOf(query) !== -1;
+          });
+          _.each(resultItems, function (page) {
+            var $li = $("<li class='chosen-page'></li>");
+            $li.data("id", page.id);
+            $li.text(page.escape("title"))
+            $results.append($li);
+          })
+        }
+      });
+    } else {
+      this.hideSearch();
+    }
+  },
+
+  selectPage: function (event) {
+    event.preventDefault();
+    var $target = $(event.target);
+    var pageId = $target.data("id");
+    var pages = new Idiot.Collections.Pages();
+    var page = pages.getOrAdd(pageId);
+    page.save({page: {collection_id: this.model.id}}, {
+      patch: true,
+      success: function () {
+        this.model.fetch({
+          success: function () {
+            $("#page-search-results").empty();
+            this.hideSearch();
+            this.render();
+          }.bind(this)
+        })
+      }.bind(this)
+    });
+  },
+
+  hideSearch: function () {
+    $("#page-search-results").css("display", "none")
   },
 
   deletePrep: function (event) {
