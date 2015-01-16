@@ -1,6 +1,7 @@
 Idiot.Views.AnnotationNew = Backbone.CompositeView.extend({
   template: JST["annotations/new"],
   formTemplate: JST["annotations/form"],
+  illegalTemplate: JST["annotations/illegal"],
 
   events: {
     "click a.new-annotation": "renderNewForm",
@@ -44,7 +45,8 @@ Idiot.Views.AnnotationNew = Backbone.CompositeView.extend({
     if (!this.currentUser.get("logged_in")) {
       this.headerView.trigger("forceLogin");
     } else if (this.overlaps()) {
-
+      $("#header-form").html(this.illegalTemplate());
+      $("span.modal-background").css("visibility", "visible").css("opacity", "1");
     } else {
       var annotation = new Idiot.Models.Annotation();
       var content = this.formTemplate({

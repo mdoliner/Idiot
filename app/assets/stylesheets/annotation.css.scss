@@ -33,3 +33,17 @@ button.submit-annotation {
 button.submit-annotation:hover {
   background: rgb(51, 51, 51);
 }
+
+.header-form span.annotation-illegal h1 {
+  padding: 0 5px;
+  margin-top: 90px;
+  font-size: 36px;
+  text-align: center;
+  color: rgb(255, 195, 28);
+}
+
+.header-form span.annotation-illegal h2 {
+  padding-top: 10px;
+  font-size: 12px;
+  text-align: center;
+}
