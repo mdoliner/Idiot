@@ -1,5 +1,5 @@
 json.(@page, :title, :text, :id, :collection_id)
-json.image_url asset_path(@page.photo.url)
+json.image_url asset_path(@page.image_url)
 json.spotify_uri @page.spotify_uri
 if @page.description
   json.description do

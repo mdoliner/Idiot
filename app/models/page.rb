@@ -21,16 +21,31 @@ class Page < ActiveRecord::Base
     primary_key: :description_id
   )
 
-  def spotify_uri
+  def spotify_track
     tracks = RSpotify::Track.search(self.title)
     tracks.each do |track|
       track.artists.each do |artist|
         if artist.name == self.artist.name
-          return track.uri
+          return track
         end
       end
     end
     nil
+  end
+
+  def spotify_uri
+    track = self.spotify_track
+    return nil unless track
+    track.uri
+  end
+
+  def image_url
+    if self.photo.url == "/photos/original/missing.png"
+      track = self.spotify_track
+      track.album.images.first["url"]
+    else
+      self.photo.url
+    end
   end
 
 end
