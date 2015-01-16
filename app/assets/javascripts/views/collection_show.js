@@ -6,7 +6,8 @@ Idiot.Views.CollectionShow = Backbone.View.extend({
   events: {
     "click #edit-photo": "editPhoto",
     "dblclick small.editable": "editNumbering",
-    "blur .edit-numbering": "saveNumbering"
+    "blur .edit-numbering": "saveNumbering",
+    "click #delete-photo": "deletePrep"
   },
 
   initialize: function (options) {
@@ -49,6 +50,11 @@ Idiot.Views.CollectionShow = Backbone.View.extend({
         }.bind(this)
       })
     }
+  },
+
+  deletePrep: function (event) {
+    event.preventDefault();
+    $(event.currentTarget).addClass("active");
   },
 
   editPhoto: function (event) {

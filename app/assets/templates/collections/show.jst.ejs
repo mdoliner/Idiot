@@ -1,9 +1,14 @@
 <span class="collection-header">
+  <span class="collection-header-info">
   <h1><%= collection.escape("title") %></h1>
   <% if (collection.escape("release_year")) { %>
     <h2>(<%= collection.escape("release_year") %>)</h2>
   <% } %>
   <h3><a href="#artists/<%= collection.artist().id %>"><%= collection.artist().escape("name") %></a></h3>
+  </span>
+  <span class="collection-header-delete">
+    <button id="delete-collection" class="delete">Delete This Collection</button>
+  </span>
 </span>
 <span class="collection-info">
   <% if (currentUser.get("level") === "editor") {%>

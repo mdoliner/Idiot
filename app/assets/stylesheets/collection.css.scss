@@ -3,6 +3,11 @@ span.collection-header {
   display: block;
 }
 
+span.collection-header-info {
+  float: left;
+  width: 900px;
+}
+
 span.collection-header h1 {
   font-size: 32px;
   font-weight: bold;
@@ -22,6 +27,19 @@ span.collection-header h3 {
   color: rgb(170, 170, 170);
   display: block;
   padding-bottom: 20px;
+}
+
+span.collection-header-delete {
+  float: right;
+  margin-top: 40px;
+}
+
+button.delete {
+  -webkit-transition: background .5s;
+}
+
+.active {
+  background: rgb(227, 34, 46);
 }
 
 span.collection-info {

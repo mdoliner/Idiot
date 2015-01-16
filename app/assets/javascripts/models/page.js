@@ -34,11 +34,11 @@ Idiot.Models.Page = Backbone.Model.extend({
   },
 
   collection: function () {
-    if (!this.coll) {
-      this.coll = new Idiot.Models.Collection();
+    if (!this._collection) {
+      this._collection = new Idiot.Models.Collection();
     }
 
-    return this.coll;
+    return this._collection;
   },
 
   description: function () {
