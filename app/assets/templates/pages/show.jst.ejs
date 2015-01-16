@@ -1,6 +1,10 @@
 <span class="info-bar">
   <h1 class="title"><%= page.escape("title") %></h1>
   <a class="artist" href="#artists/<%= page.artist().id %>"><%= page.artist().escape("name") %></a>
+  <% if (page.escape("spotify_uri")) {%>
+    <iframe class="spotify" src="https://embed.spotify.com/?uri=<%= page.escape("spotify_uri") %>"
+      width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+  <% } %>
   <span class="image-bar">
     <span class="texture">
       <img class="photo-main" src="<%= page.get("image_url") %>">

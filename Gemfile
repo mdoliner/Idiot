@@ -34,6 +34,7 @@ gem 'figaro'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'unicorn'
+gem 'rspotify'
 
 group :development do
   gem 'better_errors'

@@ -21,4 +21,16 @@ class Page < ActiveRecord::Base
     primary_key: :description_id
   )
 
+  def spotify_uri
+    tracks = RSpotify::Track.search(self.title)
+    tracks.each do |track|
+      track.artists.each do |artist|
+        if artist.name == self.artist.name
+          return track.uri
+        end
+      end
+    end
+    nil
+  end
+
 end
