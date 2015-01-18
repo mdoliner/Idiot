@@ -9,7 +9,7 @@ class Api::PagesController < ApplicationController
     if @page.save
       render :show
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -28,7 +28,7 @@ class Api::PagesController < ApplicationController
     if @page.update(page_params)
       render :show
     else
-      render json: @page
+      render json: @page, status: :unprocessable_entity
     end
   end
 

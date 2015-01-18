@@ -5,7 +5,7 @@ class Api::ImprovementsController < ApplicationController
     if @improvement.save
       render :show
     else
-      render json: @improvement
+      render json: @improvement, status: :unprocessable_entity
     end
   end
 

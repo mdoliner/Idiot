@@ -14,7 +14,7 @@ class Api::CollectionsController < ApplicationController
     if @collection.update(collection_params)
       render :show
     else
-      render json: @collection
+      render json: @collection, status: :unprocessable_entity
     end
   end
 

@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
       login!(@user)
       render :current
     else
-      render json: @user
+      render json: @user, status: :unprocessable_entity
     end
   end
 
@@ -25,7 +25,7 @@ class Api::UsersController < ApplicationController
     if @user.update(user_params)
       render :show
     else
-      render json: @user
+      render json: @user, status: :unprocessable_entity
     end
   end
 

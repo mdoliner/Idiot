@@ -16,7 +16,7 @@ class Api::AnnotationsController < ApplicationController
     if @annotation.update(annotation_params)
       render :show
     else
-      render @annotation
+      render @annotation, status: :unproccesable_entity
     end
   end
 

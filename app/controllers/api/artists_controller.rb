@@ -24,7 +24,7 @@ class Api::ArtistsController < ApplicationController
     if @artist.update(artist_params)
       render :show
     else
-      render json: @artist
+      render json: @artist, status: :unprocessable_entity
     end
   end
 
