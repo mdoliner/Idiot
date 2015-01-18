@@ -13,16 +13,13 @@ span.genres-index li.page-link-big {
   margin-top: 10px;
   width: 676px;
   height: 500px;
+  position: relative;
 }
 
 span.genres-index li.page-link {
   width: 330px;
   height: 241px;
   margin-top: 10px;
-}
-
-span.genres-index li.page-link-big {
-  position: relative;
 }
 
 span.genres-index span.title {
@@ -53,6 +50,10 @@ span.genres-index li.page-link-big h3 {
   max-width: 670px;
   bottom: 25px;
   font-size: 16px;
+}
+
+span.genres-index li.page-link-big img {
+  min-height: 500px;
 }
 
 span.genres-index small {
@@ -102,6 +103,10 @@ span.genres-index li.page-link h3 {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
+}
+
+span.genres-index li.page-link img {
+  min-height: 241px;
 }
 
 /* Genre Show */
@@ -166,6 +171,7 @@ li.page-link-big h3 {
 
 li.page-link-big img {
   width: 100%;
+  min-height: 410px;
   overflow: hidden;
   opacity: 0.6;
   -webkit-transition: opacity 1s;
@@ -237,6 +243,7 @@ li.page-link h3 {
 li.page-link img {
   float: left;
   width: 100%;
+  min-height: 200px;
   opacity: 0.6;
   -webkit-transition: opacity 1s;
 }
