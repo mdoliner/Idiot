@@ -4,7 +4,7 @@
     <% var genre = genres.first(); %>
     <% var page = genre.mostRecentPage(); %>
     <li class="page-link-big"><a href="#/pages/<%=  genre.mostRecentPage().id %>">
-      <span class="title"><i><%= genre.escape("name").toUpperCase() %></i> GENIUS</span>
+      <span class="title"><i><%= genre.escape("name").toUpperCase() %></i> IDIOT</span>
       <h2><%=  page.escape("title") %></h2>
       <h3><%=  page.escape("artist_name") %></h3>
       <small><%= page.escape("annotation_count") %> annotations</small>
@@ -15,7 +15,7 @@
     <% if (isFirst) { isFirst = false } else {%>
       <% page = genre.mostRecentPage() %>
       <li class="page-link"><a href="#/pages/<%= page.id %>">
-        <span class="title"><i><%= genre.escape("name").toUpperCase() %></i> GENIUS</span>
+        <span class="title"><i><%= genre.escape("name").toUpperCase() %></i> IDIOT</span>
         <h2><%= page.escape("title") %></h2>
         <h3><%= page.escape("artist_name") %></h3>
         <small><%= page.escape("annotation_count") %> annotation<% if (page.escape("annotation_count") !== "1") {%>s <% } %></small>
