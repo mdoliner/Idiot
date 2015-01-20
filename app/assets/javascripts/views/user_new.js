@@ -43,7 +43,6 @@ Idiot.Views.UserNew = Backbone.View.extend({
               password: attrs.password
             });
           }.bind(this)
-
         });
         this.remove();
       }.bind(this),

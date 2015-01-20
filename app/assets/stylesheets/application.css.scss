@@ -83,3 +83,7 @@ input, textarea {
 input, textarea, label {
   display: block;
 }
+
+form p.error {
+  color: rgb(207, 13, 30);
+}
