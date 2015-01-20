@@ -27,7 +27,7 @@ Idiot.Views.SessionNew = Backbone.View.extend({
         window.location.reload();
       }.bind(this),
       error: function () {
-
+        $("#login-error").text("Username/password incorrect.");
       }
     });
   }

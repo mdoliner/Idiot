@@ -67,23 +67,22 @@ Idiot.Views.PageNew = Backbone.View.extend({
         Backbone.history.navigate("#pages/" + this.model.id, {trigger: true});
       }.bind(this),
       error: function (model, response) {
-        var params = attrs.page;
-        if (params.artist_id.length === 0) {
+        if (!attrs.artist_id) {
           $("#artist-error").text("This field is required.");
         } else {
           $("#artist-error").empty();
         }
-        if (params.title.length === 0) {
+        if (attrs.title.length === 0) {
           $("#title-error").text("This field is required.");
         } else {
           $("#title-error").empty();
         }
-        if (params.text.length === 0) {
+        if (attrs.text.length === 0) {
           $("#text-error").text("This field is required.");
         } else {
           $("#text-error").empty();
         }
-        if (!params.genre_id) {
+        if (!attrs.genre_id) {
           $("#tag-error").text("This field is required.");
         } else {
           $("#tag-error").empty();

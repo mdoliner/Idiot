@@ -200,6 +200,7 @@ form.new-session-form {
   color: rgb(236, 231, 232);
   width: 370px;
   margin: auto;
+  text-align: center;
 }
 
 form.new-session-form label {
@@ -210,7 +211,7 @@ form.new-session-form label {
 
 form.new-session-form input {
   box-sizing: border-box;
-  margin-left: 10px;
+  margin: auto;
   color: rgb(204, 204, 204);
   border: 1px solid rgb(85, 85, 85);
   -webkit-transition: border .25s;

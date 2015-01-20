@@ -1,20 +1,20 @@
 <h3>Create Text</h3>
 <small>PRIMARY TAG</small>
-<p class="error" id="tag-error"></p>
 <span class="genre-buttons">
   <% genres.each(function (genre) {%>
     <input id="<%= genre.escape("name") %>" type="radio" name="page[genre_id]" value="<%= genre.id %>">
     <label for="<%= genre.escape("name") %>" class="genre-radio" ><%= genre.escape("name") %></label>
   <% }); %>
 </span>
+<p class="error" id="tag-error"></p>
 <span class="main-inputs group">
   <span class="artist">
     <label for="artist">By:</label>
     <input type="text" id="artist" placeholder="The primary artist, author, creator, etc." value="<%= page.artist().escape("name") %>">
+    <p class="error" id="artist-error"></p>
   </span>
   <span class="title">
     <ul class="artist-search-results" id="artist-search-results"></ul>
-    <p class="error" id="artist-error"></p>
     <label for="title">Title:</label>
     <input type="text" name="page[title]" id="title" placeholder="Title" value="<%= page.escape("title") %>">
     <p class="error" id="title-error"></p>
