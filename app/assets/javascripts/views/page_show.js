@@ -156,7 +156,7 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
         }
       }.bind(this),
       error: function () {
-        if (this.currentUser.get("logged_in")) {
+        if (!this.currentUser.get("logged_in")) {
           if (attrs.username.length === 0) {
             $("#username-error").text("Enter your name.");
           } else {
@@ -169,7 +169,7 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
           }
         }
         if (attrs.content.length === 0) {
-          $("#content-error").text("Enter your suggesstion");
+          $("#content-error").text("Enter your suggestion");
         } else {
           $("#content-error").empty();
         }

@@ -196,9 +196,10 @@ span.annotation-options {
 
 article.page-annotations a.reply {
   font-size: 14px;
-  padding: 5px 0;
+  padding: 5px 10px 5px 380px;
   float: right;
   color: rgb(126, 126, 126);
+  display: block;
 }
 
 article.page-annotations a.reply:hover {

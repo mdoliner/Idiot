@@ -89,22 +89,22 @@ Idiot.Views.AnnotationShow = Backbone.View.extend({
         }
       }.bind(this),
       error: function () {
-        if (this.currentUser.get("logged_in")) {
+        if (!this.currentUser.get("logged_in")) {
           if (attrs.username.length === 0) {
-            $("#username-error").text("Enter your name.");
+            $("#anno-username-error").text("Enter your name.");
           } else {
-            $("#username-error").empty();
+            $("#anno-username-error").empty();
           }
           if (attrs.email.length === 0) {
-            $("#email-error").text("Enter your email address.");
+            $("#anno-email-error").text("Enter your email address.");
           } else {
-            $("#email-error").empty();
+            $("#anno-email-error").empty();
           }
         }
         if (attrs.content.length === 0) {
-          $("#content-error").text("Enter your suggesstion");
+          $("#anno-content-error").text("Enter your suggesstion");
         } else {
-          $("#content-error").empty();
+          $("#anno-content-error").empty();
         }
       }.bind(this)
     })

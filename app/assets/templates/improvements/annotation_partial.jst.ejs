@@ -12,17 +12,17 @@
   <% if (!currentUser.get("logged_in")) {%>
     <label for="annotation-improvement-username"></label>
     <input id="annotation-improvement-username" type="text" name="improvement[username]" placeholder="Your name">
-    <p id="username-error"></p>
 
     <label for="annotation-improvement-email"></label>
     <input id="annotation-improvement-email" type="text" name="improvement[email]" placeholder="Your email address">
-    <p id="email-error"></p>
+    <p id="anno-username-error" class="error half"></p>
+    <p id="anno-email-error" class="error half"></p>
 
   <% }; %>
 
   <label for="annotation-improvement-content"></label>
   <textarea name="improvement[content]" id="annotation-improvement-content" placeholder="Suggest an improvement or correction to earn IQ"></textarea>
-  <p id="content-error"></p>
+  <p id="anno-content-error" class="error"></p>
 
   <span id="submit-annotation-improvement"></span>
 </form>

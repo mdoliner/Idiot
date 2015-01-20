@@ -18,6 +18,11 @@ li.page-improvement p {
   color: rgb(204, 204, 204);
 }
 
+#page-improvement-partial p.error.half {
+  display: inline-block;
+  width: 265px;
+}
+
 li.page-improvement h9.username {
   color: rgb(254, 254, 254);
   font-size: 12px;
@@ -130,6 +135,11 @@ span.annotation-improvement-partial textarea {
   font-size: 18px;
   outline: none;
   color: white;
+}
+
+span.annotation-improvement-partial p.error.half {
+  width: 180px;
+  display: inline-block;
 }
 
 #submit-annotation-improvement a {

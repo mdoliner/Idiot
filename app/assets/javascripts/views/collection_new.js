@@ -31,7 +31,7 @@ Idiot.Views.CollectionNew = Backbone.View.extend({
         this.headerView.render();
       }.bind(this),
       error: function () {
-        if (args.name.length === 0) {
+        if (args.title.length === 0) {
           $("#collection-title-errors").text("Name cannot be blank");
         }
       }

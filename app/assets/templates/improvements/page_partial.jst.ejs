@@ -2,17 +2,17 @@
   <% if (!currentUser.get("logged_in")) {%>
   <label for="page-improvement-username"></label>
   <input id="page-improvement-username" type="text" name="improvement[username]" placeholder="Your name">
-  <p id="username-error"></p>
 
   <label for="page-improvement-email"></label>
   <input id="page-improvement-email" type="text" name="improvement[email]" placeholder="Your email address">
-  <p id="email-error"></p>
+  <p id="username-error" class="error half"></p>
+  <p id="email-error" class="error half"></p>
 
   <% }; %>
 
   <label for="page-improvement-content"></label>
   <textarea name="improvement[content]" id="page-improvement-content" placeholder="Suggest an improvement or correction to earn IQ"></textarea>
-  <p id="content-error"></p>
+  <p id="content-error" class="error"></p>
 
   <span id="submit-page-improvement"></span>
 </form>
