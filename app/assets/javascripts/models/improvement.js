@@ -1,7 +1,4 @@
-Idiot.Models.Improvement = Backbone.Model.extend({
+Idiot.Models.Improvement = Backbone.SaveableModel.extend({
   url: "api/improvements",
-
-  toJSON: function () {
-    return { improvement: _.clone( this.attributes )};
-  }
+  wrapper: "improvement"
 });

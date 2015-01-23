@@ -1,5 +1,6 @@
-Idiot.Models.Page = Backbone.Model.extend({
+Idiot.Models.Page = Backbone.ImageableModel.extend({
   urlRoot: "api/pages",
+  wrapper: "page",
 
   parse: function (payload) {
     if (payload.artist) {
@@ -63,14 +64,6 @@ Idiot.Models.Page = Backbone.Model.extend({
     }
 
     return this._improvements;
-  },
-
-  toJSON: function () {
-    var json = { page: _.clone( this.attributes )};
-    if (this._image) {
-      json.page.photo = this._image;
-    }
-    return json;
   }
 
 });

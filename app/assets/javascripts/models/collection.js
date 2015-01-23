@@ -1,13 +1,6 @@
-Idiot.Models.Collection = Backbone.Model.extend({
+Idiot.Models.Collection = Backbone.ImageableModel.extend({
   urlRoot: "api/collections",
-
-  toJSON: function () {
-    var json = { collection: _.clone( this.attributes )};
-    if (this._image) {
-      json.collection.photo = this._image;
-    }
-    return json;
-  },
+  wrapper: "collection",
 
   parse: function (payload) {
     if (payload.pages) {

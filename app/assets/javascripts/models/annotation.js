@@ -1,9 +1,6 @@
-Idiot.Models.Annotation = Backbone.Model.extend({
+Idiot.Models.Annotation = Backbone.SaveableModel.extend({
   urlRoot: "api/annotations",
-
-  toJSON: function () {
-    return { annotation: _.clone( this.attributes )};
-  },
+  wrapper: "annotation",
 
   parse: function (payload) {
     if (payload.improvements) {

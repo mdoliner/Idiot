@@ -1,6 +1,4 @@
-Idiot.Models.User = Backbone.Model.extend({
+Idiot.Models.User = Backbone.SaveableModel.extend({
   urlRoot: "api/users",
-  toJSON: function () {
-    return { user: _.clone( this.attributes )};
-  }
+  wrapper: "user"
 })
