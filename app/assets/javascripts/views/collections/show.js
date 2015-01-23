@@ -86,7 +86,7 @@ Idiot.Views.CollectionShow = Backbone.View.extend({
     var $target = $(event.target);
     var pageId = $target.data("id");
     var pages = new Idiot.Collections.Pages();
-    var page = pages.getOrAdd(pageId);
+    var page = pages.getAndFetch(pageId);
     page.save({page: {collection_id: this.model.id}}, {
       patch: true,
       success: function () {
