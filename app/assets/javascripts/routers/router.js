@@ -14,6 +14,7 @@ Idiot.Routers.Router = Backbone.Router.extend({
     this.$rootEl = $("#main");
     this.$headerEl = $("#header");
     this._currentUser = new Idiot.Models.CurrentUser();
+    this._genres = new Idiot.Collections.Genres();
     this._currentUser.fetch({ async: false });
     this.header();
   },
@@ -36,126 +37,90 @@ Idiot.Routers.Router = Backbone.Router.extend({
     if (typeof this._artists === "undefined") {
       this._artists = new Idiot.Collections.Artists();
     }
-    var artist = this._artists.getOrAdd(id);
-    artist.fetch({
-      success: function () {
-        var view = new Idiot.Views.ArtistShow({
-          headerView: this._headerView,
-          model: artist,
-          currentUser: this._currentUser
-        });
-        this.swapView(view);
-      }.bind(this)
+    var artist = this._artists.getAndFetch(id);
+    var view = new Idiot.Views.ArtistShow({
+      headerView: this._headerView,
+      model: artist,
+      currentUser: this._currentUser
     });
+    this.swapView(view);
   },
 
   collectionShow: function (id) {
     if (typeof this._collections === "undefined") {
       this._collections = new Idiot.Collections.Collections();
     }
-    var collection = this._collections.getOrAdd(id);
-    collection.fetch({
-      success: function () {
-        var view = new Idiot.Views.CollectionShow({
-          model: collection,
-          currentUser: this._currentUser
-        });
-        this.swapView(view);
-      }.bind(this)
+    var collection = this._collections.getAndFetch(id);
+    var view = new Idiot.Views.CollectionShow({
+      model: collection,
+      currentUser: this._currentUser
     });
+    this.swapView(view);
   },
 
   genresIndex: function () {
-    if (typeof this._genres === "undefined") {
-      this._genres = new Idiot.Collections.Genres();
-    }
-    this._genres.fetch({
-      success: function () {
-        var view = new Idiot.Views.GenresIndex({
-          collection: this._genres
-        });
-        this.swapView(view);
-      }.bind(this)
+    this._genres.fetch({ async: false });
+    var view = new Idiot.Views.GenresIndex({
+      collection: this._genres
     });
+    this.swapView(view);
   },
 
   genreShow: function (id) {
-    var genre = this._genres.getOrAdd(id);
-    genre.fetch({
-      success: function () {
-        var view = new Idiot.Views.GenreShow({
-          model: genre
-        });
-        this.swapView(view);
-      }.bind(this)
-    })
+    var genre = this._genres.getAndFetch(id);
+    var view = new Idiot.Views.GenreShow({
+      model: genre
+    });
+    this.swapView(view);
   },
 
   pagesIndex: function (id) {
-    var genre = this._genres.getOrAdd(id);
-    genre.fetch({
-      success: function () {
-        var view = new Idiot.Views.PagesIndex({
-          model: genre,
-          collection: genre.pages()
-        });
-        this.swapView(view);
-      }.bind(this)
-    })
+    var genre = this._genres.getAndFetch(id);
+    var view = new Idiot.Views.PagesIndex({
+      model: genre,
+      collection: genre.pages()
+    });
+    this.swapView(view);
   },
 
   pageNew: function () {
-    this._currentUser.fetch({
-      success: function () {
-        if (this._currentUser.get("logged_in")) {
-          var page = new Idiot.Models.Page();
-          this._genres.fetch({
-            success: function () {
-              var view = new Idiot.Views.PageNew({
-                model: page,
-                collection: this._genres
-              });
-              this.swapView(view);
-            }.bind(this)
-          });
-        } else {
-          this._headerView.trigger("forceLogin");
-        }
-      }.bind(this)
-    });
+    this._currentUser.fetch({ async: false });
+    if (this._currentUser.get("logged_in")) {
+      var page = new Idiot.Models.Page();
+      this._genres.fetch({ async: false });
+      var view = new Idiot.Views.PageNew({
+        model: page,
+        collection: this._genres
+      });
+      this.swapView(view);
+    } else {
+      this._headerView.trigger("forceLogin");
+    }
   },
 
   pageShow: function (id) {
     if (typeof this._pages === "undefined") {
       this._pages = new Idiot.Collections.Pages();
     }
-    this._pages.getOrAdd(id);
-    page.fetch({
-      success: function () {
-        var view = new Idiot.Views.PageShow({
-          model: page,
-          currentUser: this._currentUser,
-          headerView: this._headerView
-        });
-        this.swapView(view);
-      }.bind(this)
+    var page = this._pages.getAndFetch(id);
+    var view = new Idiot.Views.PageShow({
+      model: page,
+      currentUser: this._currentUser,
+      headerView: this._headerView
     });
+    this.swapView(view);
   },
 
   userShow: function (id) {
     if (typeof this._users === "undefined") {
       this._users = new Idiot.Collections.Users();
     }
-    var user = this._users.getOrAdd(id);
-    user.fetch({
-      success: function () {
-        var view = new Idiot.Views.UserShow({
-          model: user,
-          currentUser: this._currentUser
-        });
-        this.swapView(view);
-      }.bind(this)
+    var user = this._users.getAndFetch(id);
+    var view = new Idiot.Views.UserShow({
+      model: user,
+      currentUser: this._currentUser
     });
+    this.swapView(view);
   },
 
   swapView: function (view) {

@@ -21,6 +21,8 @@ class Page < ActiveRecord::Base
     primary_key: :description_id
   )
 
+  MUSIC_TYPES = ["Rap", "Rock", "Pop", "Country", "R&B"]
+
   def spotify_track
     tracks = RSpotify::Track.search(self.title)
     tracks.each do |track|
@@ -41,10 +43,14 @@ class Page < ActiveRecord::Base
 
   def image_url
     if self.photo.url == "/photos/original/missing.png"
-      track = self.spotify_track
-      return "/photos/original/blank.png" if !track
-      self.photo = track.album.images.first["url"]
-      self.save!
+      if MUSIC_TYPES.include?(self.genre.name)
+        return "/photos/original/blank.png"
+      else
+        track = self.spotify_track
+        return "/photos/original/blank.png" if !track
+        self.photo = track.album.images.first["url"]
+        self.save!
+      end
     end
     self.photo.url
   end
