@@ -33,7 +33,7 @@ Idiot.Views.PageNew = Backbone.View.extend({
           _.each(resultItems, function (artist) {
             var $li = $("<li class='chosen-artist'></li>");
             $li.data("id", artist.id);
-            $li.text(artist.escape("name"))
+            $li.html(artist.escape("name"))
             $results.append($li);
           })
         }

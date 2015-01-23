@@ -91,16 +91,16 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
     var query = $("#search").val().toLowerCase();
     var resultItems;
     if (query.length > 2) {
-      $results.empty();
       var pages = new Idiot.Collections.Pages();
       pages.fetch({
         success: function () {
+          $results.empty();
           resultItems = pages.filter(function (item) {
             return item.get("title").toLowerCase().indexOf(query) !== -1;
           });
           _.each(resultItems, function (item) {
             var $li = $("<li>");
-            var $link = $("<a class='search-item' href='#pages/" + item.id + "'></a>").text(item.escape("title"));
+            var $link = $("<a class='search-item' href='#pages/" + item.id + "'></a>").text(item.get("title") + " - " + item.get("artist_name"));
             $li.html($link);
             $results.append($li);
           })
