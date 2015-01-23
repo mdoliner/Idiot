@@ -30,11 +30,13 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'backbone-on-rails'
 
+
 gem 'figaro'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'unicorn'
 gem 'rspotify'
+gem 'omniauth-twitter'
 
 group :development do
   gem 'better_errors'

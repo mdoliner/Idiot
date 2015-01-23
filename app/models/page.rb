@@ -43,10 +43,10 @@ class Page < ActiveRecord::Base
     if self.photo.url == "/photos/original/missing.png"
       track = self.spotify_track
       return "/photos/original/blank.png" if !track
-      track.album.images.first["url"]
-    else
-      self.photo.url
+      self.photo = track.album.images.first["url"]
+      self.save!
     end
+    self.photo.url
   end
 
 end

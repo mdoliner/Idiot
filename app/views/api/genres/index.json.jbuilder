@@ -3,10 +3,9 @@ json.array! @genres.order('random()') do |genre|
   json.(genre, :id, :name)
   json.most_recent_page do
     page = genre.most_recent_page
-    json.title page.title
-    json.id page.id
+    json.(page, :title, :id)
     json.image_url asset_path(page.image_url)
     json.artist_name page.artist.name
-    json.annotation_count page.annotations.length
+    json.annotation_count page.annotations.to_a.length
   end
 end

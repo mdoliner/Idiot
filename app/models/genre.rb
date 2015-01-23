@@ -4,7 +4,10 @@ class Genre < ActiveRecord::Base
   has_many :pages
 
   def most_recent_page
-    self.pages.order(:created_at).last
+    pages = self.pages
+    pages = pages.to_a
+    pages = pages.sort_by(&:created_at)
+    page = pages.last
   end
 
   def recent_pages

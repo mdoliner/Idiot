@@ -13,34 +13,29 @@ Idiot.Routers.Router = Backbone.Router.extend({
   initialize: function () {
     this.$rootEl = $("#main");
     this.$headerEl = $("#header");
-    this._genres = new Idiot.Collections.Genres();
-    this._pages = new Idiot.Collections.Pages();
-    this._artists = new Idiot.Collections.Artists();
-    this._users = new Idiot.Collections.Users();
     this._currentUser = new Idiot.Models.CurrentUser();
-    this._session = new Idiot.Models.Session();
-    this._collections = new Idiot.Collections.Collections();
+    this._currentUser.fetch({ async: false });
     this.header();
-    this._headerView = new Idiot.Views.Header({
-      collection: this._genres,
-      model: this._currentUser,
-      router: this
-    });
   },
 
   header: function () {
-    this._currentUser.fetch({
-      success: function () {
-        this._genres.fetch({
-          success: function () {
-            this.$headerEl.html(this._headerView.render().$el);
-          }.bind(this)
-        });
-      }.bind(this)
+    var headerGenres = new Idiot.Collections.Genres();
+    headerGenres.fetch({
+      url: "api/genres/header",
+      async: false
     });
+    this._headerView = new Idiot.Views.Header({
+      collection: headerGenres,
+      model: this._currentUser,
+      router: this
+    });
+    this.$headerEl.html(this._headerView.render().$el);
   },
 
   artistShow: function (id) {
+    if (typeof this._artists === "undefined") {
+      this._artists = new Idiot.Collections.Artists();
+    }
     var artist = this._artists.getOrAdd(id);
     artist.fetch({
       success: function () {
@@ -55,6 +50,9 @@ Idiot.Routers.Router = Backbone.Router.extend({
   },
 
   collectionShow: function (id) {
+    if (typeof this._collections === "undefined") {
+      this._collections = new Idiot.Collections.Collections();
+    }
     var collection = this._collections.getOrAdd(id);
     collection.fetch({
       success: function () {
@@ -68,6 +66,9 @@ Idiot.Routers.Router = Backbone.Router.extend({
   },
 
   genresIndex: function () {
+    if (typeof this._genres === "undefined") {
+      this._genres = new Idiot.Collections.Genres();
+    }
     this._genres.fetch({
       success: function () {
         var view = new Idiot.Views.GenresIndex({
@@ -125,7 +126,10 @@ Idiot.Routers.Router = Backbone.Router.extend({
   },
 
   pageShow: function (id) {
-    var page = this._pages.getOrAdd(id);
+    if (typeof this._pages === "undefined") {
+      this._pages = new Idiot.Collections.Pages();
+    }
+    this._pages.getOrAdd(id);
     page.fetch({
       success: function () {
         var view = new Idiot.Views.PageShow({
@@ -139,6 +143,9 @@ Idiot.Routers.Router = Backbone.Router.extend({
   },
 
   userShow: function (id) {
+    if (typeof this._users === "undefined") {
+      this._users = new Idiot.Collections.Users();
+    }
     var user = this._users.getOrAdd(id);
     user.fetch({
       success: function () {

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     match 'users/current' => 'users#current', via: :get
     match 'users/logout' => 'users#logout', via: :get
     resources :users
+    match 'genres/header' => 'genres#header', via: :get
     resources :genres
     resources :pages
     resources :annotations

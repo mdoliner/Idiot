@@ -1,8 +1,7 @@
 class GenresController < ApplicationController
 
   def index
-    @genres = Genre.all.includes(:pages)
-    @most_recent_pages = []
+    @genres = Genre.all.includes(pages: [:artist, :annotations])
   end
 
   def show
