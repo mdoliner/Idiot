@@ -43,7 +43,7 @@ class Page < ActiveRecord::Base
 
   def image_url
     if self.photo.url == "/photos/original/missing.png"
-      if MUSIC_TYPES.include?(self.genre.name)
+      if !MUSIC_TYPES.include?(self.genre.name)
         return "/photos/original/blank.png"
       else
         track = self.spotify_track
