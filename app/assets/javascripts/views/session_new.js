@@ -24,7 +24,6 @@ Idiot.Views.SessionNew = Backbone.View.extend({
       success: function () {
         this.headerView.model.fetch();
         this.remove();
-        window.location.reload();
       }.bind(this),
       error: function () {
         $("#login-error").text("Username/password incorrect.");
