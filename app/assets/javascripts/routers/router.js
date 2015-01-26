@@ -17,6 +17,7 @@ Idiot.Routers.Router = Backbone.Router.extend({
     this._genres = new Idiot.Collections.Genres();
     this._currentUser.fetch({ async: false });
     this.header();
+    Idiot.Tour.start();
   },
 
   header: function () {

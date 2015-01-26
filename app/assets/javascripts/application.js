@@ -15,6 +15,8 @@
 //= require underscore
 //= require backbone
 //= require idiot
+//= require tether
+//= require shepherd
 //= require_tree ../templates
 //= require_tree ./utils
 //= require_tree ./models
