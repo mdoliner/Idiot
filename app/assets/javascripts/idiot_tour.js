@@ -70,7 +70,7 @@
     classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
     buttons: [
     {
-      text: 'Way ahead of you. Already there.',
+      text: 'Way ahead of you.',
       action: tour.next,
       classes: 'shepherd-button-example-primary'
     }
@@ -91,8 +91,8 @@
   });
 
   tour.addStep({
-    text: ["Let's click on 'Create Page' to get started."],
-    attachTo: 'a.create',
+    text: ["Let's click on 'Sign In' to get started."],
+    attachTo: 'a.new-session',
     classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
     buttons: [
     {
@@ -103,12 +103,12 @@
     ]
   });
   tour.addStep({
-    text: ["Oh man! You have to sign in?? Don't worry, I've got you covered. Click 'Sign in here.'"],
+    text: ["Oh man! You have to sign in?? Don't worry, I've got you covered. Click 'Sign in as editor.'"],
     attachTo: '#header-form',
     classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
     buttons: [
     {
-      text: 'Ok, clicked that too.',
+      text: 'Cool, I\'m logged in!',
       action: tour.next,
       classes: 'shepherd-button-example-primary'
     }

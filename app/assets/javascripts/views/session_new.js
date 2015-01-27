@@ -3,7 +3,8 @@ Idiot.Views.SessionNew = Backbone.View.extend({
   tagName: "span",
   className: "new-session",
   events: {
-    "click button.login": "createSession"
+    "click button.login": "createSession",
+    "click button.login-editor": "createGuestSession"
   },
 
   initialize: function (options) {
@@ -28,6 +29,18 @@ Idiot.Views.SessionNew = Backbone.View.extend({
       error: function () {
         $("#login-error").text("Username/password incorrect.");
       }
+    });
+  },
+
+  createGuestSession: function (event) {
+    event.preventDefault();
+    var attrs = {username: "editor", password: "editor"};
+    this.model.save(attrs, {
+      wait: true,
+      success: function () {
+        this.headerView.model.fetch();
+        this.remove();
+      }.bind(this),
     });
   }
 });
