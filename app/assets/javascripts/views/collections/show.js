@@ -61,10 +61,10 @@ Idiot.Views.CollectionShow = Backbone.View.extend({
     var query = $("#new-page").val().toLowerCase();
     var resultItems;
     if (query.length > 2) {
-      $results.empty();
       var pages = new Idiot.Collections.Pages();
       pages.fetch({
         success: function () {
+          $results.empty();
           resultItems = pages.filter(function (page) {
             return page.get("title").toLowerCase().indexOf(query) !== -1;
           });

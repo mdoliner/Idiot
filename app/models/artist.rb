@@ -7,6 +7,6 @@ class Artist < ActiveRecord::Base
   }
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
-  has_many :pages
-  has_many :collections
+  has_many :pages, dependent: :destroy
+  has_many :collections, dependent: :destroy
 end

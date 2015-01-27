@@ -17,6 +17,7 @@ Idiot.Routers.Router = Backbone.Router.extend({
     this._genres = new Idiot.Collections.Genres();
     this._currentUser.fetch({ async: false });
     this.header();
+    this.start = true;
   },
 
   header: function () {
@@ -64,7 +65,10 @@ Idiot.Routers.Router = Backbone.Router.extend({
       collection: this._genres
     });
     this.swapView(view);
-    Idiot.Tour.start();
+    if (this.start) {
+      Idiot.Tour.start();
+      this.start = false;
+    }
   },
 
   genreShow: function (id) {

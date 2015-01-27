@@ -5,7 +5,8 @@ Idiot.Views.UserNew = Backbone.View.extend({
   className: "user-new",
   events: {
     "click #sign-up-email": "newUserEmail",
-    "click button.user-new": "createUser"
+    "click button.user-new": "createUser",
+    "click button.login-editor": "createGuestSession"
   },
 
   initialize: function (options) {
@@ -64,5 +65,18 @@ Idiot.Views.UserNew = Backbone.View.extend({
         }
       }
     })
+  },
+
+  createGuestSession: function (event) {
+    event.preventDefault();
+    var attrs = {username: "editor", password: "editor"};
+    var session = new Idiot.Models.Session();
+    session.save(attrs, {
+      wait: true,
+      success: function () {
+        this.headerView.model.fetch();
+        this.remove();
+      }.bind(this),
+    });
   }
 });
