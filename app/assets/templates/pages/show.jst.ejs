@@ -16,7 +16,11 @@
 <% } %>
 <span class="page-content group">
   <article class="page-text">
-    <p class="text-content"><%= page.escape("text") %></p>
+    <% if (currentUser.get("level") === "editor") {%>
+      <p class="text-content editable"><%= page.escape("text") %></p>
+    <% } else {%>
+      <p class="text-content"><%= page.escape("text") %></p>
+    <% } %>
     <content id="page-improvements"></content>
   </article>
   <article class="page-annotations">

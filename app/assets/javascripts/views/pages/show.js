@@ -2,13 +2,16 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
   template: JST["pages/show"],
 
   events: {
+    "blur .edit-text": "saveContent",
     "click a.annotation": "refreshAnnotation",
     "mouseup .page-text": "toggleNewAnnotation",
     "click #submit-annotation": "createAnnotation",
     "click #new-page-improvement input": "attachPageImprovementSubmit",
     "click #new-page-improvement textarea": "attachPageImprovementSubmit",
     "click #submit-page-improvement": "createPageImprovement",
-    "click #edit-photo": "editPhoto"
+    "click #edit-photo": "editPhoto",
+    "dblclick p.editable": "editContent"
+
   },
 
   initialize: function (options) {
@@ -186,6 +189,29 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
     });
     $el.after(view.render().$el);
     $el.remove();
-  }
+  },
+
+  editContent: function (event) {
+    event.preventDefault();
+    var $contentArea = $(event.target);
+    var $textarea = $("<textarea class='edit-text'>");
+    $textarea.css("height", $contentArea.height() + 30);
+
+    $textarea.val(this.model.get("text"));
+    $contentArea.removeClass('editable');
+    $contentArea.html($textarea);
+    $textarea.focus();
+  },
+
+  saveContent: function (event) {
+    event.preventDefault();
+    if (this.currentUser.get("level") === "editor") {
+      var newContent = $(event.currentTarget).val();
+
+      this.model.set("text", newContent);
+      this.model.save();
+    }
+    this.render();
+  },
 
 });
