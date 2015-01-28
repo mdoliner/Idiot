@@ -71,7 +71,7 @@ Idiot.Views.CollectionShow = Backbone.View.extend({
           _.each(resultItems, function (page) {
             var $li = $("<li class='chosen-page'></li>");
             $li.data("id", page.id);
-            $li.text(page.escape("title"))
+            $li.html(page.escape("title"))
             $results.append($li);
           })
         }

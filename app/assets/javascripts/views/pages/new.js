@@ -68,7 +68,8 @@ Idiot.Views.PageNew = Backbone.View.extend({
       }.bind(this),
       error: function (model, response) {
         if (!attrs.artist_id) {
-          $("#artist-error").text("This field is required.");
+          $("#artist-search-results").empty();
+          $("#artist-error").text("Please choose your artist from the search results.");
         } else {
           $("#artist-error").empty();
         }

@@ -78,10 +78,6 @@
         }
       }
       return (_base = this.options).buttons != null ? (_base = this.options).buttons : _base.buttons = [
-        {
-          text: 'Next',
-          action: this.tour.next
-        }
       ];
     };
 
