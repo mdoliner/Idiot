@@ -12,7 +12,7 @@
   </ul>
   <% } else { %>
   <ul class="nav-user">
-    <li><a href="#users/<%= currentUser.id %>"><img class="prof-photo" src="<%= currentUser.get("image_url") %>"</a></li>
+    <li><img class="prof-photo" src="<%= currentUser.get("image_url") %>"></li>
     <li><a id="destroy-session">Log Out</a></li>
   </ul>
   <% } %>

@@ -8,7 +8,8 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
     "keyup #search": "updateSearch",
     "click a.search-item": "clearSearch",
     "click span.modal-background": "toggleModal",
-    "click": "hideSearch"
+    "click": "hideSearch",
+    "click a.create": "ensureLogin"
   },
 
   initialize: function (options) {
@@ -108,6 +109,15 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
       });
     } else {
       this.hideSearch();
+    }
+  },
+
+  ensureLogin: function (event) {
+    this.model.fetch({ async: false });
+    if (!this.model.get("logged_in")) {
+      event.preventDefault();
+      Backbone.history.fragment = "";
+      this.trigger("forceLogin");
     }
   },
 

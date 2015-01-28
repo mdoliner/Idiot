@@ -89,18 +89,13 @@ Idiot.Routers.Router = Backbone.Router.extend({
   },
 
   pageNew: function () {
-    this._currentUser.fetch({ async: false });
-    if (this._currentUser.get("logged_in")) {
-      var page = new Idiot.Models.Page();
-      this._genres.fetch({ async: false });
-      var view = new Idiot.Views.PageNew({
-        model: page,
-        collection: this._genres
-      });
-      this.swapView(view);
-    } else {
-      this._headerView.trigger("forceLogin");
-    }
+    var page = new Idiot.Models.Page();
+    this._genres.fetch({ async: false });
+    var view = new Idiot.Views.PageNew({
+      model: page,
+      collection: this._genres
+    });
+    this.swapView(view);
   },
 
   pageShow: function (id) {
