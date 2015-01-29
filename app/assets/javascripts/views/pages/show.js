@@ -30,6 +30,7 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
     this.$el.html(textContent);
     var $textContent = this.$el.find(".text-content");
     var text = $textContent.text();
+    /* Wraps each annotation in a link */
     annotations.each(function (annotation) {
       var startTag = "<a class='annotation' href='#' data-id=" + annotation.id + ">";
       var endTag = "</a>"
