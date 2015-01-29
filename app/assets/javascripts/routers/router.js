@@ -65,10 +65,10 @@ Idiot.Routers.Router = Backbone.Router.extend({
       collection: this._genres
     });
     this.swapView(view);
-    if (this.start) {
-      Idiot.Tour.start();
-      this.start = false;
-    }
+    // if (this.start) {
+    //   Idiot.Tour.start();
+    //   this.start = false;
+    // }
   },
 
   genreShow: function (id) {
@@ -99,6 +99,10 @@ Idiot.Routers.Router = Backbone.Router.extend({
   },
 
   pageShow: function (id) {
+    if (this.start) {
+      Idiot.Tour.start();
+      this.start = false;
+    }
     if (typeof this._pages === "undefined") {
       this._pages = new Idiot.Collections.Pages();
     }
