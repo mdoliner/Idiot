@@ -189,19 +189,579 @@ coll = Collection.create!({
   artist_id: 1,
   release_year: 2000
 })
-rap3 =  Page.create!({genre_id: rap.id, title: "I Don't Fuck With You", artist_id: sean.id})
-rap4 =  Page.create!({genre_id: rap.id, title: "No Role Modelz", artist_id: cole.id})
-rap5 =  Page.create!({genre_id: rap.id, title: "Only", artist_id: minaj.id})
-rap6 =  Page.create!({genre_id: rap.id, title: "No Type", artist_id: rae.id})
-rock1 = Page.create!({ genre_id: rock.id, title: "The Pale Emperor Tracklist", artist_id: marilyn.id})
-lit1 = Page.create!({ genre_id: lit.id, title: "Moby-Dick (Chap. 1: Loomings)", artist_id: melville.id})
-pop1 = Page.create!({ genre_id: pop.id, title: "Style", artist_id: taylor.id})
-news1 = Page.create!({ genre_id: news.id, title: "Writer At War: Kendrick Lamar's XXL Cover Story", artist_id: kendrick.id})
-country1 = Page.create!({ genre_id: country.id, title: "Turtles All The Way Down", artist_id: sturgill.id})
-rb1 = Page.create!({ genre_id: rb.id, title: "Hold You Down", artist_id: khaled.id})
-history1 = Page.create!({ genre_id: history.id, title: "The Declaration of Independence", artist_id: jefferson.id})
-screen1 = Page.create!({ genre_id: sports.id, title: "Pipe Bomb", artist_id: cmpunk.id})
-law1 = Page.create!({ genre_id: law.id, title: "Vosburg v. Putney", artist_id: 1})
-tech1 = Page.create!({ genre_id: tech.id, title: "Bitcoin: A Peer-to-Peer Electronic Cash System", artist_id: 1})
-x1 = Page.create!({ genre_id: x.id, title: "Twelve Jewels", artist_id: 1})
-meta1 = Page.create!({ genre_id: meta.id, title: "Contributor Guidelines", artist_id: 1})
+rap3 =  Page.create!({genre_id: rap.id, title: "I Don't Fuck With You", artist_id: sean.id, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+rap4 =  Page.create!({genre_id: rap.id, title: "No Role Modelz", artist_id: cole.id, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+rap5 =  Page.create!({genre_id: rap.id, title: "Only", artist_id: minaj.id, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+rap6 =  Page.create!({genre_id: rap.id, title: "No Type", artist_id: rae.id, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+rock1 = Page.create!({ genre_id: rock.id, title: "The Pale Emperor Tracklist", artist_id: marilyn.id, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+lit1 = Page.create!({ genre_id: lit.id, title: "Moby-Dick (Chap. 1: Loomings)", artist_id: melville.id, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+pop1 = Page.create!({ genre_id: pop.id, title: "Style", artist_id: taylor.id, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+news1 = Page.create!({ genre_id: news.id, title: "Writer At War: Kendrick Lamar's XXL Cover Story", artist_id: kendrick.id, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+country1 = Page.create!({ genre_id: country.id, title: "Turtles All The Way Down", artist_id: sturgill.id, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+rb1 = Page.create!({ genre_id: rb.id, title: "Hold You Down", artist_id: khaled.id, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+history1 = Page.create!({ genre_id: history.id, title: "The Declaration of Independence", artist_id: jefferson.id, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+screen1 = Page.create!({ genre_id: sports.id, title: "Pipe Bomb", artist_id: cmpunk.id, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+law1 = Page.create!({ genre_id: law.id, title: "Vosburg v. Putney", artist_id: 1, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+tech1 = Page.create!({ genre_id: tech.id, title: "Bitcoin: A Peer-to-Peer Electronic Cash System", artist_id: 1, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+x1 = Page.create!({ genre_id: x.id, title: "Twelve Jewels", artist_id: 1, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})
+meta1 = Page.create!({ genre_id: meta.id, title: "Contributor Guidelines", artist_id: 1, text:
+  "[Hook x2]
+  I'm in love with the coco
+  I'm in love with the coco
+  I got it for the low, low
+  I'm in love with the coco
+
+  [Verse 1]
+  Hit my plug, that's my cholo (mi amigo)
+  Cause he got it for the low, low
+  If you snitchin' I go loco (go crazy)
+  Hit you with that treinta ocho
+  Niggas thinkin' that I'm solo
+  Fifty deep, they like, \"oh, no\"
+  Heard the feds takin' photos
+  I know nothin', fuck the popo
+
+  [Refrain]
+  Bakin' soda, I got bakin' soda
+  Bakin' soda, I got bakin' soda
+  Whip it through the glass, nigga
+  I'm blowin' money fast, nigga
+
+  [Hook x2]
+
+  [Verse 2]
+  Thirty six, that's a kilo (aqui)
+  Need a brick, miss my free throw
+  I'm in love, just like Ne-Yo
+  Bustin' shots, now he Neo
+  Free my homies, fuck the C.O
+  Fuck the judge, fuck my P.O
+  All this coke, like I'm Nino
+  Water whip, like I'm Nemo
+
+  [Refrain + Hook x2]"})

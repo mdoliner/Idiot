@@ -8,7 +8,7 @@ class Page < ActiveRecord::Base
   }
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
-  validates :genre_id, :title, :artist_id, presence: true
+  validates :genre_id, :title, :artist_id, :text, presence: true
 
   belongs_to :genre
   belongs_to :collection
@@ -23,6 +23,12 @@ class Page < ActiveRecord::Base
 
   MUSIC_TYPES = ["Rap", "Rock", "Pop", "Country", "R&B"]
 
+  def spotify_uri
+    track = self.spotify_track
+    return nil unless track
+    track.uri
+  end
+
   def spotify_track
     tracks = RSpotify::Track.search(self.title)
     tracks.each do |track|
@@ -33,12 +39,6 @@ class Page < ActiveRecord::Base
       end
     end
     nil
-  end
-
-  def spotify_uri
-    track = self.spotify_track
-    return nil unless track
-    track.uri
   end
 
   def image_url
