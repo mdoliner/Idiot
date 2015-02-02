@@ -34,8 +34,10 @@ Idiot.Views.SessionNew = Backbone.View.extend({
 
   createGuestSession: function (event) {
     event.preventDefault();
-    var attrs = {username: "editor", password: "editor"};
-    this.model.save(attrs, {
+    var guestNum = Math.floor(Math.random() * 100000)
+    var attrs = {username: "guest" + guestNum, email: "guest" + guestNum + "@guest.com", password: "password"};
+    user = new Idiot.Models.User;
+    user.save(attrs, {
       wait: true,
       success: function () {
         this.headerView.model.fetch();

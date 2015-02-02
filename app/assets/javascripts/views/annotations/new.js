@@ -42,9 +42,7 @@ Idiot.Views.AnnotationNew = Backbone.CompositeView.extend({
 
   renderNewForm: function (event) {
     event.preventDefault();
-    if (!this.currentUser.get("logged_in")) {
-      this.headerView.trigger("forceLogin");
-    } else if (this.overlaps()) {
+    if (this.overlaps()) {
       $("#header-form").html(this.illegalTemplate());
       $("span.modal-background").css("visibility", "visible").css("opacity", "1");
     } else {
