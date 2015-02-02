@@ -3,13 +3,30 @@
     window.Idiot = {};
   }
 
-  var tour = Idiot.Tour = new Shepherd.Tour({
+  var pageShowTour = Idiot.PageShowTour = new Shepherd.Tour({
     classes: 'shepherd-element shepherd-open shepherd-theme-arrows',
     showCancelLink: true
   });
 
-  tour.addStep({
+  pageShowTour.addStep({
     text: ["Pro Tip: If you want to add annotations, sign in as a guest. Then, highlight the text you want to annotate. If you want to edit the lyrics (or most things on the site), just double click them and edit in place."],
+    classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
+      buttons: [
+      {
+          text: 'Cool, thanks!',
+          action: tour.next,
+          classes: 'shepherd-button-example-primary'
+        }
+      ]
+  });
+
+  var pageNewTour = Idiot.PageNewTour = new Shepherd.Tour({
+    classes: 'shepherd-element shepherd-open shepherd-theme-arrows',
+    showCancelLink: true
+  });
+
+  pageNewTour.addStep({
+    text: ["Pro Tip: If you use a real song by a real artist, Idiot will auto-load the artwork and spotify player on creation."],
     classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
       buttons: [
       {

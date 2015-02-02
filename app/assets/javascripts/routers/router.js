@@ -17,7 +17,8 @@ Idiot.Routers.Router = Backbone.Router.extend({
     this._genres = new Idiot.Collections.Genres();
     this._currentUser.fetch({ async: false });
     this.header();
-    this.start = true;
+    this.pageShowStart = true;
+    this.pageNewStart = true;
   },
 
   header: function () {
@@ -89,6 +90,10 @@ Idiot.Routers.Router = Backbone.Router.extend({
   },
 
   pageNew: function () {
+    if (this.pageNewStart) {
+      Idiot.PageNewTour.start();
+      this.pageNewStart = false;
+    }
     var page = new Idiot.Models.Page();
     this._genres.fetch({ async: false });
     var view = new Idiot.Views.PageNew({
@@ -99,9 +104,9 @@ Idiot.Routers.Router = Backbone.Router.extend({
   },
 
   pageShow: function (id) {
-    if (this.start) {
-      Idiot.Tour.start();
-      this.start = false;
+    if (this.pageShowStart) {
+      Idiot.PageShowTour.start();
+      this.pageShowStart = false;
     }
     if (typeof this._pages === "undefined") {
       this._pages = new Idiot.Collections.Pages();
