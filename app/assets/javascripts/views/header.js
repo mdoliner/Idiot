@@ -91,7 +91,7 @@ Idiot.Views.Header = Backbone.CompositeView.extend({
     $results.css("display", "block")
     var query = $("#search").val().toLowerCase();
     var resultItems;
-    if (query.length > 2) {
+    if (query.length > 0) {
       var pages = new Idiot.Collections.Pages();
       pages.fetch({
         success: function () {

@@ -22,7 +22,7 @@ Idiot.Views.PageNew = Backbone.View.extend({
     $results.css("display", "block")
     var query = $("#artist").val().toLowerCase();
     var resultItems;
-    if (query.length > 2) {
+    if (query.length > 0) {
       var artists = new Idiot.Collections.Artists();
       artists.fetch({
         success: function () {

@@ -60,7 +60,7 @@ Idiot.Views.CollectionShow = Backbone.View.extend({
     $results.css("display", "block")
     var query = $("#new-page").val().toLowerCase();
     var resultItems;
-    if (query.length > 2) {
+    if (query.length > 0) {
       var pages = new Idiot.Collections.Pages();
       pages.fetch({
         success: function () {
