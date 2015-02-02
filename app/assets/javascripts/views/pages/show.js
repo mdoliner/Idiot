@@ -78,13 +78,13 @@ Idiot.Views.PageShow = Backbone.CompositeView.extend({
     if ($(event.target).hasClass("text-content")) {
       if (window.getSelection().toString().length === 0) {
         $('.page-annotations').empty();
-        var annotationView = new Idiot.Views.AnnotationShow({
-          model: this.model.description(),
-          currentUser: this.currentUser,
-          isDescription: true
-        });
-        this.addSubview('.page-annotations', annotationView);
-        $(".page-annotations").css("top", event.pageY - $(".page-annotations").height() / 2);
+        // var annotationView = new Idiot.Views.AnnotationShow({
+        //   model: this.model.description(),
+        //   currentUser: this.currentUser,
+        //   isDescription: true
+        // });
+        // this.addSubview('.page-annotations', annotationView);
+        // $(".page-annotations").css("top", event.pageY - $(".page-annotations").height() / 2);
       } else {
         $('.page-annotations').empty();
         var newAnnotationView = new Idiot.Views.AnnotationNew({
