@@ -14,7 +14,7 @@
       buttons: [
       {
           text: 'Cool, thanks!',
-          action: tour.next,
+          action: pageShowTour.next,
           classes: 'shepherd-button-example-primary'
         }
       ]
@@ -31,7 +31,7 @@
       buttons: [
       {
           text: 'Cool, thanks!',
-          action: tour.next,
+          action: pageNewTour.next,
           classes: 'shepherd-button-example-primary'
         }
       ]
