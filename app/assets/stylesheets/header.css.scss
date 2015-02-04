@@ -105,7 +105,6 @@ nav input.search {
   border-radius: 5px;
   padding: 5px;
   box-sizing: border-box;
-  display: none;
 }
 
 nav li.search-bar {
@@ -132,6 +131,7 @@ ul.search-results {
   width: 300px;
   overflow: hidden;
   z-index: 10;
+  display: none;
 }
 
 ul.search-results a {
