@@ -26,7 +26,7 @@
       </ul>
     </li>
     <li><a href="#pages/new" class="create">Create Page</a></li>
-    <% if (currentUser.get("level") === "editor") { %>
+    <% if (currentUser.get("logged_in") && currentUser.get("level") === "editor") { %>
       <li><a href="#" class="create" id="new-artist">Create Artist</a></li>
     <% } %>
   </ul>

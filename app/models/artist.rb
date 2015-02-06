@@ -9,4 +9,14 @@ class Artist < ActiveRecord::Base
 
   has_many :pages, dependent: :destroy
   has_many :collections, dependent: :destroy
+
+  def image_url
+    if self.photo.url == "/photos/original/missing.png"
+      artist = RSpotify::Artist.search(self.name).first
+      return "/photos/original/blank.png" if !artist
+      self.photo = artist.images.first["url"]
+      self.save!
+    end
+    self.photo.url
+  end
 end
