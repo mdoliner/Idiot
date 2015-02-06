@@ -25,7 +25,7 @@ end
 def image_url
   if self.photo.url == "/photos/original/missing.png"
     album = self.spotify_album
-    return "/photos/original/blank.png" if !album
+    return "/photos/original/blank.png" if !album || album.images.empty?
     self.photo = album.images.first["url"]
     self.save!
   end

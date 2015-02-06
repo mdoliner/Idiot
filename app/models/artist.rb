@@ -13,7 +13,7 @@ class Artist < ActiveRecord::Base
   def image_url
     if self.photo.url == "/photos/original/missing.png"
       artist = RSpotify::Artist.search(self.name).first
-      return "/photos/original/blank.png" if !artist
+      return "/photos/original/blank.png" if !artist || artist.images.empty?
       self.photo = artist.images.first["url"]
       self.save!
     end

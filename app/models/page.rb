@@ -47,7 +47,7 @@ class Page < ActiveRecord::Base
         return "/photos/original/blank.png"
       else
         track = self.spotify_track
-        return "/photos/original/blank.png" if !track
+        return "/photos/original/blank.png" if !track || track.images.empty?
         self.photo = track.album.images.first["url"]
         self.save!
       end
