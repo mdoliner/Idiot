@@ -9,7 +9,7 @@
   });
 
   pageShowTour.addStep({
-    text: ["Pro Tip: If you want to add annotations, sign in as a guest. Then, highlight the text you want to annotate. If you want to edit the lyrics (or most things on the site), just double click them and edit in place."],
+    text: ["Pro Tip: If you want to add annotations, sign in as a guest. Then, highlight the text you want to annotate."],
     classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
       buttons: [
       {
