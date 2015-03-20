@@ -3,9 +3,7 @@
 <%} else {%>
   <h3><a href="#">Idiot Annotation</a></h3>
 <% } %>
-<p>
-  <%= annotation.escape("content") %>
-</p>
+<p><%= annotation.escape("content") %></p>
 <a class="edit">propose an edit</a>
 <a class="reply" id="annotation-replies">Reply</a>
 <span id="annotation-improvements"></span>
